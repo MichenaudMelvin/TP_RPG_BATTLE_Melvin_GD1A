@@ -1,4 +1,9 @@
-#noms{
+.noms{
 	font-size: 28px;
 	color: red;
+}
+
+.stats{
+	display: flex;
+	
 }
