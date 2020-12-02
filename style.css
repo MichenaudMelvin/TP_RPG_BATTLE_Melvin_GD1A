@@ -1,6 +1,5 @@
 .noms{
 	font-size: 28px;
-	color: red;
 	text-decoration: underline;
 }
 
@@ -27,10 +26,16 @@
 	background: lightgrey;
 	background-color: rgb(50, 50, 150, 0.7);
 	width: 15%;
+	margin-top: 50px;
 
 }
 .actions:hover{
 	padding-left: 10px;
 	text-decoration: underline;
 	color: grey;
+}
+body{
+	background-image:url(img/background.png);
+	background-repeat:no-repeat;
+	color: white;
 }
