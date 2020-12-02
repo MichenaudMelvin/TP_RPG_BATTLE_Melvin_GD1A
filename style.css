@@ -1,9 +1,26 @@
 .noms{
 	font-size: 28px;
 	color: red;
+	text-decoration: underline;
 }
 
 .stats{
 	display: flex;
+	border: 5px solid red;
+	border-radius: 5px;
+	border-top: 5px;
+	background: lightgrey;
+}
+
+.actions{
+	display: flex;
+	justify-content: left; 
+	border: 5px solid red;
+	border-radius: 5px;
 	
+}
+.actions:hover{
+	padding-left: 10px;
+	text-decoration: underline;
+	color: grey;
 }
