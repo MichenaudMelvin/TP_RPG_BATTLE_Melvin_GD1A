@@ -8,8 +8,9 @@
 	display: flex;
 	border-radius: 5px;
 	border-top: 1px red;
-	background: lightgrey;
+	background-color: rgb(50, 50, 150, 0.7);
 }
+
 .table{
 	display: flex;
 	justify-content: center;
@@ -24,6 +25,8 @@
 	border-radius: 5px;
 	padding-left: 5px;
 	background: lightgrey;
+	background-color: rgb(50, 50, 150, 0.7);
+
 }
 .actions:hover{
 	padding-left: 10px;
