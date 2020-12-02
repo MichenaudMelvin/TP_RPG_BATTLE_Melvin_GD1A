@@ -20,15 +20,14 @@
 	justify-content: center;
 }
 
-.stats{
-	display: flex;
-	border-radius: 5px;
-	border-top: 1px red;
-}
-
 .noms{
 	font-size: 28px;
 	text-decoration: underline;
+}
+
+.stats{
+	display: flex;
+	font-size: 25px;
 }
 
 
