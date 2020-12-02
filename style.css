@@ -38,4 +38,5 @@ body{
 	background-image:url(img/background.png);
 	background-repeat:no-repeat;
 	color: white;
+	background-size: 100% 350%;
 }
