@@ -6,10 +6,14 @@
 
 .stats{
 	display: flex;
-	border: 5px solid red;
 	border-radius: 5px;
-	border-top: 5px;
+	border-top: 1px red;
 	background: lightgrey;
+}
+.table{
+	display: flex;
+	justify-content: center;
+	border: 5px solid red;
 }
 
 .actions{
@@ -17,7 +21,8 @@
 	justify-content: left; 
 	border: 5px solid red;
 	border-radius: 5px;
-	
+	padding-left: 5px;
+	background: lightgrey;
 }
 .actions:hover{
 	padding-left: 10px;
