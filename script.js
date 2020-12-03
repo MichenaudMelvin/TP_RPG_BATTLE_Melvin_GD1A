@@ -11,9 +11,9 @@ var mana_perso_trois = document.getElementById("mana_perso_trois");
 var mana_perso_quatre = document.getElementById("mana_perso_quatre");
 
 /*pv des boss*/
-var pv_boss_un
-var pv_boss_deux
-var pv_boss_trois = document.getElementById("")
+var pv_boss_un = document.getElementById("pv_boss_un")
+var pv_boss_deux = document.getElementById("pv_boss_deux")
+var pv_boss_trois = document.getElementById("pv_boss_trois")
 
 function attaque() {
   document.getElementById("attaque").innerHTML = "> attaque <";
