@@ -4,15 +4,11 @@
         url('img/RPGSystem.woff') format('woff');
 }
 
-
 .box{
 	display: flex;
 	border: 5px solid white;
 	border-radius: 5px;
-	padding-left: 5px;
-	padding-top: 5px;
 	background-color: rgb(50, 50, 150, 0.7);
-	margin-top: 50px;
 	text-align: center;
 	justify-content: space-around;
 	height : auto;
@@ -40,6 +36,7 @@
 	font-size: 25px;
 	display: flex;
 	flex-direction: column;
+	padding: 70px;
 }
 
 
