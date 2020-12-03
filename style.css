@@ -39,6 +39,10 @@
 	flex-direction: column;
 }
 
+.ennemis{
+	display: flex;
+	justify-content: space-around;
+}
 
 .choix{
 	color: white;
@@ -53,6 +57,7 @@
 	color: lightgrey;
 	text-decoration-color: lightgrey;
 }
+
 body{
 	color: white;
 	/*permet d'avoir un arrière plan qui s'adapte à la taille de l'écran*/
