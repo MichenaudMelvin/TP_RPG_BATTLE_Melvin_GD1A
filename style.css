@@ -22,35 +22,36 @@
 
 #actions{
 	display: flex;
-	justify-content: left;
-	width: 5%; 
+	width: 10%;
+	text-align: left;
+	flex-direction: column;
+	margin-top: 1%;
 }
 
-#noms{
+.noms{
 	font-size: 28px;
 	text-decoration: underline;
-	justify-content: center;
 }
 
 .stats{
 	font-size: 25px;
 	display: flex;
 	flex-direction: column;
-	padding: 70px;
 }
 
 
 .choix{
 	color: white;
 	font-size :25px;
+	padding-left: 10px
 }
 
 .choix:hover{
-	padding-left: 10px;
+	padding-left: 20px;
 	text-decoration: underline;
 	font-weight: bold;
-	color: grey;
-	margin-right: -10px;
+	color: lightgrey;
+	text-decoration-color: lightgrey;
 }
 body{
 	color: white;
