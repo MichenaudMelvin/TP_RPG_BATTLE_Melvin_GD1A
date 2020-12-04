@@ -8,23 +8,29 @@
 </head>
 <body style="font-family: 'RPGSystem';">
 
-<section class="box" id="table">
-	<div id="perso_un">
-		<p class="nom">Madotsuki</p><p class ="pv" id="pv_perso_un">PV : 100</p><p class="mana" id="mana_perso_quatre">Mana : 500</p>
-	</div>
-
-	<div id="perso_deux">
-		<p class="nom">Curly</p><p class ="pv" id="pv_perso_deux">PV : 100</p><p class="mana" id="mana_perso_quatre">Mana : 500</p>
-	</div>
-
-	<div id="perso_trois">
-		<p class="nom">Sauce</p><p class ="pv" id="pv_perso_trois">PV : 100</p><p class="mana" id="mana_perso_quatre">Mana : 500</p>
-	</div>
-
-	<div id="perso_quatre">
-		<p class="nom">Sauce_deux</p><p class ="pv" id="pv_perso_quatre">PV : 100</p><p class="mana" id="mana_perso_quatre">Mana : 500</p>
-	</div>
-</section>
+<table class="box" id="table">
+	<tr class="nom">
+		<td></td>
+		<td>Madotsuki</td>
+		<td>Curly</td>
+		<td>Sauce</td>
+		<td>Sauce_Deux</td>
+	</tr>
+	<tr class="pv">
+		<td>PV</td>
+		<td id="pv_perso_un">100</td>
+		<td id="pv_perso_deux">100</td>
+		<td id="pv_perso_trois">100</td>
+		<td id="pv_perso_quatre">100</td>
+	</tr>
+	<tr class="mana">
+		<td>Mana</td>
+		<td id="mana_perso_un">500</td>
+		<td id="mana_perso_deux">500</td>
+		<td id="mana_perso_trois">500</td>
+		<td id="mana_perso_quatre">500</td>
+	</tr>
+</table>
 
 <section class="ennemis">
 	<img class="boss" src="img/test.gif">
@@ -32,10 +38,13 @@
 	<img class="boss" src="img/test.gif">
 </section>
 
-<section class="box" id="actions">
-	<div class ="choix" id="attaque" onclick="attaque()">Attaque</div>
-	<div class ="choix" id="defense" onclick="defense()">Defense</div>
-	<div class ="choix" id="special" onclick="special()">Special</div>
+<section class="bottom">
+	<section class="box" id="actions">
+		<div class ="choix" id="attaque" onclick="attaque()">Attaque</div>
+		<div class ="choix" id="defense" onclick="defense()">Defense</div>
+		<div class ="choix" id="special" onclick="special()">Special</div>
+	</section>
+	<div class ="box" id="message_box">test</div>
 </section>
 
 </body>

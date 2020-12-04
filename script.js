@@ -28,7 +28,7 @@ function special() {
 }
 
 function testPerdu(pv_boss_un, pv_boss_deux, pv_boss_trois, pv_perso_quatre){
-	if (pv_perso_un and pv_boss_deux and pv_boss_trois and pv_perso_quatre == 0);{
+	if (pv_perso_un && pv_boss_deux && pv_boss_trois && pv_perso_quatre == 0){
 		var lose = true;
 	return lose;
 	}

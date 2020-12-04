@@ -9,8 +9,6 @@
 	border: 5px solid white;
 	border-radius: 5px;
 	background-color: rgb(50, 50, 150, 0.7);
-	text-align: center;
-	justify-content: space-around;
 	height : auto;
 	font-size: 36px;
 }
@@ -18,30 +16,41 @@
 #table{
 	display: flex;
 	width : auto;
+	text-align: center;
+	justify-content: space-around;
 }
 
-#actions{
-	display: flex;
-	width: 10%;
-	text-align: left;
-	flex-direction: column;
-	margin-top: 1%;
+td{
+	padding-right: 50px;
+	padding-left: 50px;
 }
 
 .noms{
 	font-size: 28px;
 	text-decoration: underline;
+	border-bottom: 1px solid white;
 }
 
-.stats{
-	font-size: 25px;
-	display: flex;
-	flex-direction: column;
+.pv{
+	border-top: 1px solid white;
 }
 
 .ennemis{
 	display: flex;
 	justify-content: space-around;
+}
+
+.bottom{
+	display: flex;
+	justify-content: left;
+	text-align: left;
+	margin-top: 1%;
+}
+
+#actions{
+	display: flex;
+	width: 10%;
+	flex-direction: column;
 }
 
 .choix{
@@ -56,6 +65,13 @@
 	font-weight: bold;
 	color: lightgrey;
 	text-decoration-color: lightgrey;
+}
+
+#message_box{
+	padding-left: 10px;
+	margin-left: 10px;
+	width: 70%;
+	text-align: right;
 }
 
 body{
