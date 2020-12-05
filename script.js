@@ -26,14 +26,15 @@ function attaquePerso(bossChoisi){
 	var nombre_attaque = attaque(20,30);
 	bossChoisi = bossChoisi - nombre_attaque;
 	document.getElementById("message_box").innerHTML = ("Vous infligez nombre_attaque de degats au monstre.");
+	document.getElementById("perso_un").style.underline = "red";
 	return bossChoisi
 }
 
 //main program
-var perso_un = Number(document.getElementById("pv_perso_un"));
-var perso_deux = Number(document.getElementById("pv_perso_deux"));
-var perso_quatre = Number(document.getElementById("pv_perso_trois"));
-var perso_quatre = Number(document.getElementById("pv_perso_quatre"));
+var perso_un = document.getElementById("pv_perso_un");
+var perso_deux = document.getElementById("pv_perso_deux");
+var perso_quatre = document.getElementById("pv_perso_trois");
+var perso_quatre = document.getElementById("pv_perso_quatre");
 
 //pv des perso
 var pv_perso_un = Number(document.getElementById("pv_perso_un"));
@@ -64,6 +65,7 @@ perso n+1
 */
 
 while (win != true || lose != true){
+	document.getElementById("perso_un").style.color = "red";
 	document.getElementById("message_box").innerHTML = ("Tour de");
 	document.getElementById("perso_un").style.color = "red";
 }
