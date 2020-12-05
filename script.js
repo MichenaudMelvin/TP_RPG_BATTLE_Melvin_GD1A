@@ -26,7 +26,7 @@ function attaquePerso(bossChoisi){
 	var nombre_attaque = attaque(20,30);
 	bossChoisi = bossChoisi - nombre_attaque;
 	document.getElementById("message_box").innerHTML = ("Vous infligez nombre_attaque de degats au monstre.");
-	document.getElementById("perso_un").style.underline = "red";
+	document.getElementById("perso_un").style.color = "red";
 	return bossChoisi
 }
 
