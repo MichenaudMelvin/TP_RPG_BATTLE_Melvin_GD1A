@@ -26,7 +26,6 @@ function attaquePerso(bossChoisi){
 	var nombre_attaque = attaque(20,30);
 	bossChoisi = bossChoisi - nombre_attaque;
 	document.getElementById("message_box").innerHTML = ("Vous infligez nombre_attaque de degats au monstre.");
-	document.getElementById("perso_un").style.color = "red";
 	return bossChoisi
 }
 
@@ -66,6 +65,7 @@ perso n+1
 
 while (win != true || lose != true){
 	document.getElementById("perso_un").style.color = "red";
+	document.getElementById("perso_un").style.textDecoration = "underline red";
 	document.getElementById("message_box").innerHTML = ("Tour de");
 	document.getElementById("perso_un").style.color = "red";
 }
