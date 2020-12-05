@@ -2,3 +2,5 @@ links :
 background image : https://opengameart.org/content/mountain-at-dusk-background / @ansimuz
 
 font : https://www.dafont.com/rpgsystem.font / Axel Lymphos
+
+boss image : opengameart.org/content/lpc-imp-2 / Stephen Challener and William.Thompsonj
