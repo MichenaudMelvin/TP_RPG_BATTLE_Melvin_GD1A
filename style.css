@@ -9,7 +9,6 @@
 	border: 5px solid white;
 	border-radius: 5px;
 	background-color: rgb(50, 50, 150, 0.7);
-	height : auto;
 	font-size: 36px;
 }
 
@@ -18,6 +17,7 @@
 	width : auto;
 	text-align: center;
 	justify-content: space-around;
+	height : auto;
 }
 
 td{
@@ -42,8 +42,6 @@ td{
 
 .bottom{
 	display: flex;
-	justify-content: left;
-	text-align: left;
 	margin-top: 1%;
 }
 
@@ -55,11 +53,12 @@ td{
 
 .choix{
 	color: white;
-	font-size :25px;
-	padding-left: 10px
+	font-size : 36px;
+	padding-left: 10px;
 }
 
 .choix:hover{
+	font-size: 40px;
 	padding-left: 20px;
 	text-decoration: underline;
 	font-weight: bold;
@@ -71,7 +70,6 @@ td{
 	padding-left: 10px;
 	margin-left: 10px;
 	width: 70%;
-	text-align: right;
 }
 
 body{

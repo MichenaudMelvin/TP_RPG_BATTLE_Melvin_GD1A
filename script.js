@@ -7,11 +7,12 @@ function attaque(min, max) {
 }
 
 function defense() {
-  document.getElementById("defense").innerHTML = "> defense <";
+  document.getElementById("defense").innerHTML = "> Defense <";
 }
 
 function special() {
-  document.getElementById("special").innerHTML = "> special <";
+  document.getElementById("special").innerHTML = "> Special <";
+  document.getElementById("special").innerHTML = "Special";
 }
 
 function testPerdu(pv_boss_un, pv_boss_deux, pv_boss_trois, pv_perso_quatre){
@@ -22,9 +23,10 @@ function testPerdu(pv_boss_un, pv_boss_deux, pv_boss_trois, pv_perso_quatre){
 }
 
 function attaquePerso(bossChoisi) {
-	document.getElementById("attaque").innerHTML = "> attaque <";
+	document.getElementById("attaque").innerHTML = "> Attaque <";
 	var nombre_attaque = attaque(20,30);
 	bossChoisi = bossChoisi - nombre_attaque
+	document.getElementById("message_box").innerHTML = "Vous infligez";
 	return bossChoisi
 }
 
