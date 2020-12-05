@@ -25,14 +25,8 @@ td{
 	padding-left: 50px;
 }
 
-.noms{
-	font-size: 28px;
+.nom{
 	text-decoration: underline;
-	border-bottom: 1px solid white;
-}
-
-.pv{
-	border-top: 1px solid white;
 }
 
 .ennemis{
@@ -47,14 +41,15 @@ td{
 
 #actions{
 	display: flex;
-	width: 10%;
 	flex-direction: column;
+	width: 15%;
 }
 
 .choix{
 	color: white;
 	font-size : 36px;
 	padding-left: 10px;
+	height: auto;
 }
 
 .choix:hover{
@@ -70,6 +65,8 @@ td{
 	padding-left: 10px;
 	margin-left: 10px;
 	width: 70%;
+	font-size: 32px;
+	height: 70px;
 }
 
 body{
