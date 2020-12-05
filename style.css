@@ -40,7 +40,28 @@
 	height: 15%
 }
 
-.stats_boss{
+.stats_boss_table{
+	padding-right: 10px;
+    padding-left: 10px;
+}
+
+.stats_boss_un{
+	position:absolute; 
+	left: 10%;
+	background-color: rgb(50, 50, 150, 0.7);
+    border-radius:5px;
+    border: 5px solid white;
+    opacity: 0;
+    padding: 10px;
+    width: auto;
+    font-size: 28px;
+}
+
+.stats_boss_un:hover{
+	opacity: 1;
+}
+
+.stats_boss_deux{
 	position:absolute;  
 	background-color: rgb(50, 50, 150, 0.7);
     border-radius:5px;
@@ -49,17 +70,29 @@
     padding: 10px;
     width: auto;
     font-size: 28px;
-    text-align: center;
 }
 
-.stats_boss_table{
-	padding-right: 10px;
-    padding-left: 10px;
-}
-
-.stats_boss:hover{
+.stats_boss_deux:hover{
 	opacity: 1;
 }
+
+.stats_boss_trois{
+	position:absolute;
+	right: 10%;
+	background-color: rgb(50, 50, 150, 0.7);
+    border-radius:5px;
+    border: 5px solid white;
+    opacity: 0;
+    padding: 10px;
+    width: auto;
+    font-size: 28px;
+}
+
+.stats_boss_trois:hover{
+	opacity: 1;
+}
+
+
 
 .bottom{
 	display: flex;
