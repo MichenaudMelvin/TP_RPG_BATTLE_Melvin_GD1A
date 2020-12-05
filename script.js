@@ -64,6 +64,7 @@ perso n+1
 */
 
 while (win != true || lose != true){
+	var sauce = 45;
 	document.getElementById("perso_un").style.color = "red";
 	document.getElementById("perso_un").style.textDecoration = "underline red";
 	document.getElementById("message_box").innerHTML = ("Tour de");
