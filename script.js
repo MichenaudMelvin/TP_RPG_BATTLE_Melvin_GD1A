@@ -6,12 +6,9 @@ function attaque(min, max) {
   return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
-function defense(){
-  document.getElementById("defense").innerHTML = "> Defense <";
-}
-
-function special(){
-  document.getElementById("special").innerHTML = "> Special <";
+function choix(){
+  var choixJoueur = document.getElementById("").innerHTML
+  if (choixJoueur == "Attaque");
 }
 
 function testPerdu(pv_boss_un, pv_boss_deux, pv_boss_trois, pv_perso_quatre){
