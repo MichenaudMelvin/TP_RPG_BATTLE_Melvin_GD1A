@@ -1,27 +1,9 @@
-/*pv des perso*/
-var pv_perso_un = Number(document.getElementById("pv_perso_un"));
-var pv_perso_deux = Number(document.getElementById("pv_perso_deux"));
-var pv_perso_quatre = Number(document.getElementById("pv_perso_trois"));
-var pv_perso_quatre = Number(document.getElementById("pv_perso_quatre"));
+/*all functions*/
 
-
-
-/*mana des perso*/
-var mana_perso_un = Number(document.getElementById("mana_perso_un"));
-var mana_perso_deux = Number(document.getElementById("mana_perso_deux"));
-var mana_perso_trois = Number(document.getElementById("mana_perso_trois"));
-var mana_perso_quatre = Number(document.getElementById("mana_perso_quatre"));
-
-console.log(typeof pv_perso_un);
-
-
-/*pv des boss*/
-var pv_boss_un = Number(document.getElementById("pv_boss_un"));
-var pv_boss_deux = Number(document.getElementById("pv_boss_deux"));
-var pv_boss_trois = Number(document.getElementById("pv_boss_trois"));
-
-function attaque() {
-  document.getElementById("attaque").innerHTML = "> attaque <";
+function attaque(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
 function defense() {
@@ -38,3 +20,29 @@ function testPerdu(pv_boss_un, pv_boss_deux, pv_boss_trois, pv_perso_quatre){
 	return lose;
 	}
 }
+
+function attaquePerso(bossChoisi) {
+	document.getElementById("attaque").innerHTML = "> attaque <";
+	var nombre_attaque = attaque(20,30);
+	bossChoisi = bossChoisi - nombre_attaque
+	return bossChoisi
+}
+
+/*main program*/
+
+/*pv des perso*/
+var pv_perso_un = Number(document.getElementById("pv_perso_un"));
+var pv_perso_deux = Number(document.getElementById("pv_perso_deux"));
+var pv_perso_quatre = Number(document.getElementById("pv_perso_trois"));
+var pv_perso_quatre = Number(document.getElementById("pv_perso_quatre"));
+
+/*mana des perso*/
+var mana_perso_un = Number(document.getElementById("mana_perso_un"));
+var mana_perso_deux = Number(document.getElementById("mana_perso_deux"));
+var mana_perso_trois = Number(document.getElementById("mana_perso_trois"));
+var mana_perso_quatre = Number(document.getElementById("mana_perso_quatre"));
+
+/*pv des boss*/
+var pv_boss_un = Number(document.getElementById("pv_boss_un"));
+var pv_boss_deux = Number(document.getElementById("pv_boss_deux"));
+var pv_boss_trois = Number(document.getElementById("pv_boss_trois"));
