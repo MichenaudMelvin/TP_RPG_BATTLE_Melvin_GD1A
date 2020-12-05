@@ -92,7 +92,9 @@
 	opacity: 1;
 }
 
-
+#nom{
+	text-decoration: underline;
+}
 
 .bottom{
 	display: flex;
