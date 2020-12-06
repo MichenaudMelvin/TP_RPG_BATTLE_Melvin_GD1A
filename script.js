@@ -5,12 +5,12 @@ function aleatoire(min, max) {
   return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
-function attaque(choix,perso_un){
+function attaque(choix){
 	document.getElementById("attaque").innerHTML = ("> Attaque <");
 	choix = "attaque"
 	console.log(choix)
 	setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
-	return(choix)
+	return choix;
 }
 
 function defense(choix){
@@ -18,7 +18,7 @@ function defense(choix){
 	choix = "defense"
 	console.log(choix)
 	setTimeout(() => {document.getElementById("defense").innerHTML = ("Defense");}, 250);
-	return(choix)
+	return choix;
 }
 
 function special(choix){
@@ -26,22 +26,28 @@ function special(choix){
 	choix = "special"
 	console.log(choix)
 	setTimeout(() => {document.getElementById("special").innerHTML = ("Special");}, 250);
-	return(choix)
+	return choix;
 }
 
-function boss_un(boss_un){
-	document.getElementById("message_box").innerHTML = ("Vous avez sélectionner" + boss_un + ".");
+function bossUn(boss_un){
+	var bossChoisi = boss_un;
+	document.getElementById("message_box").innerHTML = ("Vous avez sélectionner " + boss_un + ".");
+	return bossChoisi;
 }
 
-/*
-function boss_deux(boss_deux){
-	document.getElementById("message_box").innerHTML = ("Vous avez sélectionner" + boss_deux + ".");
+
+function bossDeux(boss_deux){
+	var bossChoisi = boss_deux;
+	document.getElementById("message_box").innerHTML = ("Vous avez sélectionner " + boss_deux + ".");
+	return bossChoisi;
 }
 
-function boss_trois(boss_trois){
-	document.getElementById("message_box").innerHTML = ("Vous avez sélectionner" + boss_trois + ".");
+function bossTrois(boss_trois){
+	var bossChoisi = boss_trois;
+	document.getElementById("message_box").innerHTML = ("Vous avez sélectionner " + boss_trois + ".");
+	return bossChoisi;
 }
-*/
+
 
 function testPerdu(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre){
 	if (pv_perso_un && pv_boss_deux && pv_boss_trois && pv_perso_quatre == 0){
@@ -127,6 +133,7 @@ let i =""
 
 if (choix == attaque){
 		attaquePerso(bossChoisi)
+
 	}
 
 
