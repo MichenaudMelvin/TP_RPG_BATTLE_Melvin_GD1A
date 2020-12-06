@@ -32,28 +32,38 @@ function tourJoueurUn(){
 	document.getElementById("message_box").innerHTML = ("Vous infligez nombre_attaque de degats au monstre.");
 }
 
+function tourBoss(pv_perso_un,pv_boss_deux,pv_boss_trois,pv_perso_quatre){
+	//attaque de boss_un
+	
+}
+
+var test = document.getElementById("perso_un").innerHTML;
+console.log(test);
+
+/*
 //main program
-var perso_un = document.getElementById("pv_perso_un");
-var perso_deux = document.getElementById("pv_perso_deux");
-var perso_quatre = document.getElementById("pv_perso_trois");
-var perso_quatre = document.getElementById("pv_perso_quatre");
+var perso_un = document.getElementById("perso_un").innerHTML;
+var perso_deux = document.getElementById("perso_deux").innerHTML;
+var perso_trois = document.getElementById("perso_trois").innerHTML;
+var perso_quatre = document.getElementById("perso_quatre").innerHTML;
 
 //pv des perso
-var pv_perso_un = Number(document.getElementById("pv_perso_un"));
-var pv_perso_deux = Number(document.getElementById("pv_perso_deux"));
-var pv_perso_quatre = Number(document.getElementById("pv_perso_trois"));
-var pv_perso_quatre = Number(document.getElementById("pv_perso_quatre"));
+var pv_perso_un = Number(document.getElementById("pv_perso_un").innerHTML);
+var pv_perso_deux = Number(document.getElementById("pv_perso_deux").innerHTML);
+var pv_perso_trois = Number(document.getElementById("pv_perso_trois").innerHTML);
+var pv_perso_quatre = Number(document.getElementById("pv_perso_quatre").innerHTML);
 
 //mana des perso
-var mana_perso_un = Number(document.getElementById("mana_perso_un"));
-var mana_perso_deux = Number(document.getElementById("mana_perso_deux"));
-var mana_perso_trois = Number(document.getElementById("mana_perso_trois"));
-var mana_perso_quatre = Number(document.getElementById("mana_perso_quatre"));
+var mana_perso_un = Number(document.getElementById("mana_perso_un").innerHTML);
+var mana_perso_deux = Number(document.getElementById("mana_perso_deux").innerHTML);
+var mana_perso_trois = Number(document.getElementById("mana_perso_trois").innerHTML);
+var mana_perso_quatre = Number(document.getElementById("mana_perso_quatre").innerHTML);
 
 //pv des boss
-var pv_boss_un = Number(document.getElementById("pv_boss_un"));
-var pv_boss_deux = Number(document.getElementById("pv_boss_deux"));
-var pv_boss_trois = Number(document.getElementById("pv_boss_trois"));
+var pv_boss_un = Number(document.getElementById("pv_boss_un").innerHTML);
+var pv_boss_deux = Number(document.getElementById("pv_boss_deux").innerHTML);
+var pv_boss_trois = Number(document.getElementById("pv_boss_trois").innerHTML);
+*/
 
 var win = false;
 var lose = false;
@@ -65,7 +75,11 @@ choisi un ennemi
 choisi une action
 perso n+1
 */
+var cible = [pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre];
+console.log(cible);
 
+/*
 while (win != true || lose != true){
 	tourJoueurUn();
 }
+*/
