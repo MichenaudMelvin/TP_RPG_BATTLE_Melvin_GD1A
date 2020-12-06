@@ -9,6 +9,8 @@ function attaque(choix){
 	document.getElementById("attaque").innerHTML = ("> Attaque <");
 	choix = "attaque"
 	console.log(choix)
+	setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
+		document.getElementById("message_box").innerHTML = ("sauce");
 	return(choix)
 }
 
@@ -16,6 +18,7 @@ function defense(choix){
 	document.getElementById("defense").innerHTML = ("> Defense <");
 	choix = "defense"
 	console.log(choix)
+	setTimeout(() => {document.getElementById("defense").innerHTML = ("Defense");}, 250);
 	return(choix)
 }
 
@@ -23,6 +26,7 @@ function special(choix){
 	document.getElementById("special").innerHTML = ("> Special <");
 	choix = "special"
 	console.log(choix)
+	setTimeout(() => {document.getElementById("special").innerHTML = ("Special");}, 250);
 	return(choix)
 }
 
@@ -77,7 +81,7 @@ function tourBoss(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre, boss
 		console.log(degatsBoss)
 
 		pv_perso = pv_perso - degatsBoss;
-		document.getElementById("message_box").innerHTML = (listeBoss[i] "vous inflige" + pv_perso + "de degats.");
+		document.getElementById("message_box").innerHTML = (listeBoss[i] + " vous inflige" + pv_perso + "de degats.");
 	return pv_perso
 	
 }
@@ -117,7 +121,7 @@ var lose = false;
 
 tourJoueurUn();
 var choix = ""
-
+let i =""
 
 if (choix == attaque){
 
