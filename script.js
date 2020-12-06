@@ -86,11 +86,13 @@ function tourBoss(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre, boss
 }
 
 function testPerdu(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre){
-	if (pv_perso_un && pv_boss_deux && pv_boss_trois && pv_perso_quatre == 0){
+	if (pv_perso_un == 0 && pv_perso_deux == 0 && pv_perso_trois == 0 && pv_perso_quatre == 0){
 		var lose = true;
 		document.getElementById("message_box").innerHTML = ("Vous avez perdu");
-	return lose;
+	} else{
+		var lose = false;
 	}
+	return lose;
 }
 
 //main program
@@ -122,12 +124,12 @@ var pv_boss_un = Number(document.getElementById("pv_boss_un").innerHTML);
 var pv_boss_deux = Number(document.getElementById("pv_boss_deux").innerHTML);
 var pv_boss_trois = Number(document.getElementById("pv_boss_trois").innerHTML);
 
-var win = false;
-var lose = false;
-
 tourJoueurUn();
 var choix = ""
 let i =""
+
+lose = testPerdu(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre)
+console.log(lose)
 
 /*
 if (choix == attaque){
