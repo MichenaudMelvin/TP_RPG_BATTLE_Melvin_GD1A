@@ -1,9 +1,33 @@
 //all functions
-
 function aleatoire(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min +1)) + min;
+}
+
+function attaque(choix){
+	document.getElementById("attaque").innerHTML = ("> Attaque <");
+	choix = "attaque"
+	console.log(choix)
+	return(choix)
+}
+
+function defense(choix){
+	document.getElementById("defense").innerHTML = ("> Defense <");
+	choix = "defense"
+	console.log(choix)
+	return(choix)
+}
+
+function special(choix){
+	document.getElementById("special").innerHTML = ("> Special <");
+	choix = "special"
+	console.log(choix)
+	return(choix)
+}
+
+function boss_trois(){
+	document.getElementById("message_box").innerHTML = ("Vous avez sélectionner" +  + ".");
 }
 
 function choix(){
@@ -11,7 +35,7 @@ function choix(){
   console.log(choixJoueur)
 }
 
-function testPerdu(pv_boss_un, pv_boss_deux, pv_boss_trois, pv_perso_quatre){
+function testPerdu(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre){
 	if (pv_perso_un && pv_boss_deux && pv_boss_trois && pv_perso_quatre == 0){
 		var lose = true;
 	return lose;
@@ -33,22 +57,22 @@ function tourJoueurUn(){
 
 }
 
-function tourBoss(pv_perso_un,pv_boss_deux,pv_boss_trois,pv_perso_quatre){
+function tourBoss(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre){
 	//attaque de boss_un
 	//choix aléatoire du personnage attaqué
 	document.getElementById("attaque").innerHTML = ("> Attaque <");
-	var listePerso = [pv_perso_un,pv_boss_deux,pv_boss_trois,pv_perso_quatre];
+	var listePerso = [pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre];
 	console.log(listePerso);
 
-	var persoAttaque = listePerso[aleatoire(0,3)];
-	console.log(persoAttaque)
+	var pv_perso = listePerso[aleatoire(0,3)];
+	console.log(pv_perso)
 
 	var degatsBoss = aleatoire(20,30);
 	console.log(degatsBoss)
 
-	persoAttaque = degatsBoss - persoAttaque;
-	console.log(persoAttaque)
-	document.getElementById("message_box").innerHTML = ("PV resant : " + persoAttaque + ".");
+	pv_perso = pv_perso - degatsBoss;
+	document.getElementById("message_box").innerHTML = ("PV resant : " + pv_perso + ".");
+	return pv_perso
 	
 }
 
@@ -80,7 +104,11 @@ var win = false;
 var lose = false;
 
 tourJoueurUn();
+var choix = ""
 
+if (choix == attaque){
+
+}
 /*
 Déroulé d'un tour :
 perso 1 :
