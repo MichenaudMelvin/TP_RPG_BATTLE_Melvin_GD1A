@@ -10,8 +10,6 @@ function attaque(choix,perso_un){
 	choix = "attaque"
 	console.log(choix)
 	setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
-	setTimeout(() => {document.getElementById("message_box").innerHTML = (perso_un + " attaque.");}, 250);
-	setTimeout(() => {document.getElementById("message_box").innerHTML = ("");}, 1500);
 	return(choix)
 }
 
@@ -53,12 +51,15 @@ function testPerdu(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre){
 }
 
 function attaquePerso(bossChoisi){
-	document.getElementById("attaque").innerHTML = ("> Attaque <");
 	var nombre_attaque = aleatoire(20,30);
 	bossChoisi = bossChoisi - nombre_attaque;
 	document.getElementById("message_box").innerHTML = ("Vous infligez " + nombre_attaque + " de degats au monstre.");
 	return bossChoisi
 }
+/*
+	setTimeout(() => {document.getElementById("message_box").innerHTML = (perso_un + choix);}, 250);
+	setTimeout(() => {document.getElementById("message_box").innerHTML = ("");}, 1500);
+*/
 
 function tourJoueurUn(){
 	document.getElementById("perso_un").style.color = "red";
@@ -125,16 +126,19 @@ var choix = ""
 let i =""
 
 if (choix == attaque){
+		attaquePerso(bossChoisi)
+	}
 
-}
+
 /*
 Déroulé d'un tour :
 perso 1 :
-choisi un ennemi
 choisi une action
-perso n+1
+choisi un ennemi
+
 
 while (win != true || lose != true){
 	//tour du perso 1
+	tourJoueurUn();
 }
 */
