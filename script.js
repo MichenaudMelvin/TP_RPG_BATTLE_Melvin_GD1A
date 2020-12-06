@@ -7,8 +7,8 @@ function aleatoire(min, max) {
 }
 
 function choix(){
-  var choixJoueur = document.getElementById("").innerHTML
-  if (choixJoueur == "Attaque");
+  var choixJoueur = document.getElementById("choix").innerHTML
+  console.log(choixJoueur)
 }
 
 function testPerdu(pv_boss_un, pv_boss_deux, pv_boss_trois, pv_perso_quatre){
@@ -19,21 +19,36 @@ function testPerdu(pv_boss_un, pv_boss_deux, pv_boss_trois, pv_perso_quatre){
 }
 
 function attaquePerso(bossChoisi){
-	document.getElementById("attaque").innerHTML = "> Attaque <";
-	var nombre_attaque = attaque(20,30);
+	document.getElementById("attaque").innerHTML = ("> Attaque <");
+	var nombre_attaque = aleatoire(20,30);
 	bossChoisi = bossChoisi - nombre_attaque;
-	document.getElementById("message_box").innerHTML = ("Vous infligez nombre_attaque de degats au monstre.");
+	document.getElementById("message_box").innerHTML = ("Vous infligez " + nombre_attaque + " de degats au monstre.");
 	return bossChoisi
 }
 
 function tourJoueurUn(){
 	document.getElementById("perso_un").style.color = "red";
 	document.getElementById("perso_un").style.textDecoration = "underline red";
-	document.getElementById("message_box").innerHTML = ("Tour de perso_un");
+	document.getElementById("message_box").innerHTML = ("Tour de " + perso_un + ".");
+
 }
 
 function tourBoss(pv_perso_un,pv_boss_deux,pv_boss_trois,pv_perso_quatre){
 	//attaque de boss_un
+	//choix aléatoire du personnage attaqué
+	document.getElementById("attaque").innerHTML = ("> Attaque <");
+	var listePerso = [pv_perso_un,pv_boss_deux,pv_boss_trois,pv_perso_quatre];
+	console.log(listePerso);
+
+	var persoAttaque = listePerso[aleatoire(0,3)];
+	console.log(persoAttaque)
+
+	var degatsBoss = aleatoire(20,30);
+	console.log(degatsBoss)
+
+	persoAttaque = degatsBoss - persoAttaque;
+	console.log(persoAttaque)
+	document.getElementById("message_box").innerHTML = ("PV resant : " + persoAttaque + ".");
 	
 }
 
