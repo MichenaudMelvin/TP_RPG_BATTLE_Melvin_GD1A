@@ -35,7 +35,6 @@ function bossUn(boss_un){
 	return bossChoisi;
 }
 
-
 function bossDeux(boss_deux){
 	var bossChoisi = boss_deux;
 	document.getElementById("message_box").innerHTML = ("Vous avez sélectionner " + boss_deux + ".");
@@ -46,14 +45,6 @@ function bossTrois(boss_trois){
 	var bossChoisi = boss_trois;
 	document.getElementById("message_box").innerHTML = ("Vous avez sélectionner " + boss_trois + ".");
 	return bossChoisi;
-}
-
-
-function testPerdu(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre){
-	if (pv_perso_un && pv_boss_deux && pv_boss_trois && pv_perso_quatre == 0){
-		var lose = true;
-	return lose;
-	}
 }
 
 function attaquePerso(bossChoisi){
@@ -94,6 +85,14 @@ function tourBoss(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre, boss
 	
 }
 
+function testPerdu(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre){
+	if (pv_perso_un && pv_boss_deux && pv_boss_trois && pv_perso_quatre == 0){
+		var lose = true;
+		document.getElementById("message_box").innerHTML = ("Vous avez perdu");
+	return lose;
+	}
+}
+
 //main program
 //nom des perso
 var perso_un = document.getElementById("perso_un").innerHTML;
@@ -123,7 +122,6 @@ var pv_boss_un = Number(document.getElementById("pv_boss_un").innerHTML);
 var pv_boss_deux = Number(document.getElementById("pv_boss_deux").innerHTML);
 var pv_boss_trois = Number(document.getElementById("pv_boss_trois").innerHTML);
 
-
 var win = false;
 var lose = false;
 
@@ -131,13 +129,14 @@ tourJoueurUn();
 var choix = ""
 let i =""
 
+/*
 if (choix == attaque){
 		attaquePerso(bossChoisi)
 
 	}
 
 
-/*
+
 Déroulé d'un tour :
 perso 1 :
 choisi une action
