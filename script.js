@@ -1,6 +1,6 @@
 //all functions
 
-function attaque(min, max) {
+function aleatoire(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min +1)) + min;
@@ -29,7 +29,7 @@ function attaquePerso(bossChoisi){
 function tourJoueurUn(){
 	document.getElementById("perso_un").style.color = "red";
 	document.getElementById("perso_un").style.textDecoration = "underline red";
-	document.getElementById("message_box").innerHTML = ("Vous infligez nombre_attaque de degats au monstre.");
+	document.getElementById("message_box").innerHTML = ("Tour de perso_un");
 }
 
 function tourBoss(pv_perso_un,pv_boss_deux,pv_boss_trois,pv_perso_quatre){
@@ -37,10 +37,6 @@ function tourBoss(pv_perso_un,pv_boss_deux,pv_boss_trois,pv_perso_quatre){
 	
 }
 
-var test = document.getElementById("perso_un").innerHTML;
-console.log(test);
-
-/*
 //main program
 var perso_un = document.getElementById("perso_un").innerHTML;
 var perso_deux = document.getElementById("perso_deux").innerHTML;
@@ -63,10 +59,12 @@ var mana_perso_quatre = Number(document.getElementById("mana_perso_quatre").inne
 var pv_boss_un = Number(document.getElementById("pv_boss_un").innerHTML);
 var pv_boss_deux = Number(document.getElementById("pv_boss_deux").innerHTML);
 var pv_boss_trois = Number(document.getElementById("pv_boss_trois").innerHTML);
-*/
+
 
 var win = false;
 var lose = false;
+
+tourJoueurUn();
 
 /*
 Déroulé d'un tour :
@@ -74,12 +72,8 @@ perso 1 :
 choisi un ennemi
 choisi une action
 perso n+1
-*/
-var cible = [pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre];
-console.log(cible);
 
-/*
 while (win != true || lose != true){
-	tourJoueurUn();
+	
 }
 */
