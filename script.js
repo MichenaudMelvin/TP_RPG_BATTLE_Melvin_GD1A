@@ -5,12 +5,13 @@ function aleatoire(min, max) {
   return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
-function attaque(choix){
+function attaque(choix,perso_un){
 	document.getElementById("attaque").innerHTML = ("> Attaque <");
 	choix = "attaque"
 	console.log(choix)
 	setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
-		document.getElementById("message_box").innerHTML = ("sauce");
+	setTimeout(() => {document.getElementById("message_box").innerHTML = (perso_un + " attaque.");}, 250);
+	setTimeout(() => {document.getElementById("message_box").innerHTML = ("");}, 1500);
 	return(choix)
 }
 
