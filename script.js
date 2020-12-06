@@ -26,14 +26,19 @@ function special(choix){
 	return(choix)
 }
 
-function boss_trois(){
-	document.getElementById("message_box").innerHTML = ("Vous avez sélectionner" +  + ".");
+function boss_un(boss_un){
+	document.getElementById("message_box").innerHTML = ("Vous avez sélectionner" + boss_un + ".");
 }
 
-function choix(){
-  var choixJoueur = document.getElementById("choix").innerHTML
-  console.log(choixJoueur)
+/*
+function boss_deux(boss_deux){
+	document.getElementById("message_box").innerHTML = ("Vous avez sélectionner" + boss_deux + ".");
 }
+
+function boss_trois(boss_trois){
+	document.getElementById("message_box").innerHTML = ("Vous avez sélectionner" + boss_trois + ".");
+}
+*/
 
 function testPerdu(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre){
 	if (pv_perso_un && pv_boss_deux && pv_boss_trois && pv_perso_quatre == 0){
@@ -57,26 +62,28 @@ function tourJoueurUn(){
 
 }
 
-function tourBoss(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre){
+function tourBoss(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre, boss_un, boss_deux,boss_trois){
 	//attaque de boss_un
 	//choix aléatoire du personnage attaqué
 	document.getElementById("attaque").innerHTML = ("> Attaque <");
 	var listePerso = [pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre];
-	console.log(listePerso);
+	var listeBoss = [boss_un,boss_deux,boss_trois];
+	console.log(listeBoss);
+	for (let i = 0; i < 3; i++)
+		var pv_perso = listePerso[aleatoire(0,3)];
+		console.log(pv_perso)
 
-	var pv_perso = listePerso[aleatoire(0,3)];
-	console.log(pv_perso)
+		var degatsBoss = aleatoire(20,30);
+		console.log(degatsBoss)
 
-	var degatsBoss = aleatoire(20,30);
-	console.log(degatsBoss)
-
-	pv_perso = pv_perso - degatsBoss;
-	document.getElementById("message_box").innerHTML = ("PV resant : " + pv_perso + ".");
+		pv_perso = pv_perso - degatsBoss;
+		document.getElementById("message_box").innerHTML = (listeBoss[i] "vous inflige" + pv_perso + "de degats.");
 	return pv_perso
 	
 }
 
 //main program
+//nom des perso
 var perso_un = document.getElementById("perso_un").innerHTML;
 var perso_deux = document.getElementById("perso_deux").innerHTML;
 var perso_trois = document.getElementById("perso_trois").innerHTML;
@@ -94,6 +101,11 @@ var mana_perso_deux = Number(document.getElementById("mana_perso_deux").innerHTM
 var mana_perso_trois = Number(document.getElementById("mana_perso_trois").innerHTML);
 var mana_perso_quatre = Number(document.getElementById("mana_perso_quatre").innerHTML);
 
+//nom des boss
+var boss_un = document.getElementById("boss_un").innerHTML;
+var boss_deux = document.getElementById("boss_deux").innerHTML;
+var boss_trois = document.getElementById("boss_trois").innerHTML;
+
 //pv des boss
 var pv_boss_un = Number(document.getElementById("pv_boss_un").innerHTML);
 var pv_boss_deux = Number(document.getElementById("pv_boss_deux").innerHTML);
@@ -106,6 +118,7 @@ var lose = false;
 tourJoueurUn();
 var choix = ""
 
+
 if (choix == attaque){
 
 }
@@ -117,6 +130,6 @@ choisi une action
 perso n+1
 
 while (win != true || lose != true){
-	
+	//tour du perso 1
 }
 */
