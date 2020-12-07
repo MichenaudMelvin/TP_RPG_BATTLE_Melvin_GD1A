@@ -107,6 +107,20 @@ function testWin(pv_boss_un, pv_boss_deux, pv_boss_trois){
 	return win;
 }
 
+function testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois){
+	if (pv_boss_un == 0){
+		image_boss_un.setAttribute("src", "img/boss_un_mort.png");
+	}
+
+	if (pv_boss_deux == 0){
+		image_boss_deux.setAttribute("src", "img/boss_deux_mort.png");
+	}
+
+	if (pv_boss_trois == 0){
+		image_boss_trois.setAttribute("src", "img/boss_trois_mort.png");
+	}
+}
+
 //main program
 //nom des perso
 var perso_un = document.getElementById("perso_un").innerHTML;
@@ -136,14 +150,20 @@ var pv_boss_un = Number(document.getElementById("pv_boss_un").innerHTML);
 var pv_boss_deux = Number(document.getElementById("pv_boss_deux").innerHTML);
 var pv_boss_trois = Number(document.getElementById("pv_boss_trois").innerHTML);
 
+//images des boss
+var image_boss_un = document.getElementById("image_boss_un");
+var image_boss_deux = document.getElementById("image_boss_deux");
+var image_boss_trois = document.getElementById("image_boss_trois");
+
 //autres variables
 var choix = "";
 let i ="";
 var lose = false;
 var win = false;
 var tourJoueurListe = [perso_un, perso_deux, perso_trois, perso_quatre];
-var tourJoueur = tourJoueurListe[0];
+var tourJoueur = tourJoueurListe[0];4
 
+testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois)
 /* changement entre poison et soin
 if (tourJoueur == perso_deux || tourJoueur == perso_quatre){
 	document.getElementById("special").innerHTML = ("Poison");
