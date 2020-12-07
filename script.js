@@ -21,7 +21,7 @@ function defense(choix){
 	return choix;
 }
 
-function special(choix){
+function special(choix, ){
 	document.getElementById("special").innerHTML = ("> Special <");
 	choix = "special"
 	console.log(choix)
@@ -31,19 +31,19 @@ function special(choix){
 
 function bossUn(boss_un){
 	var bossChoisi = boss_un;
-	document.getElementById("message_box").innerHTML = ("Vous avez sélectionner " + boss_un + ".");
+	document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_un + ".");
 	return bossChoisi;
 }
 
 function bossDeux(boss_deux){
 	var bossChoisi = boss_deux;
-	document.getElementById("message_box").innerHTML = ("Vous avez sélectionner " + boss_deux + ".");
+	document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_deux + ".");
 	return bossChoisi;
 }
 
 function bossTrois(boss_trois){
 	var bossChoisi = boss_trois;
-	document.getElementById("message_box").innerHTML = ("Vous avez sélectionner " + boss_trois + ".");
+	document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_trois + ".");
 	return bossChoisi;
 }
 
