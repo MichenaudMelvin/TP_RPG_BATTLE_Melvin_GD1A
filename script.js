@@ -144,6 +144,7 @@ var win = false;
 var tourJoueurListe = [perso_un, perso_deux, perso_trois, perso_quatre];
 var tourJoueur = tourJoueurListe[0];
 
+/* changement entre poison et soin
 if (tourJoueur == perso_deux || tourJoueur == perso_quatre){
 	document.getElementById("special").innerHTML = ("Poison");
 }
@@ -151,6 +152,8 @@ if (tourJoueur == perso_deux || tourJoueur == perso_quatre){
 if (tourJoueur == perso_un || tourJoueur == perso_trois){
 	document.getElementById("special").innerHTML = ("Soin");
 }
+*/
+
 
 /*
 Déroulé d'un tour :
