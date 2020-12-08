@@ -32,8 +32,8 @@
 </table>
 
 <section class="ennemis">
-		<img class="boss" id="image_boss_un" src="img/boss_un.png" onclick="bossUn(boss_un)">
-			<table class="stats_boss_un" onclick="bossUn(boss_un)">
+		<img class="boss" id="image_boss_un" src="img/boss_un.png" onclick="bossUn(boss_un, pv_boss_un)">
+			<table class="stats_boss_un" onclick="bossUn(boss_un, pv_boss_un)">
 				<tr>
 					<td class="stats_boss_table">Nom</td>
 					<td class="stats_boss_table_nom" id="boss_un">Darmanin</td>
@@ -43,8 +43,8 @@
 					<td class="stats_boss_table" id="pv_boss_un">0</td>
 				</tr>
 			</table>
-		<img class="boss" id="image_boss_deux" src="img/boss_deux.png" onclick="bossDeux(boss_deux)">
-			<table class="stats_boss_deux" onclick="bossDeux(boss_deux)">
+		<img class="boss" id="image_boss_deux" src="img/boss_deux.png" onclick="bossDeux(boss_deux, pv_boss_deux)">
+			<table class="stats_boss_deux" onclick="bossDeux(boss_deux, pv_boss_deux)">
 				<tr>
 					<td class="stats_boss_table">Nom</td>
 					<td class="stats_boss_table_nom" id="boss_deux">Macron</td>
@@ -54,8 +54,8 @@
 					<td class="stats_boss_table" id="pv_boss_deux">100</td>
 				</tr>
 			</table>
-		<img class="boss" id="image_boss_trois" src="img/boss_trois.png" onclick="bossTrois(boss_trois)">
-			<table class="stats_boss_trois" onclick="bossTrois(boss_trois)">
+		<img class="boss" id="image_boss_trois" src="img/boss_trois.png" onclick="bossTrois(boss_trois, pv_boss_trois)">
+			<table class="stats_boss_trois" onclick="bossTrois(boss_trois, pv_boss_trois)">
 				<tr>
 					<td class="stats_boss_table">Nom</td>
 					<td class="stats_boss_table_nom" id="boss_trois">Blanquer</td>
@@ -69,9 +69,9 @@
 
 <section class="bottom">
 	<section class="box" id="actions">
-		<div class ="choix" id="attaque" onclick="attaque(choix)">Attaque</div>
-		<div class ="choix" id="defense" onclick="defense(choix)">Defense</div>
-		<div class ="choix" id="special" onclick="special(choix)">Special</div>
+		<div class ="choix" id="attaque" onclick="attaque(bossChoisi)">Attaque</div>
+		<div class ="choix" id="defense" onclick="defense(bossChoisi)">Defense</div>
+		<div class ="choix" id="special" onclick="special(bossChoisi)">Special</div>
 	</section>
 	<div class ="box" id="message_box"></div>
 </section>

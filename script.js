@@ -1,3 +1,48 @@
+//all variables
+//nom des perso
+var perso_un = document.getElementById("perso_un").innerHTML;
+var perso_deux = document.getElementById("perso_deux").innerHTML;
+var perso_trois = document.getElementById("perso_trois").innerHTML;
+var perso_quatre = document.getElementById("perso_quatre").innerHTML;
+
+//pv des perso
+var pv_perso_un = Number(document.getElementById("pv_perso_un").innerHTML);
+var pv_perso_deux = Number(document.getElementById("pv_perso_deux").innerHTML);
+var pv_perso_trois = Number(document.getElementById("pv_perso_trois").innerHTML);
+var pv_perso_quatre = Number(document.getElementById("pv_perso_quatre").innerHTML);
+
+//mana des perso
+var mana_perso_un = Number(document.getElementById("mana_perso_un").innerHTML);
+var mana_perso_deux = Number(document.getElementById("mana_perso_deux").innerHTML);
+var mana_perso_trois = Number(document.getElementById("mana_perso_trois").innerHTML);
+var mana_perso_quatre = Number(document.getElementById("mana_perso_quatre").innerHTML);
+
+//nom des boss
+var boss_un = document.getElementById("boss_un").innerHTML;
+var boss_deux = document.getElementById("boss_deux").innerHTML;
+var boss_trois = document.getElementById("boss_trois").innerHTML;
+
+//pv des boss
+var pv_boss_un = Number(document.getElementById("pv_boss_un").innerHTML);
+var pv_boss_deux = Number(document.getElementById("pv_boss_deux").innerHTML);
+var pv_boss_trois = Number(document.getElementById("pv_boss_trois").innerHTML);
+
+//images des boss
+var image_boss_un = document.getElementById("image_boss_un");
+var image_boss_deux = document.getElementById("image_boss_deux");
+var image_boss_trois = document.getElementById("image_boss_trois");
+
+//autres variables
+var choix = "";
+let i ="";
+var lose = false;
+var win = false;
+var bossChoisi = ["none", "none"]
+//bossChoisi[0] = nom du boss, bossChoisi[1] = pv du boss
+
+var tourJoueurListe = [perso_un, perso_deux, perso_trois, perso_quatre];
+var tourJoueur = tourJoueurListe[0];4
+
 //all functions
 function aleatoire(min, max) {
   min = Math.ceil(min);
@@ -5,55 +50,68 @@ function aleatoire(min, max) {
   return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
-function attaque(choix){
+function attaque(bossChoisi){
 	document.getElementById("attaque").innerHTML = ("> Attaque <");
-	choix = "attaque"
-	console.log(choix)
-	setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
+	if (bossChoisi[0] == "none"){
+		document.getElementById("message_box").innerHTML = ("veuillez selectionner un boss");
+	}
+	else {
+		var nombre_attaque = aleatoire(20,30);
+		bossChoisiPV = bossChoisiPV - nombre_attaque;
+		document.getElementById("message_box").innerHTML = ("Vous infligez " + nombre_attaque + " de degats à " + bossChoisi);
+		setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
+		testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois);
+	}
 	return choix;
 }
 
-function defense(choix){
+function defense(bossChoisi){
 	document.getElementById("defense").innerHTML = ("> Defense <");
-	choix = "defense"
-	console.log(choix)
 	setTimeout(() => {document.getElementById("defense").innerHTML = ("Defense");}, 250);
 	return choix;
 }
 
-function special(choix, ){
+function special(bossChoisi){
 	document.getElementById("special").innerHTML = ("> Special <");
-	choix = "special"
-	console.log(choix)
 	setTimeout(() => {document.getElementById("special").innerHTML = ("Special");}, 250);
 	return choix;
 }
 
-function bossUn(boss_un){
-	var bossChoisi = boss_un;
-	document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_un + ".");
-	return bossChoisi;
-}
-
-function bossDeux(boss_deux){
-	var bossChoisi = boss_deux;
-	document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_deux + ".");
-	return bossChoisi;
-}
-
-function bossTrois(boss_trois){
-	var bossChoisi = boss_trois;
-	document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_trois + ".");
-	return bossChoisi;
-}
-
-function attaquePerso(bossChoisi){
-	var nombre_attaque = aleatoire(20,30);
-	bossChoisi = bossChoisi - nombre_attaque;
-	document.getElementById("message_box").innerHTML = ("Vous infligez " + nombre_attaque + " de degats au monstre.");
-	return bossChoisi
-}
 /*
+function bossUn(boss_un, pv_boss_un){
+	var bossChoisi = [boss_un, pv_boss_un];
+	console.log(bossChoisi)
+	if (bossChoisiPV > 0);{
+		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_un + ".");
+	} else{
+		document.getElementById("message_box").innerHTML = (boss_un + " est mort, veuillez choisir un autre boss.");
+	}
+	return bossChoisi;
+}
+
+function bossDeux(boss_deux, pv_boss_deux){
+	var bossChoisi = boss_deux;
+	var bossChoisiPV = pv_boss_deux;
+	if (bossChoisiPV > 0);{
+		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_deux + ".");
+	} else{
+		document.getElementById("message_box").innerHTML = (boss_deux + " est mort, veuillez choisir un autre boss.");
+	}
+	return bossChoisi;
+}
+
+function bossTrois(boss_trois, pv_boss_trois){
+	var bossChoisi = boss_trois;
+	var bossChoisiPV = pv_boss_trois;
+	if (bossChoisiPV > 0);{
+		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_trois + ".");
+	} else{
+		document.getElementById("message_box").innerHTML = (boss_trois + " est mort, veuillez choisir un autre boss.");
+	}
+	return bossChoisi;
+}
+
+
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (perso_un + choix);}, 250);
 	setTimeout(() => {document.getElementById("message_box").innerHTML = ("");}, 1500);
 */
@@ -121,49 +179,6 @@ function testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois){
 	}
 }
 
-//main program
-//nom des perso
-var perso_un = document.getElementById("perso_un").innerHTML;
-var perso_deux = document.getElementById("perso_deux").innerHTML;
-var perso_trois = document.getElementById("perso_trois").innerHTML;
-var perso_quatre = document.getElementById("perso_quatre").innerHTML;
-
-//pv des perso
-var pv_perso_un = Number(document.getElementById("pv_perso_un").innerHTML);
-var pv_perso_deux = Number(document.getElementById("pv_perso_deux").innerHTML);
-var pv_perso_trois = Number(document.getElementById("pv_perso_trois").innerHTML);
-var pv_perso_quatre = Number(document.getElementById("pv_perso_quatre").innerHTML);
-
-//mana des perso
-var mana_perso_un = Number(document.getElementById("mana_perso_un").innerHTML);
-var mana_perso_deux = Number(document.getElementById("mana_perso_deux").innerHTML);
-var mana_perso_trois = Number(document.getElementById("mana_perso_trois").innerHTML);
-var mana_perso_quatre = Number(document.getElementById("mana_perso_quatre").innerHTML);
-
-//nom des boss
-var boss_un = document.getElementById("boss_un").innerHTML;
-var boss_deux = document.getElementById("boss_deux").innerHTML;
-var boss_trois = document.getElementById("boss_trois").innerHTML;
-
-//pv des boss
-var pv_boss_un = Number(document.getElementById("pv_boss_un").innerHTML);
-var pv_boss_deux = Number(document.getElementById("pv_boss_deux").innerHTML);
-var pv_boss_trois = Number(document.getElementById("pv_boss_trois").innerHTML);
-
-//images des boss
-var image_boss_un = document.getElementById("image_boss_un");
-var image_boss_deux = document.getElementById("image_boss_deux");
-var image_boss_trois = document.getElementById("image_boss_trois");
-
-//autres variables
-var choix = "";
-let i ="";
-var lose = false;
-var win = false;
-var tourJoueurListe = [perso_un, perso_deux, perso_trois, perso_quatre];
-var tourJoueur = tourJoueurListe[0];4
-
-testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois)
 /* changement entre poison et soin
 if (tourJoueur == perso_deux || tourJoueur == perso_quatre){
 	document.getElementById("special").innerHTML = ("Poison");
