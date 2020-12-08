@@ -53,7 +53,7 @@ function aleatoire(min, max) {
 function attaque(bossChoisi){
 	document.getElementById("attaque").innerHTML = ("> Attaque <");
 	if (bossChoisi[0] == "none"){
-		document.getElementById("message_box").innerHTML = ("veuillez selectionner un boss");
+		document.getElementById("message_box").innerHTML = ("Veuillez selectionner un boss");
 	}
 	else {
 		var nombre_attaque = aleatoire(20,30);
@@ -67,32 +67,43 @@ function attaque(bossChoisi){
 
 function defense(bossChoisi){
 	document.getElementById("defense").innerHTML = ("> Defense <");
-	setTimeout(() => {document.getElementById("defense").innerHTML = ("Defense");}, 250);
-	return choix;
+	if (bossChoisi[0] == "none"){
+		document.getElementById("message_box").innerHTML = ("Veuillez selectionner un boss");
+	}
+	else {
+		setTimeout(() => {document.getElementById("defense").innerHTML = ("Defense");}, 250);
+	}
+	return defense;
 }
 
 function special(bossChoisi){
 	document.getElementById("special").innerHTML = ("> Special <");
-	setTimeout(() => {document.getElementById("special").innerHTML = ("Special");}, 250);
-	return choix;
+	if (bossChoisi[0] == "none"){
+		document.getElementById("message_box").innerHTML = ("Veuillez selectionner un boss");
+	}
+	else {
+		setTimeout(() => {document.getElementById("special").innerHTML = ("Special");}, 250);
+	}
+	return defense;
 }
 
-/*
+
 function bossUn(boss_un, pv_boss_un){
 	var bossChoisi = [boss_un, pv_boss_un];
-	console.log(bossChoisi)
-	if (bossChoisiPV > 0);{
-		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_un + ".");
+	console.log(bossChoisi);
+	if (bossChoisi[1] > 0){
+		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + bossChoisi[0] + ".");
 	} else{
-		document.getElementById("message_box").innerHTML = (boss_un + " est mort, veuillez choisir un autre boss.");
+		document.getElementById("message_box").innerHTML = (bossChoisi[0] + " est mort, veuillez choisir un autre boss.");
 	}
 	return bossChoisi;
 }
 
+/*
 function bossDeux(boss_deux, pv_boss_deux){
 	var bossChoisi = boss_deux;
 	var bossChoisiPV = pv_boss_deux;
-	if (bossChoisiPV > 0);{
+	if (bossChoisiPV > 0){
 		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_deux + ".");
 	} else{
 		document.getElementById("message_box").innerHTML = (boss_deux + " est mort, veuillez choisir un autre boss.");
@@ -103,7 +114,7 @@ function bossDeux(boss_deux, pv_boss_deux){
 function bossTrois(boss_trois, pv_boss_trois){
 	var bossChoisi = boss_trois;
 	var bossChoisiPV = pv_boss_trois;
-	if (bossChoisiPV > 0);{
+	if (bossChoisiPV > 0){
 		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_trois + ".");
 	} else{
 		document.getElementById("message_box").innerHTML = (boss_trois + " est mort, veuillez choisir un autre boss.");
@@ -179,6 +190,7 @@ function testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois){
 	}
 }
 
+testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois);
 /* changement entre poison et soin
 if (tourJoueur == perso_deux || tourJoueur == perso_quatre){
 	document.getElementById("special").innerHTML = ("Poison");
