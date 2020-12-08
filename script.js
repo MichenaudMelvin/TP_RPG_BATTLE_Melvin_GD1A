@@ -91,14 +91,11 @@ function special(bossChoisi){
 
 function bossUn(boss_un, pv_boss_un){
 	var bossChoisi = [boss_un, pv_boss_un];
-	console.log(bossChoisi);
 	if (bossChoisi[1] > 0){
 		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + bossChoisi[0] + ".");
-		console.log(bossChoisi);
 	} else{
 		document.getElementById("message_box").innerHTML = (bossChoisi[0] + " est mort, veuillez choisir un autre boss.");
-		bossChoisi[0] = none;
-		console.log(bossChoisi);
+		bossChoisi[0] = "none";
 	}
 	return bossChoisi;
 }
@@ -106,28 +103,22 @@ function bossUn(boss_un, pv_boss_un){
 
 function bossDeux(boss_deux, pv_boss_deux){
 	var bossChoisi = [boss_deux, pv_boss_deux];
-	console.log(bossChoisi);
 	if (bossChoisi[1] > 0){
 		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + bossChoisi[0] + ".");
-		console.log(bossChoisi);
 	} else{
 		document.getElementById("message_box").innerHTML = (bossChoisi[0] + " est mort, veuillez choisir un autre boss.");
-		bossChoisi[0] = none;
-		console.log(bossChoisi);
+		bossChoisi[0] = "none";
 	}
 	return bossChoisi;
 }
 
 function bossTrois(boss_trois, pv_boss_trois){
 	var bossChoisi = [boss_trois, pv_boss_trois];
-	console.log(bossChoisi);
 	if (bossChoisi[1] > 0){
 		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + bossChoisi[0] + ".");
-		console.log(bossChoisi);
 	} else{
 		document.getElementById("message_box").innerHTML = (bossChoisi[0] + " est mort, veuillez choisir un autre boss.");
-		bossChoisi[0] = none;
-		console.log(bossChoisi);
+		bossChoisi[0] = "none";
 	}
 	return bossChoisi;
 }
