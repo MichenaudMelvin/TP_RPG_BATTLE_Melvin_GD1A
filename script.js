@@ -28,8 +28,7 @@ function special(bossChoisi, bossChoisiPV){
 	return choix;
 }
 
-function bossUn(boss_un){
-	console.log("test");
+function bossUn(boss_un, pv_boss_un){
 	var bossChoisi = [boss_un, pv_boss_un];
 	console.log(bossChoisi)
 	if (bossChoisiPV > 0);{
