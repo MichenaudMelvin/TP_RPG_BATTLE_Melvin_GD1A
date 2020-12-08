@@ -4,14 +4,18 @@ function aleatoire(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min +1)) + min;
 }
-
-function attaque(choix){
+/*
+function attaque(bossChoisi, bossChoisiPV){
 	document.getElementById("attaque").innerHTML = ("> Attaque <");
-	choix = "attaque"
-	console.log(choix)
+	var nombre_attaque = aleatoire(20,30);
+	bossChoisiPV = bossChoisiPV - nombre_attaque;
+
+	document.getElementById("message_box").innerHTML = ("Vous infligez " + nombre_attaque + " de degats à " + bossChoisi);
 	setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
+	testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois)
 	return choix;
 }
+*/
 
 function defense(choix){
 	document.getElementById("defense").innerHTML = ("> Defense <");
@@ -31,10 +35,11 @@ function special(choix, ){
 
 function bossUn(boss_un){
 	var bossChoisi = boss_un;
+	var bossChoisiPV
 	document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_un + ".");
 	return bossChoisi;
 }
-
+console.log(bossChoisi)
 function bossDeux(boss_deux){
 	var bossChoisi = boss_deux;
 	document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_deux + ".");
@@ -47,12 +52,6 @@ function bossTrois(boss_trois){
 	return bossChoisi;
 }
 
-function attaquePerso(bossChoisi){
-	var nombre_attaque = aleatoire(20,30);
-	bossChoisi = bossChoisi - nombre_attaque;
-	document.getElementById("message_box").innerHTML = ("Vous infligez " + nombre_attaque + " de degats au monstre.");
-	return bossChoisi
-}
 /*
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (perso_un + choix);}, 250);
 	setTimeout(() => {document.getElementById("message_box").innerHTML = ("");}, 1500);
@@ -163,7 +162,6 @@ var win = false;
 var tourJoueurListe = [perso_un, perso_deux, perso_trois, perso_quatre];
 var tourJoueur = tourJoueurListe[0];4
 
-testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois)
 /* changement entre poison et soin
 if (tourJoueur == perso_deux || tourJoueur == perso_quatre){
 	document.getElementById("special").innerHTML = ("Poison");
