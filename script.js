@@ -29,6 +29,7 @@ function special(bossChoisi, bossChoisiPV){
 }
 
 function bossUn(boss_un){
+	console.log("test");
 	var bossChoisi = [boss_un, pv_boss_un];
 	console.log(bossChoisi)
 	if (bossChoisiPV > 0);{
