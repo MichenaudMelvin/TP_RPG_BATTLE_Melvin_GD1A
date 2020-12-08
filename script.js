@@ -16,7 +16,6 @@ function attaque(bossChoisi, bossChoisiPV){
 	return choix;
 }
 
-
 function defense(bossChoisi, bossChoisiPV){
 	document.getElementById("defense").innerHTML = ("> Defense <");
 	choix = "defense"
@@ -34,23 +33,35 @@ function special(bossChoisi, bossChoisiPV){
 }
 
 function bossUn(boss_un, pv_boss_un){
-	var bossChoisi = boss_un;
-	var bossChoisiPV = pv_boss_un
-	document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_un + ".");
+	var bossChoisi = [boss_un, pv_boss_un];
+	console.log(bossChoisi)
+	if (bossChoisiPV > 0);{
+		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_un + ".");
+	} else{
+		document.getElementById("message_box").innerHTML = (boss_un + " est mort, veuillez choisir un autre boss.");
+	}
 	return bossChoisi;
 }
 
 function bossDeux(boss_deux, pv_boss_deux){
 	var bossChoisi = boss_deux;
 	var bossChoisiPV = pv_boss_deux;
-	document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_deux + ".");
+	if (bossChoisiPV > 0);{
+		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_deux + ".");
+	} else{
+		document.getElementById("message_box").innerHTML = (boss_deux + " est mort, veuillez choisir un autre boss.");
+	}
 	return bossChoisi;
 }
 
 function bossTrois(boss_trois, pv_boss_trois){
 	var bossChoisi = boss_trois;
 	var bossChoisiPV = pv_boss_trois;
-	document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_trois + ".");
+	if (bossChoisiPV > 0);{
+		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_trois + ".");
+	} else{
+		document.getElementById("message_box").innerHTML = (boss_trois + " est mort, veuillez choisir un autre boss.");
+	}
 	return bossChoisi;
 }
 
