@@ -12,20 +12,18 @@ function attaque(bossChoisi, bossChoisiPV){
 
 	document.getElementById("message_box").innerHTML = ("Vous infligez " + nombre_attaque + " de degats à " + bossChoisi);
 	setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
-	testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois)
+	testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois);
 	return choix;
 }
 
 function defense(bossChoisi, bossChoisiPV){
 	document.getElementById("defense").innerHTML = ("> Defense <");
-	choix = "defense"
 	setTimeout(() => {document.getElementById("defense").innerHTML = ("Defense");}, 250);
 	return choix;
 }
 
 function special(bossChoisi, bossChoisiPV){
 	document.getElementById("special").innerHTML = ("> Special <");
-	choix = "special"
 	setTimeout(() => {document.getElementById("special").innerHTML = ("Special");}, 250);
 	return choix;
 }
