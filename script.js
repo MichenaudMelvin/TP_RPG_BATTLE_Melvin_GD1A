@@ -68,22 +68,24 @@ function attaque(bossChoisi){
 
 function defense(bossChoisi){
 	document.getElementById("defense").innerHTML = ("> Defense <");
+	setTimeout(() => {document.getElementById("defense").innerHTML = ("Defense");}, 250);
 	if (bossChoisi[0] == "none"){
 		document.getElementById("message_box").innerHTML = ("Veuillez selectionner un boss");
 	}
 	else {
-		setTimeout(() => {document.getElementById("defense").innerHTML = ("Defense");}, 250);
+		
 	}
 	return defense;
 }
 
 function special(bossChoisi){
 	document.getElementById("special").innerHTML = ("> Special <");
+	setTimeout(() => {document.getElementById("special").innerHTML = ("Special");}, 250);
 	if (bossChoisi[0] == "none"){
 		document.getElementById("message_box").innerHTML = ("Veuillez selectionner un boss");
 	}
 	else {
-		setTimeout(() => {document.getElementById("special").innerHTML = ("Special");}, 250);
+		
 	}
 	return defense;
 }
