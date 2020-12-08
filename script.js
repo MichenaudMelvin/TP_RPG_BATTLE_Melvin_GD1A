@@ -103,34 +103,35 @@ function bossUn(boss_un, pv_boss_un){
 	return bossChoisi;
 }
 
-/*
+
 function bossDeux(boss_deux, pv_boss_deux){
-	var bossChoisi = boss_deux;
-	var bossChoisiPV = pv_boss_deux;
-	if (bossChoisiPV > 0){
-		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_deux + ".");
+	var bossChoisi = [boss_deux, pv_boss_deux];
+	console.log(bossChoisi);
+	if (bossChoisi[1] > 0){
+		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + bossChoisi[0] + ".");
+		console.log(bossChoisi);
 	} else{
-		document.getElementById("message_box").innerHTML = (boss_deux + " est mort, veuillez choisir un autre boss.");
+		document.getElementById("message_box").innerHTML = (bossChoisi[0] + " est mort, veuillez choisir un autre boss.");
+		bossChoisi[0] = none;
+		console.log(bossChoisi);
 	}
 	return bossChoisi;
 }
 
 function bossTrois(boss_trois, pv_boss_trois){
-	var bossChoisi = boss_trois;
-	var bossChoisiPV = pv_boss_trois;
-	if (bossChoisiPV > 0){
-		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_trois + ".");
+	var bossChoisi = [boss_trois, pv_boss_trois];
+	console.log(bossChoisi);
+	if (bossChoisi[1] > 0){
+		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + bossChoisi[0] + ".");
+		console.log(bossChoisi);
 	} else{
-		document.getElementById("message_box").innerHTML = (boss_trois + " est mort, veuillez choisir un autre boss.");
+		document.getElementById("message_box").innerHTML = (bossChoisi[0] + " est mort, veuillez choisir un autre boss.");
+		bossChoisi[0] = none;
+		console.log(bossChoisi);
 	}
 	return bossChoisi;
 }
-
-
-	setTimeout(() => {document.getElementById("message_box").innerHTML = (perso_un + choix);}, 250);
-	setTimeout(() => {document.getElementById("message_box").innerHTML = ("");}, 1500);
-*/
-
+	
 function tourJoueurUn(){
 	document.getElementById("perso_un").style.color = "red";
 	document.getElementById("perso_un").style.textDecoration = "underline red";
