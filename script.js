@@ -4,7 +4,7 @@ function aleatoire(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min +1)) + min;
 }
-/*
+
 function attaque(bossChoisi, bossChoisiPV){
 	document.getElementById("attaque").innerHTML = ("> Attaque <");
 	var nombre_attaque = aleatoire(20,30);
@@ -15,9 +15,9 @@ function attaque(bossChoisi, bossChoisiPV){
 	testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois)
 	return choix;
 }
-*/
 
-function defense(choix){
+
+function defense(bossChoisi, bossChoisiPV){
 	document.getElementById("defense").innerHTML = ("> Defense <");
 	choix = "defense"
 	console.log(choix)
@@ -25,7 +25,7 @@ function defense(choix){
 	return choix;
 }
 
-function special(choix, ){
+function special(bossChoisi, bossChoisiPV){
 	document.getElementById("special").innerHTML = ("> Special <");
 	choix = "special"
 	console.log(choix)
@@ -33,21 +33,23 @@ function special(choix, ){
 	return choix;
 }
 
-function bossUn(boss_un){
+function bossUn(boss_un, pv_boss_un){
 	var bossChoisi = boss_un;
-	var bossChoisiPV
+	var bossChoisiPV = pv_boss_un
 	document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_un + ".");
 	return bossChoisi;
 }
-console.log(bossChoisi)
-function bossDeux(boss_deux){
+
+function bossDeux(boss_deux, pv_boss_deux){
 	var bossChoisi = boss_deux;
+	var bossChoisiPV = pv_boss_deux;
 	document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_deux + ".");
 	return bossChoisi;
 }
 
-function bossTrois(boss_trois){
+function bossTrois(boss_trois, pv_boss_trois){
 	var bossChoisi = boss_trois;
+	var bossChoisiPV = pv_boss_trois;
 	document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + boss_trois + ".");
 	return bossChoisi;
 }
