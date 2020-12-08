@@ -19,7 +19,6 @@ function attaque(bossChoisi, bossChoisiPV){
 function defense(bossChoisi, bossChoisiPV){
 	document.getElementById("defense").innerHTML = ("> Defense <");
 	choix = "defense"
-	console.log(choix)
 	setTimeout(() => {document.getElementById("defense").innerHTML = ("Defense");}, 250);
 	return choix;
 }
@@ -27,7 +26,6 @@ function defense(bossChoisi, bossChoisiPV){
 function special(bossChoisi, bossChoisiPV){
 	document.getElementById("special").innerHTML = ("> Special <");
 	choix = "special"
-	console.log(choix)
 	setTimeout(() => {document.getElementById("special").innerHTML = ("Special");}, 250);
 	return choix;
 }
