@@ -52,6 +52,7 @@ function aleatoire(min, max) {
 
 function attaque(bossChoisi){
 	document.getElementById("attaque").innerHTML = ("> Attaque <");
+	setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
 	if (bossChoisi[0] == "none"){
 		document.getElementById("message_box").innerHTML = ("Veuillez selectionner un boss");
 	}
@@ -93,8 +94,11 @@ function bossUn(boss_un, pv_boss_un){
 	console.log(bossChoisi);
 	if (bossChoisi[1] > 0){
 		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + bossChoisi[0] + ".");
+		console.log(bossChoisi);
 	} else{
 		document.getElementById("message_box").innerHTML = (bossChoisi[0] + " est mort, veuillez choisir un autre boss.");
+		bossChoisi[0] = none;
+		console.log(bossChoisi);
 	}
 	return bossChoisi;
 }
