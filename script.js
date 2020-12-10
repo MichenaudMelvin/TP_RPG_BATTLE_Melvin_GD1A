@@ -37,7 +37,9 @@ var choix = "";
 let i ="";
 var lose = false;
 var win = false;
-var bossChoisi = ["none", "none"]
+var tourJoueur = 1;
+var bossChoisi = ["none", "none"];
+tourJoueurAffichage(tourJoueur);
 //bossChoisi[0] = nom du boss, bossChoisi[1] = pv du boss
 
 var tourJoueurListe = [perso_un, perso_deux, perso_trois, perso_quatre];
@@ -123,25 +125,25 @@ function bossTrois(boss_trois, pv_boss_trois){
 }
 	
 function tourJoueurAffichage(tourJoueur){
-	if tourJoueur == 1;{
+	if (tourJoueur == 1){
 		document.getElementById("perso_quatre").style.color = "white";
 		document.getElementById("perso_quatre").style.textDecoration = "underline white";
 		document.getElementById("perso_un").style.color = "red";
 		document.getElementById("perso_un").style.textDecoration = "underline red";
 		document.getElementById("message_box").innerHTML = ("Tour de " + perso_un + ".");
-	} if tourJoueur == 2;{
+	} if (tourJoueur == 2){
 		document.getElementById("perso_un").style.color = "white";
 		document.getElementById("perso_un").style.textDecoration = "underline white";
 		document.getElementById("perso_deux").style.color = "red";
 		document.getElementById("perso_deux").style.textDecoration = "underline red";
 		document.getElementById("message_box").innerHTML = ("Tour de " + perso_deux + ".");
-	} if tourJoueur == 3;{
+	} if (tourJoueur == 3){
 		document.getElementById("perso_deux").style.color = "white";
 		document.getElementById("perso_deux").style.textDecoration = "underline white";
 		document.getElementById("perso_trois").style.color = "red";
 		document.getElementById("perso_trois").style.textDecoration = "underline red";
 		document.getElementById("message_box").innerHTML = ("Tour de " + perso_trois + ".");
-	}if tourJoueur == 4;{
+	}if (tourJoueur == 4){
 		document.getElementById("perso_trois").style.color = "white";
 		document.getElementById("perso_trois").style.textDecoration = "underline white";
 		document.getElementById("perso_quatre").style.color = "red";
