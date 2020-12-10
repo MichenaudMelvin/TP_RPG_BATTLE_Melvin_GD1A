@@ -63,7 +63,6 @@ function attaque(bossChoisi){
 		setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
 		testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois);
 	}
-	return choix;
 }
 
 function defense(bossChoisi){
@@ -75,7 +74,6 @@ function defense(bossChoisi){
 	else {
 		
 	}
-	return defense;
 }
 
 function special(bossChoisi){
@@ -87,14 +85,13 @@ function special(bossChoisi){
 	else {
 		
 	}
-	return defense;
 }
 
 
 function bossUn(boss_un, pv_boss_un){
 	var bossChoisi = [boss_un, pv_boss_un];
 	if (bossChoisi[1] > 0){
-		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + bossChoisi[0] + ".");
+		document.getElementById("message_box").innerHTML = ("Vous avez selectionne " + bossChoisi[0] + ".");
 	} else{
 		document.getElementById("message_box").innerHTML = (bossChoisi[0] + " est mort, veuillez choisir un autre boss.");
 		bossChoisi[0] = "none";
@@ -106,7 +103,7 @@ function bossUn(boss_un, pv_boss_un){
 function bossDeux(boss_deux, pv_boss_deux){
 	var bossChoisi = [boss_deux, pv_boss_deux];
 	if (bossChoisi[1] > 0){
-		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + bossChoisi[0] + ".");
+		document.getElementById("message_box").innerHTML = ("Vous avez selectionne " + bossChoisi[0] + ".");
 	} else{
 		document.getElementById("message_box").innerHTML = (bossChoisi[0] + " est mort, veuillez choisir un autre boss.");
 		bossChoisi[0] = "none";
@@ -117,7 +114,7 @@ function bossDeux(boss_deux, pv_boss_deux){
 function bossTrois(boss_trois, pv_boss_trois){
 	var bossChoisi = [boss_trois, pv_boss_trois];
 	if (bossChoisi[1] > 0){
-		document.getElementById("message_box").innerHTML = ("Vous avez selectionner " + bossChoisi[0] + ".");
+		document.getElementById("message_box").innerHTML = ("Vous avez selectionne " + bossChoisi[0] + ".");
 	} else{
 		document.getElementById("message_box").innerHTML = (bossChoisi[0] + " est mort, veuillez choisir un autre boss.");
 		bossChoisi[0] = "none";
@@ -125,11 +122,32 @@ function bossTrois(boss_trois, pv_boss_trois){
 	return bossChoisi;
 }
 	
-function tourJoueurUn(){
-	document.getElementById("perso_un").style.color = "red";
-	document.getElementById("perso_un").style.textDecoration = "underline red";
-	document.getElementById("message_box").innerHTML = ("Tour de " + perso_un + ".");
-
+function tourJoueurAffichage(tourJoueur){
+	if tourJoueur == 1;{
+		document.getElementById("perso_quatre").style.color = "white";
+		document.getElementById("perso_quatre").style.textDecoration = "underline white";
+		document.getElementById("perso_un").style.color = "red";
+		document.getElementById("perso_un").style.textDecoration = "underline red";
+		document.getElementById("message_box").innerHTML = ("Tour de " + perso_un + ".");
+	} if tourJoueur == 2;{
+		document.getElementById("perso_un").style.color = "white";
+		document.getElementById("perso_un").style.textDecoration = "underline white";
+		document.getElementById("perso_deux").style.color = "red";
+		document.getElementById("perso_deux").style.textDecoration = "underline red";
+		document.getElementById("message_box").innerHTML = ("Tour de " + perso_deux + ".");
+	} if tourJoueur == 3;{
+		document.getElementById("perso_deux").style.color = "white";
+		document.getElementById("perso_deux").style.textDecoration = "underline white";
+		document.getElementById("perso_trois").style.color = "red";
+		document.getElementById("perso_trois").style.textDecoration = "underline red";
+		document.getElementById("message_box").innerHTML = ("Tour de " + perso_trois + ".");
+	}if tourJoueur == 4;{
+		document.getElementById("perso_trois").style.color = "white";
+		document.getElementById("perso_trois").style.textDecoration = "underline white";
+		document.getElementById("perso_quatre").style.color = "red";
+		document.getElementById("perso_quatre").style.textDecoration = "underline red";
+		document.getElementById("message_box").innerHTML = ("Tour de " + perso_quatre + ".");
+	}
 }
 
 function tourBoss(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre, boss_un, boss_deux,boss_trois){
