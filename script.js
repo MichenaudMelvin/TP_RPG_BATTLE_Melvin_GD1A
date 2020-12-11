@@ -34,7 +34,7 @@ var image_boss_trois = document.getElementById("image_boss_trois");
 
 //autres variables
 var choix = "";
-let i ="";
+let i = "";
 var lose = false;
 var win = false;
 var tourJoueur = 1;
@@ -45,11 +45,6 @@ var boss_deux_mort = false;
 var boss_trois_mort = false;
 //bossChoisi[0] = nom du boss, bossChoisi[1] = pv du boss
 
-/*
-var tourJoueurListe = [perso_un, perso_deux, perso_trois, perso_quatre];
-var nomJoueur = tourJoueurListe[0];4
-*/
-
 //all functions
 function aleatoire(min, max) {
   min = Math.ceil(min);
@@ -57,11 +52,11 @@ function aleatoire(min, max) {
   return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
-function attaque(bossChoisi, tourJoueur, pv_boss_un, pv_boss_deux, pv_boss_trois){
+function attaque(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre pv_boss_un, pv_boss_deux, pv_boss_trois){
 	document.getElementById("attaque").innerHTML = ("> Attaque <");
 	setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
 	if (bossChoisi[0] == "none"){
-		document.getElementById("message_box").innerHTML = (bossChoisi[0] + "Veuillez selectionner un boss");
+		document.getElementById("message_box").innerHTML = ("Veuillez selectionner un boss.");
 	}
 	else {
 		var nombre_attaque = aleatoire(20,30);
@@ -90,10 +85,11 @@ function defense(bossChoisi, tourJoueur){
 	document.getElementById("defense").innerHTML = ("> Defense <");
 	setTimeout(() => {document.getElementById("defense").innerHTML = ("Defense");}, 250);
 	if (bossChoisi[0] == "none"){
-		document.getElementById("message_box").innerHTML = ("Veuillez selectionner un boss");
+		document.getElementById("message_box").innerHTML = ("Veuillez selectionner un boss.");
 	}
 	else {
-		
+		defenseJoueur = true; //à faire en fonction du joueur
+		tourJoueur = tourJoueur + 1;
 	}
 }
 
@@ -101,19 +97,16 @@ function special(bossChoisi, tourJoueur){
 	document.getElementById("special").innerHTML = ("> Special <");
 	setTimeout(() => {document.getElementById("special").innerHTML = ("Special");}, 250);
 	if (bossChoisi[0] == "none"){
-		document.getElementById("message_box").innerHTML = ("Veuillez selectionner un boss");
+		document.getElementById("message_box").innerHTML = ("Veuillez selectionner un boss.");
 	}
 	else {
-		
-		/* changement entre poison et soin
-		if (tourJoueur == perso_deux || tourJoueur == perso_quatre){
-			document.getElementById("special").innerHTML = ("Poison");
+		if (tourJoueur == 1 || tourJoueur == 3){
+			document.getElementById("special").innerHTML = ("> Soin <");
+			setTimeout(() => {document.getElementById("special").innerHTML = ("Soin");}, 250);
+		} if (tourJoueur == 2 || tourJoueur == 4){
+			document.getElementById("special").innerHTML = ("> Poison <");
+			setTimeout(() => {document.getElementById("special").innerHTML = ("Poison");}, 250);
 		}
-
-		if (tourJoueur == perso_un || tourJoueur == perso_trois){
-			document.getElementById("special").innerHTML = ("Soin");
-		}
-		*/
 	}
 }
 
@@ -151,6 +144,7 @@ function bossTrois(boss_trois, pv_boss_trois){
 }
 	
 function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre){
+	//Tour du joueur 1
 	if (tourJoueur == 1){
 		if (pv_perso_un <= 0) {
 			tourJoueur = tourJoueur+1
@@ -166,7 +160,9 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 			document.getElementById("perso_un").style.color = "red";
 			document.getElementById("perso_un").style.textDecoration = "underline red";
 			document.getElementById("message_box").innerHTML = ("Tour de " + perso_un + ".");
+			document.getElementById("special").innerHTML = ("Soin");
 		}
+	//Tour du joueur 2
 	} if (tourJoueur == 2){
 		if (pv_perso_deux <= 0) {
 			tourJoueur = tourJoueur+1
@@ -182,7 +178,9 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 			document.getElementById("perso_deux").style.color = "red";
 			document.getElementById("perso_deux").style.textDecoration = "underline red";
 			document.getElementById("message_box").innerHTML = ("Tour de " + perso_deux + ".");
+			document.getElementById("special").innerHTML = ("Poison");
 		}
+	//Tour du joueur 3
 	} if (tourJoueur == 3){
 		if (pv_perso_trois <= 0) {
 			tourJoueur = tourJoueur+1
@@ -198,8 +196,9 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 			document.getElementById("perso_trois").style.color = "red";
 			document.getElementById("perso_trois").style.textDecoration = "underline red";
 			document.getElementById("message_box").innerHTML = ("Tour de " + perso_trois + ".");
+			document.getElementById("special").innerHTML = ("Soin");
 		}
-		
+	//Tour du joueur 4
 	} if (tourJoueur == 4){
 		if (pv_perso_quatre <= 0) {
 			tourJoueur = tourJoueur+1
@@ -215,7 +214,9 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 			document.getElementById("perso_quatre").style.color = "red";
 			document.getElementById("perso_quatre").style.textDecoration = "underline red";
 			document.getElementById("message_box").innerHTML = ("Tour de " + perso_quatre + ".");
+			document.getElementById("special").innerHTML = ("Poison");
 		}
+	//Tour des boss
 	} if (tourJoueur == 5){
 		console.log("tour du boss")
 		tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois);
