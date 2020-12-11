@@ -132,16 +132,18 @@ function bossTrois(boss_trois, pv_boss_trois){
 }
 	
 function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre){
-	console.log(pv_perso_un)
-	console.log(pv_perso_deux)
-	console.log(pv_perso_trois)
-	console.log(pv_perso_quatre)
 	if (tourJoueur == 1){
 		if (pv_perso_un <= 0) {
 			tourJoueur = tourJoueur+1
 		} else {
+			//réinitialisation couleur
+			document.getElementById("perso_deux").style.color = "white";
+			document.getElementById("perso_deux").style.textDecoration = "underline white";
+			document.getElementById("perso_trois").style.color = "white";
+			document.getElementById("perso_trois").style.textDecoration = "underline white";
 			document.getElementById("perso_quatre").style.color = "white";
 			document.getElementById("perso_quatre").style.textDecoration = "underline white";
+			//changement de joueur
 			document.getElementById("perso_un").style.color = "red";
 			document.getElementById("perso_un").style.textDecoration = "underline red";
 			document.getElementById("message_box").innerHTML = ("Tour de " + perso_un + ".");
@@ -150,9 +152,14 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 		if (pv_perso_deux <= 0) {
 			tourJoueur = tourJoueur+1
 		} else {
-			console.log(pv_perso_deux)
+			//réinitialisation couleur 
 			document.getElementById("perso_un").style.color = "white";
 			document.getElementById("perso_un").style.textDecoration = "underline white";
+			document.getElementById("perso_trois").style.color = "white";
+			document.getElementById("perso_trois").style.textDecoration = "underline white";
+			document.getElementById("perso_quatre").style.color = "white";
+			document.getElementById("perso_quatre").style.textDecoration = "underline white";
+			//changement de joueur
 			document.getElementById("perso_deux").style.color = "red";
 			document.getElementById("perso_deux").style.textDecoration = "underline red";
 			document.getElementById("message_box").innerHTML = ("Tour de " + perso_deux + ".");
@@ -161,9 +168,14 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 		if (pv_perso_trois <= 0) {
 			tourJoueur = tourJoueur+1
 		} else {
-			console.log(pv_perso_trois)
+			//réinitialisation couleur 
+			document.getElementById("perso_un").style.color = "white";
+			document.getElementById("perso_un").style.textDecoration = "underline white";
 			document.getElementById("perso_deux").style.color = "white";
 			document.getElementById("perso_deux").style.textDecoration = "underline white";
+			document.getElementById("perso_quatre").style.color = "white";
+			document.getElementById("perso_quatre").style.textDecoration = "underline white";
+			//changement de joueur
 			document.getElementById("perso_trois").style.color = "red";
 			document.getElementById("perso_trois").style.textDecoration = "underline red";
 			document.getElementById("message_box").innerHTML = ("Tour de " + perso_trois + ".");
@@ -173,10 +185,14 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 		if (pv_perso_quatre <= 0) {
 			tourJoueur = tourJoueur+1
 		} else {
-			console.log(tourJoueur)
-			console.log(pv_perso_quatre)
+			//réinitialisation couleur 
+			document.getElementById("perso_un").style.color = "white";
+			document.getElementById("perso_un").style.textDecoration = "underline white";
+			document.getElementById("perso_deux").style.color = "white";
+			document.getElementById("perso_deux").style.textDecoration = "underline white";
 			document.getElementById("perso_trois").style.color = "white";
 			document.getElementById("perso_trois").style.textDecoration = "underline white";
+			//changement de joueur
 			document.getElementById("perso_quatre").style.color = "red";
 			document.getElementById("perso_quatre").style.textDecoration = "underline red";
 			document.getElementById("message_box").innerHTML = ("Tour de " + perso_quatre + ".");
@@ -197,8 +213,12 @@ function tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, b
 	pv_perso_deux = degats_boss_perso_deux - pv_perso_deux;
 	pv_perso_trois = degats_boss_perso_trois - pv_perso_trois;
 	document.getElementById("message_box").innerHTML = (boss_un + " vous inflige " + degats_boss_perso_un + " de degats.\n" + boss_deux + " vous inflige " + degats_boss_perso_deux + " de degats.\n" + boss_trois + " vous inflige " + degats_boss_perso_trois + " de degats.");
-	return pv_perso
-	
+	/*
+	document.getElementById("pv_perso_un").innerHTML = pv_perso_un
+	document.getElementById("pv_perso_deux").innerHTML = pv_perso_un
+	document.getElementById("pv_perso_trois").innerHTML = pv_perso_un
+	document.getElementById("pv_perso_quatre").innerHTML = pv_perso_un
+	*/
 }
 
 function testLose(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre){
