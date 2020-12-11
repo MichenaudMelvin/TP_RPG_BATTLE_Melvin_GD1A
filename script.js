@@ -59,13 +59,15 @@ function attaque(bossChoisi){
 		document.getElementById("message_box").innerHTML = ("Veuillez selectionner un boss");
 	}
 	else {
-		var nombre_attaque = aleatoire(20,30);
+		console.log("test")
+	}
+}
+var nombre_attaque = aleatoire(20,30);
 		bossChoisiPV = bossChoisiPV - nombre_attaque;
 		document.getElementById("message_box").innerHTML = ("Vous infligez " + nombre_attaque + " de degats à " + bossChoisi);
 		setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
 		testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois);
-	}
-}
+
 
 function defense(bossChoisi){
 	document.getElementById("defense").innerHTML = ("> Defense <");
@@ -216,26 +218,5 @@ if (tourJoueur == perso_deux || tourJoueur == perso_quatre){
 
 if (tourJoueur == perso_un || tourJoueur == perso_trois){
 	document.getElementById("special").innerHTML = ("Soin");
-}
-*/
-
-
-/*
-Déroulé d'un tour :
-perso 1 :
-choisi une action
-choisi un ennemi
-
-à la fin de chaque boucle : un testLose() et un testWin()
-
-
-
-while (win != true || lose != true){
-	//tour du perso 1
-	tourJoueurUn();
-	if (choix == attaque){
-		document.getElementById("message_box").innerHTML = ("Vous avez choisi attaque");
-
-	}
 }
 */
