@@ -62,11 +62,12 @@ function attaque(bossChoisi, tourJoueur){
 	}
 	else {
 		var nombre_attaque = aleatoire(20,30);
+		console.log(nombre_attaque)
 		bossChoisi[1] = bossChoisi[1] - nombre_attaque;
 		document.getElementById("message_box").innerHTML = ("Vous infligez " + nombre_attaque + " de degats a " + bossChoisi[0]);
 		tourJoueur = tourJoueur+1
 		console.log(tourJoueur)
-		setTimeout(() => {tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre);}, 2500);
+		setTimeout(() => {tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre);}, 2500);
 		console.log(tourJoueur)
 	}
 }
@@ -190,16 +191,14 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 function tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois){
 	var listePerso = [pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre];
 	var listeBoss = [boss_un,boss_deux,boss_trois];
-	console.log(listeBoss);
-	for (let i = 0; i < 3; i++)
-		var pv_perso = listePerso[aleatoire(0,3)];
+	var pv_perso = listePerso[aleatoire(0,3)];
 		console.log(pv_perso)
 
 		var degatsBoss = aleatoire(20,30);
 		console.log(degatsBoss)
 
-		pv_perso = pv_perso - degatsBoss;
-		document.getElementById("message_box").innerHTML = (listeBoss[i] + " vous inflige" + pv_perso + "de degats.");
+		pv_perso = degatsBoss - pv_perso;
+		document.getElementById("message_box").innerHTML = (listeBoss[i] + " vous inflige " + pv_perso + " de degats.\n" + listeBoss[i] + " vous inflige " + pv_perso + " de degats.\n" " vous inflige " + pv_perso + " de degats.");
 	return pv_perso
 	
 }
