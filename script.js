@@ -196,7 +196,7 @@ function tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, b
 	pv_perso_un = degats_boss_perso_un - pv_perso_un;
 	pv_perso_deux = degats_boss_perso_deux - pv_perso_deux;
 	pv_perso_trois = degats_boss_perso_trois - pv_perso_trois;
-	document.getElementById("message_box").innerHTML = (boss_un + " vous inflige " + degats_boss_perso_un + " de degats.\n" + boss_deux + " vous inflige " + degats_boss_perso_deux + " de degats.\n" + boss_trois " vous inflige " + degats_boss_perso_trois + " de degats.");
+	document.getElementById("message_box").innerHTML = (boss_un + " vous inflige " + degats_boss_perso_un + " de degats.\n" + boss_deux + " vous inflige " + degats_boss_perso_deux + " de degats.\n" + boss_trois + " vous inflige " + degats_boss_perso_trois + " de degats.");
 	return pv_perso
 	
 }
