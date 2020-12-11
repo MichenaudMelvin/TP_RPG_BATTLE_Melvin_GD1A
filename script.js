@@ -39,11 +39,13 @@ var lose = false;
 var win = false;
 var tourJoueur = 1;
 var bossChoisi = ["none", "none"];
-tourJoueurAffichage(tourJoueur);
+tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre);
 //bossChoisi[0] = nom du boss, bossChoisi[1] = pv du boss
 
+/*
 var tourJoueurListe = [perso_un, perso_deux, perso_trois, perso_quatre];
-var tourJoueur = tourJoueurListe[0];4
+var nomJoueur = tourJoueurListe[0];4
+*/
 
 //all functions
 function aleatoire(min, max) {
@@ -59,18 +61,19 @@ function attaque(bossChoisi, tourJoueur){
 		document.getElementById("message_box").innerHTML = ("Veuillez selectionner un boss");
 	}
 	else {
-		console.log("test")
+		var nombre_attaque = aleatoire(20,30);
+		bossChoisi[1] = bossChoisi[1] - nombre_attaque;
+		document.getElementById("message_box").innerHTML = ("Vous infligez " + nombre_attaque + " de degats a " + bossChoisi[0]);
 		tourJoueur = tourJoueur+1
+		console.log(tourJoueur)
+		setTimeout(() => {tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre);}, 5000);
+		console.log(tourJoueur)
 	}
 }
 
-/*
-var nombre_attaque = aleatoire(20,30);
-		bossChoisiPV = bossChoisiPV - nombre_attaque;
-		document.getElementById("message_box").innerHTML = ("Vous infligez " + nombre_attaque + " de degats à " + bossChoisi);
-		setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
-		testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois);
-*/
+
+//testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois);
+
 
 function defense(bossChoisi, tourJoueur){
 	document.getElementById("defense").innerHTML = ("> Defense <");
@@ -129,38 +132,56 @@ function bossTrois(boss_trois, pv_boss_trois){
 	return bossChoisi;
 }
 	
-function tourJoueurAffichage(tourJoueur){
+function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_boss_deux, pv_boss_trois, pv_perso_quatre){
 	if (tourJoueur == 1){
-		document.getElementById("perso_quatre").style.color = "white";
-		document.getElementById("perso_quatre").style.textDecoration = "underline white";
-		document.getElementById("perso_un").style.color = "red";
-		document.getElementById("perso_un").style.textDecoration = "underline red";
-		document.getElementById("message_box").innerHTML = ("Tour de " + perso_un + ".");
+		if (pv_perso_un <= 0) {
+			tourJoueur = tourJoueur+1
+		} else {
+			document.getElementById("perso_quatre").style.color = "white";
+			document.getElementById("perso_quatre").style.textDecoration = "underline white";
+			document.getElementById("perso_un").style.color = "red";
+			document.getElementById("perso_un").style.textDecoration = "underline red";
+			document.getElementById("message_box").innerHTML = ("Tour de " + perso_un + ".");
+		}
 	} if (tourJoueur == 2){
-		document.getElementById("perso_un").style.color = "white";
-		document.getElementById("perso_un").style.textDecoration = "underline white";
-		document.getElementById("perso_deux").style.color = "red";
-		document.getElementById("perso_deux").style.textDecoration = "underline red";
-		document.getElementById("message_box").innerHTML = ("Tour de " + perso_deux + ".");
+		if (pv_perso_deux <= 0) {
+			tourJoueur = tourJoueur+1
+		} else {
+			document.getElementById("perso_un").style.color = "white";
+			document.getElementById("perso_un").style.textDecoration = "underline white";
+			document.getElementById("perso_deux").style.color = "red";
+			document.getElementById("perso_deux").style.textDecoration = "underline red";
+			document.getElementById("message_box").innerHTML = ("Tour de " + perso_deux + ".");
+		}
 	} if (tourJoueur == 3){
-		document.getElementById("perso_deux").style.color = "white";
-		document.getElementById("perso_deux").style.textDecoration = "underline white";
-		document.getElementById("perso_trois").style.color = "red";
-		document.getElementById("perso_trois").style.textDecoration = "underline red";
-		document.getElementById("message_box").innerHTML = ("Tour de " + perso_trois + ".");
+		if (pv_perso_trois <= 0) {
+			tourJoueur = tourJoueur+1
+		} else {
+			document.getElementById("perso_deux").style.color = "white";
+			document.getElementById("perso_deux").style.textDecoration = "underline white";
+			document.getElementById("perso_trois").style.color = "red";
+			document.getElementById("perso_trois").style.textDecoration = "underline red";
+			document.getElementById("message_box").innerHTML = ("Tour de " + perso_trois + ".");
+		}
+		
 	} if (tourJoueur == 4){
-		document.getElementById("perso_trois").style.color = "white";
-		document.getElementById("perso_trois").style.textDecoration = "underline white";
-		document.getElementById("perso_quatre").style.color = "red";
-		document.getElementById("perso_quatre").style.textDecoration = "underline red";
-		document.getElementById("message_box").innerHTML = ("Tour de " + perso_quatre + ".");
+		if (pv_perso_quatre <= 0) {
+			tourJoueur = tourJoueur+1
+		} else {
+			document.getElementById("perso_trois").style.color = "white";
+			document.getElementById("perso_trois").style.textDecoration = "underline white";
+			document.getElementById("perso_quatre").style.color = "red";
+			document.getElementById("perso_quatre").style.textDecoration = "underline red";
+			document.getElementById("message_box").innerHTML = ("Tour de " + perso_quatre + ".");
+		}
 	} if (tourJoueur ==5){
-		tourBoss(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre,boss_un,boss_deux,boss_trois);
+		console.log("tour du boss")
+		tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois);
 		tourJoueur = 1
 	}
 }
 
-function tourBoss(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre,boss_un,boss_deux,boss_trois){
+function tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois){
 	var listePerso = [pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre];
 	var listeBoss = [boss_un,boss_deux,boss_trois];
 	console.log(listeBoss);
