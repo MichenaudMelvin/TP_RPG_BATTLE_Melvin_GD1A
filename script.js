@@ -40,6 +40,9 @@ var win = false;
 var tourJoueur = 1;
 var bossChoisi = ["none", "none"];
 tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre);
+var boss_un_mort = false;
+var boss_deux_mort = false;
+var boss_trois_mort = false;
 //bossChoisi[0] = nom du boss, bossChoisi[1] = pv du boss
 
 /*
@@ -74,7 +77,7 @@ function attaque(bossChoisi, tourJoueur, pv_boss_un, pv_boss_deux, pv_boss_trois
 			document.getElementById("pv_boss_trois").innerHTML = (bossChoisi[1]);
 			pv_boss_trois = bossChoisi[1]
 		}
-		testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois);
+		testBossMort(pv_boss_un, pv_boss_deux, pv_boss_trois, boss_un_mort, boss_deux_mort, boss_trois_mort);
 		tourJoueur = tourJoueur+1
 
 		console.log(tourJoueur)
@@ -82,10 +85,6 @@ function attaque(bossChoisi, tourJoueur, pv_boss_un, pv_boss_deux, pv_boss_trois
 		console.log(tourJoueur)
 	}
 }
-
-
-//testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois);
-
 
 function defense(bossChoisi, tourJoueur){
 	document.getElementById("defense").innerHTML = ("> Defense <");
@@ -106,6 +105,15 @@ function special(bossChoisi, tourJoueur){
 	}
 	else {
 		
+		/* changement entre poison et soin
+		if (tourJoueur == perso_deux || tourJoueur == perso_quatre){
+			document.getElementById("special").innerHTML = ("Poison");
+		}
+
+		if (tourJoueur == perso_un || tourJoueur == perso_trois){
+			document.getElementById("special").innerHTML = ("Soin");
+		}
+		*/
 	}
 }
 
@@ -240,31 +248,21 @@ function testLose(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre){
 	}
 }
 
-function testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois){
+function testBossMort(pv_boss_un, pv_boss_deux, pv_boss_trois, boss_un_mort, boss_deux_mort, boss_trois_mort){
 	if (pv_boss_un <= 0){
 		document.getElementById("pv_boss_un").innerHTML = (0);
 		image_boss_un.setAttribute("src", "img/boss_un_mort.png");
-		var boss_un_mort = true;
+		boss_un_mort = true;
 	} if (pv_boss_deux <= 0){
 		document.getElementById("pv_boss_deux").innerHTML = (0);
 		image_boss_deux.setAttribute("src", "img/boss_deux_mort.png");
-		var boss_deux_mort = true;
+		boss_deux_mort = true;
 	} if (pv_boss_trois <= 0){
 		document.getElementById("pv_boss_trois").innerHTML = (0);
 		image_boss_trois.setAttribute("src", "img/boss_trois_mort.png");
-		var boss_trois_mort = true;
+		boss_trois_mort = true;
 	} if (boss_un_mort == true && boss_deux_mort == true && boss_trois_mort == true){
 		document.getElementById("message_box").innerHTML = ("Vous avez gagne !");
 		alert("Vous avez gagné !")
 	}
 }
-
-/* changement entre poison et soin
-if (tourJoueur == perso_deux || tourJoueur == perso_quatre){
-	document.getElementById("special").innerHTML = ("Poison");
-}
-
-if (tourJoueur == perso_un || tourJoueur == perso_trois){
-	document.getElementById("special").innerHTML = ("Soin");
-}
-*/
