@@ -58,11 +58,10 @@ function attaque(bossChoisi, tourJoueur, pv_boss_un, pv_boss_deux, pv_boss_trois
 	document.getElementById("attaque").innerHTML = ("> Attaque <");
 	setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
 	if (bossChoisi[0] == "none"){
-		document.getElementById("message_box").innerHTML = ("Veuillez selectionner \n un boss");
+		document.getElementById("message_box").innerHTML = (bossChoisi[0] + "Veuillez selectionner un boss");
 	}
 	else {
 		var nombre_attaque = aleatoire(20,30);
-		console.log(nombre_attaque)
 		bossChoisi[1] = bossChoisi[1] - nombre_attaque;
 		document.getElementById("message_box").innerHTML = ("Vous infligez " + nombre_attaque + " de degats a " + bossChoisi[0]);
 		if (bossChoisi[0] == boss_un){
@@ -76,8 +75,8 @@ function attaque(bossChoisi, tourJoueur, pv_boss_un, pv_boss_deux, pv_boss_trois
 			pv_boss_trois = bossChoisi[1]
 		}
 		testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois);
-		testWin(pv_boss_un, pv_boss_deux, pv_boss_trois)
 		tourJoueur = tourJoueur+1
+
 		console.log(tourJoueur)
 		setTimeout(() => {tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre);}, 2500);
 		console.log(tourJoueur)
@@ -99,7 +98,7 @@ function defense(bossChoisi, tourJoueur){
 	}
 }
 
-function special(bossChois, tourJoueur){
+function special(bossChoisi, tourJoueur){
 	document.getElementById("special").innerHTML = ("> Special <");
 	setTimeout(() => {document.getElementById("special").innerHTML = ("Special");}, 250);
 	if (bossChoisi[0] == "none"){
@@ -241,28 +240,22 @@ function testLose(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre){
 	}
 }
 
-function testWin(pv_boss_un, pv_boss_deux, pv_boss_trois){
-	if (pv_boss_un <= 0 && pv_boss_deux <= 0 && pv_boss_trois <= 0){
-		document.getElementById("message_box").innerHTML = ("Vous avez gagne !");
-		alert("Vous avez gagné !")
-		console.log("win")
-	}
-}
-
 function testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois){
 	if (pv_boss_un <= 0){
 		document.getElementById("pv_boss_un").innerHTML = (0);
 		image_boss_un.setAttribute("src", "img/boss_un_mort.png");
-	}
-
-	if (pv_boss_deux <= 0){
+		var boss_un_mort = true;
+	} if (pv_boss_deux <= 0){
 		document.getElementById("pv_boss_deux").innerHTML = (0);
 		image_boss_deux.setAttribute("src", "img/boss_deux_mort.png");
-	}
-
-	if (pv_boss_trois <= 0){
+		var boss_deux_mort = true;
+	} if (pv_boss_trois <= 0){
 		document.getElementById("pv_boss_trois").innerHTML = (0);
 		image_boss_trois.setAttribute("src", "img/boss_trois_mort.png");
+		var boss_trois_mort = true;
+	} if (boss_un_mort == true && boss_deux_mort == true && boss_trois_mort == true){
+		document.getElementById("message_box").innerHTML = ("Vous avez gagne !");
+		alert("Vous avez gagné !")
 	}
 }
 
