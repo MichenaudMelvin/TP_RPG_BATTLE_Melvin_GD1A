@@ -39,7 +39,7 @@ var lose = false;
 var win = false;
 var tourJoueur = 1;
 var bossChoisi = ["none", "none"];
-tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre);
+tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre);
 //bossChoisi[0] = nom du boss, bossChoisi[1] = pv du boss
 
 /*
@@ -66,7 +66,7 @@ function attaque(bossChoisi, tourJoueur){
 		document.getElementById("message_box").innerHTML = ("Vous infligez " + nombre_attaque + " de degats a " + bossChoisi[0]);
 		tourJoueur = tourJoueur+1
 		console.log(tourJoueur)
-		setTimeout(() => {tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre);}, 5000);
+		setTimeout(() => {tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre);}, 2500);
 		console.log(tourJoueur)
 	}
 }
@@ -97,7 +97,6 @@ function special(bossChois, tourJoueur){
 	}
 }
 
-
 function bossUn(boss_un, pv_boss_un){
 	var bossChoisi = [boss_un, pv_boss_un];
 	if (bossChoisi[1] > 0){
@@ -108,7 +107,6 @@ function bossUn(boss_un, pv_boss_un){
 	}
 	return bossChoisi;
 }
-
 
 function bossDeux(boss_deux, pv_boss_deux){
 	var bossChoisi = [boss_deux, pv_boss_deux];
@@ -132,7 +130,11 @@ function bossTrois(boss_trois, pv_boss_trois){
 	return bossChoisi;
 }
 	
-function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_boss_deux, pv_boss_trois, pv_perso_quatre){
+function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre){
+	console.log(pv_perso_un)
+	console.log(pv_perso_deux)
+	console.log(pv_perso_trois)
+	console.log(pv_perso_quatre)
 	if (tourJoueur == 1){
 		if (pv_perso_un <= 0) {
 			tourJoueur = tourJoueur+1
@@ -147,6 +149,7 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 		if (pv_perso_deux <= 0) {
 			tourJoueur = tourJoueur+1
 		} else {
+			console.log(pv_perso_deux)
 			document.getElementById("perso_un").style.color = "white";
 			document.getElementById("perso_un").style.textDecoration = "underline white";
 			document.getElementById("perso_deux").style.color = "red";
@@ -157,6 +160,7 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 		if (pv_perso_trois <= 0) {
 			tourJoueur = tourJoueur+1
 		} else {
+			console.log(pv_perso_trois)
 			document.getElementById("perso_deux").style.color = "white";
 			document.getElementById("perso_deux").style.textDecoration = "underline white";
 			document.getElementById("perso_trois").style.color = "red";
@@ -168,6 +172,8 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 		if (pv_perso_quatre <= 0) {
 			tourJoueur = tourJoueur+1
 		} else {
+			console.log(tourJoueur)
+			console.log(pv_perso_quatre)
 			document.getElementById("perso_trois").style.color = "white";
 			document.getElementById("perso_trois").style.textDecoration = "underline white";
 			document.getElementById("perso_quatre").style.color = "red";
