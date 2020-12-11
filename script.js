@@ -52,7 +52,7 @@ function aleatoire(min, max) {
   return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
-function attaque(bossChoisi){
+function attaque(bossChoisi, tourJoueur){
 	document.getElementById("attaque").innerHTML = ("> Attaque <");
 	setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
 	if (bossChoisi[0] == "none"){
@@ -60,16 +60,19 @@ function attaque(bossChoisi){
 	}
 	else {
 		console.log("test")
+		tourJoueur = tourJoueur+1
 	}
 }
+
+/*
 var nombre_attaque = aleatoire(20,30);
 		bossChoisiPV = bossChoisiPV - nombre_attaque;
 		document.getElementById("message_box").innerHTML = ("Vous infligez " + nombre_attaque + " de degats à " + bossChoisi);
 		setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
 		testBossMort(pv_boss_un,pv_boss_deux,pv_boss_trois);
+*/
 
-
-function defense(bossChoisi){
+function defense(bossChoisi, tourJoueur){
 	document.getElementById("defense").innerHTML = ("> Defense <");
 	setTimeout(() => {document.getElementById("defense").innerHTML = ("Defense");}, 250);
 	if (bossChoisi[0] == "none"){
@@ -80,7 +83,7 @@ function defense(bossChoisi){
 	}
 }
 
-function special(bossChoisi){
+function special(bossChois, tourJoueur){
 	document.getElementById("special").innerHTML = ("> Special <");
 	setTimeout(() => {document.getElementById("special").innerHTML = ("Special");}, 250);
 	if (bossChoisi[0] == "none"){
@@ -145,19 +148,19 @@ function tourJoueurAffichage(tourJoueur){
 		document.getElementById("perso_trois").style.color = "red";
 		document.getElementById("perso_trois").style.textDecoration = "underline red";
 		document.getElementById("message_box").innerHTML = ("Tour de " + perso_trois + ".");
-	}if (tourJoueur == 4){
+	} if (tourJoueur == 4){
 		document.getElementById("perso_trois").style.color = "white";
 		document.getElementById("perso_trois").style.textDecoration = "underline white";
 		document.getElementById("perso_quatre").style.color = "red";
 		document.getElementById("perso_quatre").style.textDecoration = "underline red";
 		document.getElementById("message_box").innerHTML = ("Tour de " + perso_quatre + ".");
+	} if (tourJoueur ==5){
+		tourBoss(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre,boss_un,boss_deux,boss_trois);
+		tourJoueur = 1
 	}
 }
 
-function tourBoss(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre, boss_un, boss_deux,boss_trois){
-	//attaque de boss_un
-	//choix aléatoire du personnage attaqué
-	document.getElementById("attaque").innerHTML = ("> Attaque <");
+function tourBoss(pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre,boss_un,boss_deux,boss_trois){
 	var listePerso = [pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre];
 	var listeBoss = [boss_un,boss_deux,boss_trois];
 	console.log(listeBoss);
