@@ -52,7 +52,7 @@ function aleatoire(min, max) {
   return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
-function attaque(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre pv_boss_un, pv_boss_deux, pv_boss_trois){
+function attaque(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_boss_un, pv_boss_deux, pv_boss_trois){
 	document.getElementById("attaque").innerHTML = ("> Attaque <");
 	setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
 	if (bossChoisi[0] == "none"){
@@ -81,16 +81,33 @@ function attaque(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 	}
 }
 
-function defense(bossChoisi, tourJoueur){
+function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre){
 	document.getElementById("defense").innerHTML = ("> Defense <");
 	setTimeout(() => {document.getElementById("defense").innerHTML = ("Defense");}, 250);
+	var defense_perso = [false, false, false, false]
 	if (bossChoisi[0] == "none"){
 		document.getElementById("message_box").innerHTML = ("Veuillez selectionner un boss.");
+		defense_perso[0:1:2:3] = false;
 	}
 	else {
-		defenseJoueur = true; //à faire en fonction du joueur
+		defense_perso = true; //à faire en fonction du joueur
+		if (tourJoueur == 1){
+			document.getElementById("message_box").innerHTML = (perso_un + " se defend.");
+			defense_perso[0] = true
+			console.log(defense_perso)
+		} if (tourJoueur == 2){
+			document.getElementById("message_box").innerHTML = (perso_deux + " se defend.");
+			defense_perso[1] = true
+		} if (tourJoueur == 3){
+			document.getElementById("message_box").innerHTML = (perso_trois + " se defend.");
+			defense_perso[2] = true
+		} if (tourJoueur == 4){
+			document.getElementById("message_box").innerHTML = (perso_quatre + " se defend.");
+			defense_perso[3] = true
+		}
 		tourJoueur = tourJoueur + 1;
 	}
+	return (defense_perso)
 }
 
 function special(bossChoisi, tourJoueur){
@@ -219,19 +236,26 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 	//Tour des boss
 	} if (tourJoueur == 5){
 		console.log("tour du boss")
-		tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois);
+		tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, defenseJoueur);
 		tourJoueur = 1
 	}
 }
 
-function tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois){
+function tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, defenseJoueur){
 	var degats_boss_perso_un = aleatoire(20,30);
 	var degats_boss_perso_deux = aleatoire(20,30);
 	var degats_boss_perso_trois = aleatoire(20,30);
+	var listePerso = [pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre];
 
-	pv_perso_un = degats_boss_perso_un - pv_perso_un;
-	pv_perso_deux = degats_boss_perso_deux - pv_perso_deux;
-	pv_perso_trois = degats_boss_perso_trois - pv_perso_trois;
+	if (defenseJoueur == true){
+		pv_perso_un = (degats_boss_perso_un * 1/2)- pv_perso_un;
+		pv_perso_deux = (degats_boss_perso_deux * 1/2) - pv_perso_deux;
+		pv_perso_trois = (degats_boss_perso_trois * 1/2) - pv_perso_trois;
+	} else{
+		pv_perso_un = degats_boss_perso_un - pv_perso_un;
+		pv_perso_deux = degats_boss_perso_deux - pv_perso_deux;
+		pv_perso_trois = degats_boss_perso_trois - pv_perso_trois;
+	}
 	document.getElementById("message_box").innerHTML = (boss_un + " vous inflige " + degats_boss_perso_un + " de degats.\n" + boss_deux + " vous inflige " + degats_boss_perso_deux + " de degats.\n" + boss_trois + " vous inflige " + degats_boss_perso_trois + " de degats.");
 	/*
 	document.getElementById("pv_perso_un").innerHTML = pv_perso_un
