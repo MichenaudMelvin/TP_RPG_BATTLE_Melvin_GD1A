@@ -72,9 +72,11 @@ function attaque(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 
 		setTimeout(() => {tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre);}, 2500);
 	}
+	return (tourJoueur)
 }
 
 function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre){
+	console.log(tourJoueur)
 	document.getElementById("defense").innerHTML = ("> Defense <");
 	setTimeout(() => {document.getElementById("defense").innerHTML = ("Defense");}, 250);
 	var defense_perso = [false, false, false, false]
@@ -102,6 +104,7 @@ function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 			defense_perso[3] = true
 		}
 		tourJoueur = tourJoueur + 1;
+		console.log(tourJoueur)
 		setTimeout(() => {tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre);}, 2500);
 	}
 	return (defense_perso)
