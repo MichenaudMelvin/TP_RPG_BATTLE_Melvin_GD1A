@@ -102,6 +102,7 @@ function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 			defense_perso[3] = true
 		}
 		tourJoueur = tourJoueur + 1;
+		setTimeout(() => {tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre);}, 2500);
 	}
 	return (defense_perso)
 }
@@ -327,7 +328,9 @@ function tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, b
 		}
 	}
 
-	document.getElementById("message_box").innerHTML = (boss_un + " vous inflige " + degats_boss_perso_un + " de degats.\n" + boss_deux + " vous inflige " + degats_boss_perso_deux + " de degats.\n" + boss_trois + " vous inflige " + degats_boss_perso_trois + " de degats.");
+	document.getElementById("message_box").innerHTML = (boss_un + " vous inflige " + degats_boss_perso_un + " de degats.");
+	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_deux + " vous inflige " + degats_boss_perso_deux + " de degats.");}, 2000);
+	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_trois + " vous inflige " + degats_boss_perso_trois + " de degats.");}, 40000);
 	/*
 	document.getElementById("pv_perso_un").innerHTML = pv_perso_un
 	document.getElementById("pv_perso_deux").innerHTML = pv_perso_un
