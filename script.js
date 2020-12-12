@@ -167,7 +167,7 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 	//Tour du joueur 1
 	if (tourJoueur == 1){
 		if (pv_perso_un <= 0) {
-			tourJoueur = tourJoueur+1
+			tourJoueur = tourJoueur + 1
 		} else {
 			//réinitialisation couleur
 			document.getElementById("perso_deux").style.color = "white";
@@ -185,7 +185,7 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 	//Tour du joueur 2
 	} if (tourJoueur == 2){
 		if (pv_perso_deux <= 0) {
-			tourJoueur = tourJoueur+1
+			tourJoueur = tourJoueur + 1
 		} else {
 			//réinitialisation couleur 
 			document.getElementById("perso_un").style.color = "white";
@@ -203,7 +203,7 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 	//Tour du joueur 3
 	} if (tourJoueur == 3){
 		if (pv_perso_trois <= 0) {
-			tourJoueur = tourJoueur+1
+			tourJoueur = tourJoueur + 1
 		} else {
 			//réinitialisation couleur 
 			document.getElementById("perso_un").style.color = "white";
@@ -221,7 +221,7 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 	//Tour du joueur 4
 	} if (tourJoueur == 4){
 		if (pv_perso_quatre <= 0) {
-			tourJoueur = tourJoueur+1
+			tourJoueur = tourJoueur + 1
 		} else {
 			//réinitialisation couleur 
 			document.getElementById("perso_un").style.color = "white";
