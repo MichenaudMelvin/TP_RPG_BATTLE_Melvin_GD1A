@@ -240,6 +240,8 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 		console.log("tour du boss")
 		tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, defense_perso);
 		tourJoueur = 1
+		tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, defense_perso)
+		console.log("tour joueur = " + tourJoueur)
 	}
 }
 
@@ -335,7 +337,7 @@ function tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, b
 
 	document.getElementById("message_box").innerHTML = (boss_un + " vous inflige " + degats_boss_perso_un + " de degats.");
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_deux + " vous inflige " + degats_boss_perso_deux + " de degats.");}, 2000);
-	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_trois + " vous inflige " + degats_boss_perso_trois + " de degats.");}, 40000);
+	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_trois + " vous inflige " + degats_boss_perso_trois + " de degats.");}, 4000);
 	testLose(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre);
 }
 
