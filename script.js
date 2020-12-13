@@ -253,13 +253,13 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 	}
 }
 
-function tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, defense_perso){
+function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, defense_perso){
 	//degats des boss
 	var degats_boss_perso_un = aleatoire(20,30);
 	var degats_boss_perso_deux = aleatoire(20,30);
 	var degats_boss_perso_trois = aleatoire(20,30);
 	//perso choisi par les boss
-	var listePerso = [pv_perso_un,pv_perso_deux,pv_perso_trois,pv_perso_quatre];
+	var listePerso = [perso_un, perso_deux, perso_trois, perso_quatre];
 	var perso_choisi_un = listePerso[aleatoire(0,3)]
 	var perso_choisi_deux = listePerso[aleatoire(0,3)]
 	var perso_choisi_trois = listePerso[aleatoire(0,3)]
@@ -269,74 +269,76 @@ function tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, b
 	console.log("debat du boss 1 = " + degats_boss_perso_un)
 	console.log("debat du boss 2 = " + degats_boss_perso_trois)
 	console.log("debat du boss 3 = " + degats_boss_perso_deux)
+	console.log(listePerso)
+	console.log(listePerso[aleatoire(0,3)])
 
-	if (perso_choisi_un == pv_perso_un){
+	if (perso_choisi_un == perso_un){
 		if (defense_perso[0] == true){
 			pv_perso_un = pv_perso_un - (degats_boss_perso_un * 1/2);
 		} else {
 			pv_perso_un = pv_perso_un - degats_boss_perso_un;
 		}
-	} if (perso_choisi_un == pv_perso_deux){
+	} if (perso_choisi_un == perso_deux){
 		if (defense_perso[1] == true){
 			pv_perso_deux = pv_perso_deux - (degats_boss_perso_un * 1/2);
 		} else {
 			pv_perso_deux = pv_perso_deux - degats_boss_perso_un;
 		}
-	} if (perso_choisi_un == pv_perso_trois){
+	} if (perso_choisi_un == perso_trois){
 		if (defense_perso[2] == true){
 			pv_perso_trois = pv_perso_trois - (degats_boss_perso_un * 1/2);
 		} else {
 			pv_perso_trois = pv_perso_trois - degats_boss_perso_un;
 		}
-	} if (perso_choisi_un == pv_perso_quatre){
+	} if (perso_choisi_un == perso_quatre){
 		if (defense_perso[3] == true){
 			pv_perso_quatre = pv_perso_quatre - (degats_boss_perso_un * 1/2);
 		} else {
 			pv_perso_quatre = pv_perso_quatre - degats_boss_perso_un;
 		}
-	} if (perso_choisi_deux == pv_perso_un){
+	} if (perso_choisi_deux == perso_un){
 		if (defense_perso[0] == true){
 			pv_perso_un = pv_perso_un - (degats_boss_perso_deux * 1/2);
 		} else {
 			pv_perso_un = pv_perso_un - degats_boss_perso_deux;
 		}
-	} if (perso_choisi_deux == pv_perso_deux){
+	} if (perso_choisi_deux == perso_deux){
 		if (defense_perso[1] == true){
 			pv_perso_deux = pv_perso_deux - (degats_boss_perso_deux * 1/2);
 		} else {
 			pv_perso_deux = pv_perso_deux - degats_boss_perso_deux;
 		}
-	} if (perso_choisi_deux == pv_perso_trois){
+	} if (perso_choisi_deux == perso_trois){
 		if (defense_perso[2] == true){
 			pv_perso_trois = pv_perso_trois - (degats_boss_perso_deux * 1/2);
 		} else {
 			pv_perso_trois = pv_perso_trois - degats_boss_perso_deux;
 		}
-	} if (perso_choisi_deux == pv_perso_quatre){
+	} if (perso_choisi_deux == perso_quatre){
 		if (defense_perso[3] == true){
 			pv_perso_quatre = pv_perso_quatre - (degats_boss_perso_deux * 1/2);
 		} else {
 			pv_perso_quatre = pv_perso_quatre - degats_boss_perso_deux;
 		}
-	} if (perso_choisi_trois == pv_perso_un){
+	} if (perso_choisi_trois == perso_un){
 		if (defense_perso[0] == true){
 			pv_perso_un = pv_perso_un - (degats_boss_perso_trois * 1/2) ;
 		} else {
 			pv_perso_un = pv_perso_un - degats_boss_perso_trois;
 		}
-	} if (perso_choisi_trois == pv_perso_deux){
+	} if (perso_choisi_trois == perso_deux){
 		if (defense_perso[1] == true){
 			pv_perso_deux = pv_perso_deux - (degats_boss_perso_trois * 1/2) ;
 		} else {
 			pv_perso_deux = pv_perso_deux - degats_boss_perso_trois;
 		}
-	} if (perso_choisi_trois == pv_perso_trois){
+	} if (perso_choisi_trois == perso_trois){
 		if (defense_perso[2] == true){
 			pv_perso_trois = pv_perso_trois - (degats_boss_perso_trois * 1/2);
 		} else {
 			pv_perso_trois = pv_perso_trois - degats_boss_perso_trois;
 		}
-	} if (perso_choisi_trois == pv_perso_quatre){
+	} if (perso_choisi_trois == perso_quatre){
 		if (defense_perso[3] == true){
 			pv_perso_quatre = pv_perso_quatre - (degats_boss_perso_trois * 1/2);
 		} else {
@@ -354,6 +356,8 @@ function tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, b
 	document.getElementById("pv_perso_trois").innerHTML = pv_perso_trois;
 	document.getElementById("pv_perso_quatre").innerHTML = pv_perso_quatre;
 
+	console.log(listePerso)
+	console.log(listePerso[aleatoire(0,3)])
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_un + " vous inflige " + degats_boss_perso_un + " de degats.");}, 1);
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_deux + " vous inflige " + degats_boss_perso_deux + " de degats.");}, 2000);
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_trois + " vous inflige " + degats_boss_perso_trois + " de degats.");}, 4000);
