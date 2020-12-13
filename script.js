@@ -123,8 +123,58 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 					document.getElementById("message_box").innerHTML = ("Vous n'avez pas assez de mana");
 				} else {
 					var listePlusFaiblePV = [pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre];
-					var perso_a_soigner = listePlusFaiblePV.sort(compare);
-					perso_a_soigner
+					listePlusFaiblePV.sort(compare);
+					var perso_a_soigner = listePlusFaiblePV[0];
+					if (perso_a_soigner == pv_perso_un){
+						pv_perso_un = pv_perso_un + 15;
+						mana_perso_un = mana_perso_un - 30
+						document.getElementById("pv_perso_un").innerHTML = pv_perso_un;
+						document.getElementById("mana_perso_un").innerHTML = mana_perso_un;
+					} if (perso_a_soigner == pv_perso_deux){
+						pv_perso_deux = pv_perso_deux + 15;
+						mana_perso_un = mana_perso_un - 30
+						document.getElementById("pv_perso_deux").innerHTML = pv_perso_deux;
+						document.getElementById("mana_perso_un").innerHTML = mana_perso_un;
+					} if (perso_a_soigner == pv_perso_trois){
+						pv_perso_trois = pv_perso_trois + 15;
+						mana_perso_un = mana_perso_un - 30
+						document.getElementById("pv_perso_trois").innerHTML = pv_perso_trois;
+						document.getElementById("mana_perso_un").innerHTML = mana_perso_un;
+					} if (perso_a_soigner == pv_perso_quatre){
+						pv_perso_quatre = pv_perso_quatre + 15;
+						mana_perso_un = mana_perso_un - 30
+						document.getElementById("pv_perso_quatre").innerHTML = pv_perso_quatre;
+						document.getElementById("mana_perso_un").innerHTML = mana_perso_un;
+					}
+
+				} if (tourJoueur == 2){
+				if (mana_perso_deux <= 0){
+					document.getElementById("message_box").innerHTML = ("Vous n'avez pas assez de mana");
+				} else {
+					var listePlusFaiblePV = [pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre];
+					listePlusFaiblePV.sort(compare);
+					var perso_a_soigner = listePlusFaiblePV[0];
+					if (perso_a_soigner == pv_perso_un){
+						pv_perso_un = pv_perso_un + 15;
+						mana_perso_deux = mana_perso_deux - 30
+						document.getElementById("pv_perso_un").innerHTML = pv_perso_un;
+						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
+					} if (perso_a_soigner == pv_perso_deux){
+						pv_perso_deux = pv_perso_deux + 15;
+						mana_perso_deux = mana_perso_deux - 30
+						document.getElementById("pv_perso_deux").innerHTML = pv_perso_deux;
+						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
+					} if (perso_a_soigner == pv_perso_trois){
+						pv_perso_trois = pv_perso_trois + 15;
+						mana_perso_deux = mana_perso_deux - 30
+						document.getElementById("pv_perso_trois").innerHTML = pv_perso_trois;
+						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
+					} if (perso_a_soigner == pv_perso_quatre){
+						pv_perso_quatre = pv_perso_quatre + 15;
+						mana_perso_deux = mana_perso_deux - 30
+						document.getElementById("pv_perso_quatre").innerHTML = pv_perso_quatre;
+						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
+					}
 
 				}
 			}
