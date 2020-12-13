@@ -86,12 +86,8 @@ function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 	var defense_perso = [false, false, false, false]
 	if (bossChoisi[0] == "none"){
 		document.getElementById("message_box").innerHTML = ("Veuillez selectionner un boss.");
-		defense_perso[0] = false;
-		defense_perso[1] = false;
-		defense_perso[2] = false;
-		defense_perso[3] = false;
-	}
-	else {
+		defense_perso = [false, false, false, false];
+	} else {
 		defense_perso = true; //à faire en fonction du joueur
 		if (tourJoueur == 1){
 			document.getElementById("message_box").innerHTML = (perso_un + " se defend.");
@@ -269,7 +265,7 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 	var perso_choisi_un = listePerso[aleatoire(0,3)]
 	var perso_choisi_deux = listePerso[aleatoire(0,3)]
 	var perso_choisi_trois = listePerso[aleatoire(0,3)]
-	
+
 	if (perso_choisi_un == perso_un){
 		if (defense_perso[0] == true){
 			pv_perso_un = pv_perso_un - (degats_boss_perso_un * 1/2);
