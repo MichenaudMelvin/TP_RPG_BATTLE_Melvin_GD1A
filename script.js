@@ -48,6 +48,10 @@ function aleatoire(min, max) {
   return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
+function tri(x, y) {
+    return x - y;
+}
+
 function attaque(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_boss_un, pv_boss_deux, pv_boss_trois, defense_perso){
 	document.getElementById("attaque").innerHTML = ("> Attaque <");
 	setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
@@ -118,14 +122,16 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 		if (tourJoueur == 1 || tourJoueur == 3){
 			document.getElementById("special").innerHTML = ("> Soin <");
 			setTimeout(() => {document.getElementById("special").innerHTML = ("Soin");}, 250);
-			/*if (tourJoueur == 1){
+			if (tourJoueur == 1){
 				if (mana_perso_un <= 0){
 					document.getElementById("message_box").innerHTML = ("Vous n'avez pas assez de mana");
 				} else {
 					var listePlusFaiblePV = [pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre];
+					var perso_a_soigner = listePlusFaiblePV.sort(compare);
+					perso_a_soigner
 
 				}
-			}*/
+			}
 		} if (tourJoueur == 2 || tourJoueur == 4){
 			document.getElementById("special").innerHTML = ("> Poison <");
 			setTimeout(() => {document.getElementById("special").innerHTML = ("Poison");}, 250);
@@ -263,15 +269,7 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 	var perso_choisi_un = listePerso[aleatoire(0,3)]
 	var perso_choisi_deux = listePerso[aleatoire(0,3)]
 	var perso_choisi_trois = listePerso[aleatoire(0,3)]
-	console.log("perso choisi 1 = " + perso_choisi_un)
-	console.log("perso choisi 2 = " + perso_choisi_trois)
-	console.log("perso choisi 3 = " + perso_choisi_trois)
-	console.log("debat du boss 1 = " + degats_boss_perso_un)
-	console.log("debat du boss 2 = " + degats_boss_perso_trois)
-	console.log("debat du boss 3 = " + degats_boss_perso_deux)
-	console.log(listePerso)
-	console.log(listePerso[aleatoire(0,3)])
-
+	
 	if (perso_choisi_un == perso_un){
 		if (defense_perso[0] == true){
 			pv_perso_un = pv_perso_un - (degats_boss_perso_un * 1/2);
@@ -346,18 +344,11 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 		}
 	}
 
-	console.log(pv_perso_un)
-	console.log(pv_perso_deux)
-	console.log(pv_perso_trois)
-	console.log(pv_perso_quatre)
-
 	document.getElementById("pv_perso_un").innerHTML = pv_perso_un;
 	document.getElementById("pv_perso_deux").innerHTML = pv_perso_deux;
 	document.getElementById("pv_perso_trois").innerHTML = pv_perso_trois;
 	document.getElementById("pv_perso_quatre").innerHTML = pv_perso_quatre;
 
-	console.log(listePerso)
-	console.log(listePerso[aleatoire(0,3)])
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_un + " vous inflige " + degats_boss_perso_un + " de degats.");}, 1);
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_deux + " vous inflige " + degats_boss_perso_deux + " de degats.");}, 2000);
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_trois + " vous inflige " + degats_boss_perso_trois + " de degats.");}, 4000);
