@@ -354,7 +354,7 @@ function tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, b
 	document.getElementById("pv_perso_trois").innerHTML = pv_perso_trois;
 	document.getElementById("pv_perso_quatre").innerHTML = pv_perso_quatre;
 
-	document.getElementById("message_box").innerHTML = (boss_un + " vous inflige " + degats_boss_perso_un + " de degats.");
+	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_un + " vous inflige " + degats_boss_perso_un + " de degats.");}, 1);
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_deux + " vous inflige " + degats_boss_perso_deux + " de degats.");}, 2000);
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_trois + " vous inflige " + degats_boss_perso_trois + " de degats.");}, 4000);
 	testLose(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre);
