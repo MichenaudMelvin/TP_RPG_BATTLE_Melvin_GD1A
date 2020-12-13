@@ -147,7 +147,8 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 						document.getElementById("mana_perso_un").innerHTML = mana_perso_un;
 					}
 
-				} 
+				}
+			}
 			if (tourJoueur == 3){
 				if (mana_perso_deux <= 0){
 					document.getElementById("message_box").innerHTML = ("Vous n'avez pas assez de mana");
