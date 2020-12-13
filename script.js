@@ -246,7 +246,7 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 	//Tour des boss
 	} if (tourJoueur == 5){
 		console.log("tour du boss")
-		tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, defense_perso);
+		tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, defense_perso);
 		tourJoueur = 1
 		tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, defense_perso)
 		console.log("tour joueur = " + tourJoueur)
