@@ -108,7 +108,7 @@ function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 	return (defense_perso);
 }
 
-function special(bossChoisi, tourJoueur){
+function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_perso_trois, mana_perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre){
 	document.getElementById("special").innerHTML = ("> Special <");
 	setTimeout(() => {document.getElementById("special").innerHTML = ("Special");}, 250);
 	if (bossChoisi[0] == "none"){
@@ -118,6 +118,7 @@ function special(bossChoisi, tourJoueur){
 		if (tourJoueur == 1 || tourJoueur == 3){
 			document.getElementById("special").innerHTML = ("> Soin <");
 			setTimeout(() => {document.getElementById("special").innerHTML = ("Soin");}, 250);
+
 		} if (tourJoueur == 2 || tourJoueur == 4){
 			document.getElementById("special").innerHTML = ("> Poison <");
 			setTimeout(() => {document.getElementById("special").innerHTML = ("Poison");}, 250);
