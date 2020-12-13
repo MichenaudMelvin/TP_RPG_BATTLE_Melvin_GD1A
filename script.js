@@ -263,7 +263,13 @@ function tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, b
 	var perso_choisi_un = listePerso[aleatoire(0,3)]
 	var perso_choisi_deux = listePerso[aleatoire(0,3)]
 	var perso_choisi_trois = listePerso[aleatoire(0,3)]
-	
+	console.log("perso choisi 1 = " + perso_choisi_un)
+	console.log("perso choisi 2 = " + perso_choisi_trois)
+	console.log("perso choisi 3 = " + perso_choisi_trois)
+	console.log("debat du boss 1 = " + degats_boss_perso_un)
+	console.log("debat du boss 2 = " + degats_boss_perso_trois)
+	console.log("debat du boss 3 = " + degats_boss_perso_deux)
+
 	if (perso_choisi_un == pv_perso_un){
 		if (defense_perso[0] == true){
 			pv_perso_un = pv_perso_un - (degats_boss_perso_un * 1/2);
@@ -337,6 +343,11 @@ function tourBoss(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, b
 			pv_perso_quatre = pv_perso_quatre - degats_boss_perso_trois;
 		}
 	}
+
+	console.log(pv_perso_un)
+	console.log(pv_perso_deux)
+	console.log(pv_perso_trois)
+	console.log(pv_perso_quatre)
 
 	document.getElementById("pv_perso_un").innerHTML = pv_perso_un;
 	document.getElementById("pv_perso_deux").innerHTML = pv_perso_deux;
