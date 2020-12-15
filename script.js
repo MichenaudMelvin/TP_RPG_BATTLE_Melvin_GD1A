@@ -83,12 +83,11 @@ function attaque(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, defense_perso){
 	document.getElementById("defense").innerHTML = ("> Defense <");
 	setTimeout(() => {document.getElementById("defense").innerHTML = ("Defense");}, 250);
-	var defense_perso = [false, false, false, false]
+	//defense_perso à réinitialiser à chaque tour
 	if (bossChoisi[0] == "none"){
 		document.getElementById("message_box").innerHTML = ("Veuillez selectionner un boss.");
 		defense_perso = [false, false, false, false];
 	} else {
-		defense_perso = true; //à faire en fonction du joueur
 		if (tourJoueur == 1){
 			document.getElementById("message_box").innerHTML = (perso_un + " se defend.");
 			defense_perso[0] = true;
