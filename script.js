@@ -91,16 +91,16 @@ function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 		defense_perso = true; //à faire en fonction du joueur
 		if (tourJoueur == 1){
 			document.getElementById("message_box").innerHTML = (perso_un + " se defend.");
-			defense_perso[0] = true
+			defense_perso[0] = true;
 		} if (tourJoueur == 2){
 			document.getElementById("message_box").innerHTML = (perso_deux + " se defend.");
-			defense_perso[1] = true
+			defense_perso[1] = true;
 		} if (tourJoueur == 3){
 			document.getElementById("message_box").innerHTML = (perso_trois + " se defend.");
-			defense_perso[2] = true
+			defense_perso[2] = true;
 		} if (tourJoueur == 4){
 			document.getElementById("message_box").innerHTML = (perso_quatre + " se defend.");
-			defense_perso[3] = true
+			defense_perso[3] = true;
 		}
 		tourJoueur = tourJoueur + 1;
 		setTimeout(() => {tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, defense_perso);}, 2500);
