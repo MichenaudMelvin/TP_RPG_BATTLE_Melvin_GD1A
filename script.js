@@ -61,7 +61,7 @@ function attaque(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 	else {
 		var nombre_attaque = aleatoire(20,30);
 		bossChoisi[1] = bossChoisi[1] - nombre_attaque;
-		document.getElementById("message_box").innerHTML = ("Vous infligez " + nombre_attaque + " de degats a " + bossChoisi[0]);
+		document.getElementById("message_box").innerHTML = ("Vous infligez " + nombre_attaque + " de degats a " + bossChoisi[0].);
 		if (bossChoisi[0] == boss_un){
 			document.getElementById("pv_boss_un").innerHTML = (bossChoisi[1]);
 			pv_boss_un = bossChoisi[1]
