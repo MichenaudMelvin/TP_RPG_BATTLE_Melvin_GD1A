@@ -181,6 +181,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 			}
 		} if (tourJoueur == 2 || tourJoueur == 4){
 			document.getElementById("special").innerHTML = ("> Poison <");
+			bossChoisi =
 			setTimeout(() => {document.getElementById("special").innerHTML = ("Poison");}, 250);
 		}
 	}
