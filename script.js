@@ -43,7 +43,8 @@ var bossChoisi = ["none", "none"];
 
 var defense_perso = [false, false, false, false];
 var listeDef = [1, false];
-tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, defense_perso);
+console.log(listeDef)
+tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);
 
 
 //all functions
@@ -231,7 +232,8 @@ function bossTrois(boss_trois){
 	
 function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef){
 	tourJoueur = listeDef[0];
-	console.log("tourJoueur : ", tourJoueur)
+	console.log(listeDef);
+	console.log("tourJoueur : ", tourJoueur);
 	//Tour du joueur 1
 	if (tourJoueur == 1){
 		if (pv_perso_un <= 0) {
