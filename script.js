@@ -102,9 +102,10 @@ function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 			defense_perso[3] = true;
 		}
 		tourJoueur = tourJoueur + 1;
+		var listeDef = [tourJoueur, defense_perso];
 		setTimeout(() => {tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, defense_perso);}, 2500);
 	}
-	return (defense_perso);
+	return listeDef;
 }
 
 function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_perso_trois, mana_perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre){
@@ -223,7 +224,8 @@ function bossTrois(boss_trois){
 	return bossChoisi;
 }
 	
-function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, defense_perso){
+function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef){
+	tourJoueur = listeDef[0];
 	//Tour du joueur 1
 	if (tourJoueur == 1){
 		if (pv_perso_un <= 0) {
@@ -299,14 +301,15 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 	//Tour des boss
 	} if (tourJoueur == 5){
 		console.log("tour du boss")
-		tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, defense_perso);
+		tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, listeDef);
 		tourJoueur = 1
-		tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, defense_perso)
+		tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef)
 		console.log("tour joueur = " + tourJoueur)
 	}
 }
 
-function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, defense_perso){
+function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, listeDef){
+	defense_perso = listeDef[1];
 	//degats des boss
 	var degats_boss_perso_un = aleatoire(20,30);
 	var degats_boss_perso_deux = aleatoire(20,30);
