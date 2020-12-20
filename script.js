@@ -86,7 +86,7 @@ function attaque(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 	return (tourJoueur)
 }
 
-function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, defense_perso){
+function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, defense_perso, listeDef){
 	document.getElementById("defense").innerHTML = ("> Defense <");
 	setTimeout(() => {document.getElementById("defense").innerHTML = ("Defense");}, 250);
 	//defense_perso à réinitialiser à chaque tour
@@ -108,8 +108,10 @@ function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 			defense_perso[3] = true;
 		}
 		tourJoueur = tourJoueur + 1;
-		var listeDef = [tourJoueur, defense_perso];
+		listeDef = [tourJoueur, defense_perso];
+		console.log(tourJoueur)
 		setTimeout(() => {tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);}, 2500);
+		console.log(listeDef[0])
 	}
 	return listeDef;
 }
