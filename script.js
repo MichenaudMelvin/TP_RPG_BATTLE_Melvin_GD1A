@@ -27,6 +27,11 @@ var image_boss_un = document.getElementById("image_boss_un");
 var image_boss_deux = document.getElementById("image_boss_deux");
 var image_boss_trois = document.getElementById("image_boss_trois");
 
+//Status des boss
+var boss_un_mort = false;
+var boss_deux_mort = false;
+var boss_trois_mort = false;
+
 //autres variables
 var choix = "";
 let i = "";
@@ -34,12 +39,12 @@ var lose = false;
 var win = false;
 var tourJoueur = 1;
 var bossChoisi = ["none", "none"];
-var defense_perso = [false, false, false, false];
-tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, defense_perso);
-var boss_un_mort = false;
-var boss_deux_mort = false;
-var boss_trois_mort = false;
 //bossChoisi[0] = nom du boss, bossChoisi[1] = pv du boss
+
+var defense_perso = [false, false, false, false];
+var listeDef = [1, false];
+tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, defense_perso);
+
 
 //all functions
 function aleatoire(min, max) {
@@ -75,7 +80,7 @@ function attaque(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 		testBossMort(pv_boss_un, pv_boss_deux, pv_boss_trois, boss_un_mort, boss_deux_mort, boss_trois_mort);
 		tourJoueur = tourJoueur + 1
 
-		setTimeout(() => {tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, defense_perso);}, 2500);
+		setTimeout(() => {tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);}, 2500);
 	}
 	return (tourJoueur)
 }
@@ -103,7 +108,7 @@ function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 		}
 		tourJoueur = tourJoueur + 1;
 		var listeDef = [tourJoueur, defense_perso];
-		setTimeout(() => {tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, defense_perso);}, 2500);
+		setTimeout(() => {tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);}, 2500);
 	}
 	return listeDef;
 }
@@ -226,6 +231,7 @@ function bossTrois(boss_trois){
 	
 function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef){
 	tourJoueur = listeDef[0];
+	console.log("tourJoueur : ", tourJoueur)
 	//Tour du joueur 1
 	if (tourJoueur == 1){
 		if (pv_perso_un <= 0) {
