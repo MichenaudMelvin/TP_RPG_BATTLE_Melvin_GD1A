@@ -132,6 +132,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 					document.getElementById("message_box").innerHTML = ("Vous n'avez pas assez de mana");
 				} else {
 					var listePlusFaiblePV = [pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre];
+					//si tous les perso on le meme nombre de PV --> tous les perso sont soignés, également beaucoup plus de mana consommé
 					listePlusFaiblePV.sort(tri);
 					var perso_a_soigner = listePlusFaiblePV[0];
 					if (perso_a_soigner == pv_perso_un){
