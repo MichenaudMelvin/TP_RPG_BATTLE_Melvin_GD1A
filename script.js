@@ -71,20 +71,20 @@ function attaque(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 		document.getElementById("message_box").innerHTML = ("Vous infligez " + nombre_attaque + " de degats a " + bossChoisi[0] + ".");
 		if (bossChoisi[0] == boss_un){
 			document.getElementById("pv_boss_un").innerHTML = (bossChoisi[1]);
-			pv_boss_un = bossChoisi[1]
+			pv_boss_un = bossChoisi[1];
 		} if (bossChoisi[0] == boss_deux){
 			document.getElementById("pv_boss_deux").innerHTML = (bossChoisi[1]);
-			pv_boss_deux = bossChoisi[1]
+			pv_boss_deux = bossChoisi[1];
 		} if (bossChoisi[0] == boss_trois){
 			document.getElementById("pv_boss_trois").innerHTML = (bossChoisi[1]);
-			pv_boss_trois = bossChoisi[1]
+			pv_boss_trois = bossChoisi[1];
 		}
 		testBossMort(pv_boss_un, pv_boss_deux, pv_boss_trois, boss_un_mort, boss_deux_mort, boss_trois_mort);
-		tourJoueur = tourJoueur + 1
+		listeDef[0] = tourJoueur + 1;
 
 		setTimeout(() => {tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);}, 2500);
 	}
-	return (tourJoueur)
+	return (listeDef)
 }
 
 function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, defense_perso, listeDef){
@@ -116,7 +116,8 @@ function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 	return listeDef;
 }
 
-function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_perso_trois, mana_perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre){
+function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_perso_trois, mana_perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef){
+	tourJoueur = listeDef[0];
 	document.getElementById("special").innerHTML = ("> Special <");
 	setTimeout(() => {document.getElementById("special").innerHTML = ("Special");}, 250);
 	if (bossChoisi[0] == "none"){
@@ -135,24 +136,28 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 					var perso_a_soigner = listePlusFaiblePV[0];
 					if (perso_a_soigner == pv_perso_un){
 						pv_perso_un = pv_perso_un + 15;
-						mana_perso_un = mana_perso_un - 30
+						mana_perso_un = mana_perso_un - 30;
 						document.getElementById("pv_perso_un").innerHTML = pv_perso_un;
 						document.getElementById("mana_perso_un").innerHTML = mana_perso_un;
+						listeDef[0] = tourJoueur + 1;
 					} if (perso_a_soigner == pv_perso_deux){
 						pv_perso_deux = pv_perso_deux + 15;
-						mana_perso_un = mana_perso_un - 30
+						mana_perso_un = mana_perso_un - 30;
 						document.getElementById("pv_perso_deux").innerHTML = pv_perso_deux;
 						document.getElementById("mana_perso_un").innerHTML = mana_perso_un;
+						listeDef[0] = tourJoueur + 1;
 					} if (perso_a_soigner == pv_perso_trois){
 						pv_perso_trois = pv_perso_trois + 15;
-						mana_perso_un = mana_perso_un - 30
+						mana_perso_un = mana_perso_un - 30;
 						document.getElementById("pv_perso_trois").innerHTML = pv_perso_trois;
 						document.getElementById("mana_perso_un").innerHTML = mana_perso_un;
+						listeDef[0] = tourJoueur + 1;
 					} if (perso_a_soigner == pv_perso_quatre){
 						pv_perso_quatre = pv_perso_quatre + 15;
-						mana_perso_un = mana_perso_un - 30
+						mana_perso_un = mana_perso_un - 30;
 						document.getElementById("pv_perso_quatre").innerHTML = pv_perso_quatre;
 						document.getElementById("mana_perso_un").innerHTML = mana_perso_un;
+						listeDef[0] = tourJoueur + 1;
 					}
 
 				}
@@ -166,24 +171,28 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 					var perso_a_soigner = listePlusFaiblePV[0];
 					if (perso_a_soigner == pv_perso_un){
 						pv_perso_un = pv_perso_un + 15;
-						mana_perso_deux = mana_perso_deux - 30
+						mana_perso_deux = mana_perso_deux - 30;
 						document.getElementById("pv_perso_un").innerHTML = pv_perso_un;
 						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
+						listeDef[0] = tourJoueur + 1;
 					} if (perso_a_soigner == pv_perso_deux){
 						pv_perso_deux = pv_perso_deux + 15;
-						mana_perso_deux = mana_perso_deux - 30
+						mana_perso_deux = mana_perso_deux - 30;
 						document.getElementById("pv_perso_deux").innerHTML = pv_perso_deux;
 						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
+						listeDef[0] = tourJoueur + 1;
 					} if (perso_a_soigner == pv_perso_trois){
 						pv_perso_trois = pv_perso_trois + 15;
-						mana_perso_deux = mana_perso_deux - 30
+						mana_perso_deux = mana_perso_deux - 30;
 						document.getElementById("pv_perso_trois").innerHTML = pv_perso_trois;
 						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
+						listeDef[0] = tourJoueur + 1;
 					} if (perso_a_soigner == pv_perso_quatre){
 						pv_perso_quatre = pv_perso_quatre + 15;
-						mana_perso_deux = mana_perso_deux - 30
+						mana_perso_deux = mana_perso_deux - 30;
 						document.getElementById("pv_perso_quatre").innerHTML = pv_perso_quatre;
 						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
+						listeDef[0] = tourJoueur + 1;
 					}
 
 				}
@@ -193,7 +202,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 			setTimeout(() => {document.getElementById("special").innerHTML = ("Poison");}, 250);
 		}
 	}
-	return (defense_perso);
+	return (listeDef);
 }
 
 function bossUn(boss_un){
