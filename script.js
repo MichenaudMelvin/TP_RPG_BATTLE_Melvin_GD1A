@@ -59,7 +59,7 @@ function tri(x, y) {
 }
 
 function attaque(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_boss_un, pv_boss_deux, pv_boss_trois, defense_perso, listeDef){
-	tourJoueur = listeDef[0;]
+	tourJoueur = listeDef[0];
 	document.getElementById("attaque").innerHTML = ("> Attaque <");
 	setTimeout(() => {document.getElementById("attaque").innerHTML = ("Attaque");}, 250);
 	if (bossChoisi[0] == "none"){
