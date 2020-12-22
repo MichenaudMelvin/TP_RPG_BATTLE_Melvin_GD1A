@@ -527,17 +527,14 @@ function testBossMort(pv_boss_un, pv_boss_deux, pv_boss_trois, boss_un_mort, bos
 	if (pv_boss_un <= 0){
 		document.getElementById("pv_boss_un").innerHTML = (0);
 		image_boss_un.setAttribute("src", "img/boss_un_mort.png");
-		boss_un_mort = true;
 	} if (pv_boss_deux <= 0){
 		document.getElementById("pv_boss_deux").innerHTML = (0);
 		image_boss_deux.setAttribute("src", "img/boss_deux_mort.png");
-		boss_deux_mort = true;
 	} if (pv_boss_trois <= 0){
 		document.getElementById("pv_boss_trois").innerHTML = (0);
 		image_boss_trois.setAttribute("src", "img/boss_trois_mort.png");
-		boss_trois_mort = true;
-	} if (boss_un_mort == true && boss_deux_mort == true && boss_trois_mort == true){
+	} if (document.getElementById("pv_boss_un").innerHTML == (0) && document.getElementById("pv_boss_deux").innerHTML == (0) && document.getElementById("pv_boss_trois").innerHTML == (0)){
 		document.getElementById("message_box").innerHTML = ("Vous avez gagne !");
-		alert("Vous avez gagné !") //ne marche pas
+		alert("Vous avez gagné !")
 	}
 }
