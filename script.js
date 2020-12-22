@@ -512,14 +512,14 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_un + " vous inflige " + degats_boss_perso_un + " de degats.");}, 1);
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_deux + " vous inflige " + degats_boss_perso_deux + " de degats.");}, 2000);
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_trois + " vous inflige " + degats_boss_perso_trois + " de degats.");}, 4000);
-	testLose(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre);
+	testLose();
 	//return (defense_perso)
 }
 
-function testLose(pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre){
-	if (pv_perso_un == 0 && pv_perso_deux == 0 && pv_perso_trois == 0 && pv_perso_quatre == 0){
+function testLose(){
+	if (document.getElementById("pv_perso_un").innerHTML == (0) && document.getElementById("pv_perso_deux").innerHTML == (0) && document.getElementById("pv_perso_trois").innerHTML == (0) && document.getElementById("pv_perso_quatre").innerHTML == (0)){
 		document.getElementById("message_box").innerHTML = ("Vous avez perdu !");
-		alert("Vous avez perdu !") //ne marche pas
+		alert("Vous avez perdu !")
 	}
 }
 
