@@ -537,13 +537,11 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 	document.getElementById("pv_perso_deux").innerHTML = pv_perso_deux;
 	document.getElementById("pv_perso_trois").innerHTML = pv_perso_trois;
 	document.getElementById("pv_perso_quatre").innerHTML = pv_perso_quatre;
-	//defense_perso = [false, false, false, false];
 
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_un + " vous inflige " + degats_boss_perso_un + " de degats.");}, 1);
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_deux + " vous inflige " + degats_boss_perso_deux + " de degats.");}, 2000);
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_trois + " vous inflige " + degats_boss_perso_trois + " de degats.");}, 4000);
 	testLose();
-	//return (defense_perso)
 }
 
 function testLose(){
