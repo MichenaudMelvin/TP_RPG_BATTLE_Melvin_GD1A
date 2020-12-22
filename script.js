@@ -226,6 +226,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
 						document.getElementById("pv_boss_un").innerHTML = pv_boss_un;
 						document.getElementById("message_box").innerHTML = (perso_deux + " drainage " + drainage + "PV a " + bossChoisi[0]);
+						listeDef[0] = tourJoueur + 1;
 					} if (bossChoisi[0] == boss_deux){
 						bossChoisi[1] = bossChoisi[1] - drainage;
 						pv_boss_deux = bossChoisi[1];
@@ -235,6 +236,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
 						document.getElementById("pv_boss_deux").innerHTML = pv_boss_deux;
 						document.getElementById("message_box").innerHTML = (perso_deux + " drainage " + drainage + "PV a " + bossChoisi[0]);
+						listeDef[0] = tourJoueur + 1;
 					} if (bossChoisi[0] == boss_trois){
 						bossChoisi[1] = bossChoisi[1] - drainage;
 						pv_boss_trois = bossChoisi[1];
@@ -244,6 +246,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
 						document.getElementById("pv_boss_trois").innerHTML = pv_boss_trois;
 						document.getElementById("message_box").innerHTML = (perso_deux + " drainage " + drainage + "PV a " + bossChoisi[0]);
+						listeDef[0] = tourJoueur + 1;
 					}
 				}
 			} if (tourJoueur == 4){
@@ -259,6 +262,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 						document.getElementById("mana_perso_quatre").innerHTML = mana_perso_quatre;
 						document.getElementById("pv_boss_un").innerHTML = pv_boss_un;
 						document.getElementById("message_box").innerHTML = (perso_quatre + " drainage " + drainage + "PV a " + bossChoisi[0]);
+						listeDef[0] = tourJoueur + 1;
 					} if (bossChoisi[0] == boss_deux){
 						bossChoisi[1] = bossChoisi[1] - drainage;
 						pv_boss_deux = bossChoisi[1];
@@ -268,6 +272,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 						document.getElementById("mana_perso_quatre").innerHTML = mana_perso_quatre;
 						document.getElementById("pv_boss_deux").innerHTML = pv_boss_deux;
 						document.getElementById("message_box").innerHTML = (perso_quatre + " drainage " + drainage + "PV a " + bossChoisi[0]);
+						listeDef[0] = tourJoueur + 1;
 					} if (bossChoisi[0] == boss_trois){
 						bossChoisi[1] = bossChoisi[1] - drainage;
 						pv_boss_trois = bossChoisi[1];
@@ -277,11 +282,12 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 						document.getElementById("mana_perso_quatre").innerHTML = mana_perso_quatre;
 						document.getElementById("pv_boss_trois").innerHTML = pv_boss_trois;
 						document.getElementById("message_box").innerHTML = (perso_quatre + " drainage " + drainage + "PV a " + bossChoisi[0]);
+						listeDef[0] = tourJoueur + 1;
 					}
 				}
 			}
 		}
-				
+		setTimeout(() => {tourjoueur = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);}, 2500);	
 	}
 	return (listeDef);
 }
@@ -400,7 +406,6 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 		}
 	//Tour des boss
 	} if (tourJoueur == 5){
-		console.log("tour du boss")
 		tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, listeDef);
 		tourJoueur = 1;
 		console.log("tour joueur = " + tourJoueur)
