@@ -42,9 +42,8 @@ var bossChoisi = ["none", "none"];
 //bossChoisi[0] = nom du boss, bossChoisi[1] = pv du boss
 
 var defense_perso = [false, false, false, false];
-var listeDef = [1, false];
-console.log(listeDef)
-resetTour = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef, resetTour);
+var listeDef = [1, false, false];
+listeDef = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);
 
 
 //all functions
@@ -82,7 +81,7 @@ function attaque(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 		testBossMort(pv_boss_un, pv_boss_deux, pv_boss_trois, boss_un_mort, boss_deux_mort, boss_trois_mort);
 		listeDef[0] = tourJoueur + 1;
 
-		setTimeout(() => {resetTour = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef, resetTour);}, 2500);
+		setTimeout(() => {listeDef = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);}, 2500);
 	}
 	return (listeDef)
 }
@@ -110,8 +109,8 @@ function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 			defense_perso[3] = true;
 		}
 		tourJoueur = tourJoueur + 1;
-		listeDef = [tourJoueur, defense_perso];
-		setTimeout(() => {resetTour = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef, resetTour);}, 2500);
+		listeDef = [tourJoueur, defense_perso, false];
+		setTimeout(() => {listeDef = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);}, 2500);
 	}
 	return (listeDef);
 }
@@ -287,7 +286,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 				}
 			}
 		}
-		setTimeout(() => {resetTour = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef, resetTour);}, 2500);	
+		setTimeout(() => {listeDef = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);}, 2500);	
 	}
 	return (listeDef);
 }
@@ -328,11 +327,11 @@ function bossTrois(boss_trois){
 	return bossChoisi;
 }
 	
-function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef, resetTour){
+function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef){
 	tourJoueur = listeDef[0];
 	console.log(listeDef);
 	console.log("tourJoueur : ", tourJoueur);
-	if (resetTour = false){
+	if (listeDef[2] == false){
 		//Tour du joueur 1
 		if (tourJoueur == 1){
 			if (pv_perso_un <= 0) {
@@ -407,13 +406,14 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 			}
 		//Tour des boss
 		} if (tourJoueur == 5){
-			resetTour = tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, listeDef, tourJoueur);
+			listeDef = tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, listeDef, tourJoueur);
 		}
 	} else {
-		tourJoueur = 1;
-		resetTour = false
+		listeDef[0] = 1;
+		listeDef[2] = false
+		listeDef = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);
 	}
-	return(resetTour)
+	return(listeDef)
 }
 
 function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, listeDef, tourJoueur){
@@ -543,8 +543,8 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_deux + " vous inflige " + degats_boss_perso_deux + " de degats.");}, 2000);
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_trois + " vous inflige " + degats_boss_perso_trois + " de degats.");}, 4000);
 	testLose();
-	var resetTour = true;
-	setTimeout(() => {resetTour = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef, resetTour);}, 2500);
+	listeDef[2] = true;
+	return (listeDef)
 }
 
 function testLose(){
