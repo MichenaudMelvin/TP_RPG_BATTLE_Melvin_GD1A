@@ -427,7 +427,13 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 	var perso_choisi_deux = listePerso[aleatoire(0,3)]
 	var perso_choisi_trois = listePerso[aleatoire(0,3)]
 
-	//console.log(defense_perso);
+	while (perso_choisi_un == 0){
+		perso_choisi_un = listePerso[aleatoire(0,3)]
+	} while (perso_choisi_deux == 0){
+		perso_choisi_deux = listePerso[aleatoire(0,3)]
+	} while (perso_choisi_trois == 0){
+		perso_choisi_trois = listePerso[aleatoire(0,3)]
+	}
 
 	if (perso_choisi_un == perso_un){
 		if (defense_perso[0] == true){
