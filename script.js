@@ -406,6 +406,7 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 			}
 		//Tour des boss
 		} if (tourJoueur == 5){
+			listeDef[2] = true;
 			listeDef = tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, listeDef, tourJoueur);
 		}
 	} else {
@@ -543,7 +544,6 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_deux + " vous inflige " + degats_boss_perso_deux + " de degats.");}, 2000);
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_trois + " vous inflige " + degats_boss_perso_trois + " de degats.");}, 4000);
 	testLose();
-	listeDef[2] = true;
 	setTimeout(() => {listeDef = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);}, 2500);
 }
 
