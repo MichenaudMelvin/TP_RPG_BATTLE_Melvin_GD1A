@@ -165,47 +165,45 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 				}
 			}
 			if (tourJoueur == 3){
-				if (mana_perso_deux <= 0){
+				if (mana_perso_trois <= 0){
 					document.getElementById("message_box").innerHTML = ("Vous n'avez pas assez de mana");
 				} else {
 					var listePlusFaiblePV = [pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre];
-					listePlusFaiblePV.sort(compare);
+					listePlusFaiblePV.sort(tri);
 					var perso_a_soigner = listePlusFaiblePV[0];
 					if (perso_a_soigner == pv_perso_un){
 						pv_perso_un = pv_perso_un + 15;
-						mana_perso_deux = mana_perso_deux - 30;
+						mana_perso_trois = mana_perso_trois - 30;
 						document.getElementById("pv_perso_un").innerHTML = pv_perso_un;
-						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
+						document.getElementById("mana_perso_trois").innerHTML = mana_perso_trois;
 						listeDef[0] = tourJoueur + 1;
 					} if (perso_a_soigner == pv_perso_deux){
 						pv_perso_deux = pv_perso_deux + 15;
-						mana_perso_deux = mana_perso_deux - 30;
+						mana_perso_trois = mana_perso_trois - 30;
 						document.getElementById("pv_perso_deux").innerHTML = pv_perso_deux;
-						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
+						document.getElementById("mana_perso_trois").innerHTML = mana_perso_trois;
 						listeDef[0] = tourJoueur + 1;
 					} if (perso_a_soigner == pv_perso_trois){
 						pv_perso_trois = pv_perso_trois + 15;
-						mana_perso_deux = mana_perso_deux - 30;
+						mana_perso_trois = mana_perso_trois - 30;
 						document.getElementById("pv_perso_trois").innerHTML = pv_perso_trois;
-						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
+						document.getElementById("mana_perso_trois").innerHTML = mana_perso_trois;
 						listeDef[0] = tourJoueur + 1;
 					} if (perso_a_soigner == pv_perso_quatre){
 						pv_perso_quatre = pv_perso_quatre + 15;
-						mana_perso_deux = mana_perso_deux - 30;
+						mana_perso_trois = mana_perso_trois - 30;
 						document.getElementById("pv_perso_quatre").innerHTML = pv_perso_quatre;
-						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
+						document.getElementById("mana_perso_trois").innerHTML = mana_perso_trois;
 						listeDef[0] = tourJoueur + 1;
 					}
 
 				}
-			}
+			} 	
 		} if (tourJoueur == 2 || tourJoueur == 4){
 			document.getElementById("special").innerHTML = ("> Drainage <");
 			setTimeout(() => {document.getElementById("special").innerHTML = ("Drainage");}, 250);
-			if (tourJoueur == 1){
-				if (mana_perso_un <= 0){
-					document.getElementById("message_box").innerHTML = ("Vous n'avez pas assez de mana");
 		}
+				
 	}
 	return (listeDef);
 }
