@@ -329,8 +329,6 @@ function bossTrois(boss_trois){
 	
 function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef){
 	tourJoueur = listeDef[0];
-	console.log(listeDef);
-	console.log("tourJoueur : ", tourJoueur);
 	if (listeDef[2] == false){
 		//Tour du joueur 1
 		if (tourJoueur == 1){
