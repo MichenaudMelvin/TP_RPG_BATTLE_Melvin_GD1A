@@ -116,7 +116,7 @@ function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 	return listeDef;
 }
 
-function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_perso_trois, mana_perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef, perso_un, perso_deux, perso_trois, perso_quatre){
+function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_perso_trois, mana_perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef, perso_un, perso_deux, perso_trois, perso_quatre, pv_boss_un, pv_boss_deux, pv_perso_trois){
 	tourJoueur = listeDef[0];
 	document.getElementById("special").innerHTML = ("> Special <");
 	setTimeout(() => {document.getElementById("special").innerHTML = ("Special");}, 250);
@@ -132,34 +132,34 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 					document.getElementById("message_box").innerHTML = ("Vous n'avez pas assez de mana");
 				} else {
 					var listePlusFaiblePV = [pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre];
-					//sort de soin : soigne de 15PV le perso ayant les plus faibles PV, 30 mana consommé par sort
+					//sort de soin : soigne de 15PV le perso ayant les plus faibles PV, 20 mana consommé par sort
 					//si tous les perso on le meme nombre de PV --> tous les perso sont soignés, également beaucoup plus de mana consommé
 					listePlusFaiblePV.sort(tri);
 					var perso_a_soigner = listePlusFaiblePV[0];
 					if (perso_a_soigner == pv_perso_un){
 						pv_perso_un = pv_perso_un + 15;
-						mana_perso_un = mana_perso_un - 30;
+						mana_perso_un = mana_perso_un - 20;
 						document.getElementById("pv_perso_un").innerHTML = pv_perso_un;
 						document.getElementById("mana_perso_un").innerHTML = mana_perso_un;
 						document.getElementById("message_box").innerHTML = (perso_un + " soigne " + perso_un);
 						listeDef[0] = tourJoueur + 1;
 					} if (perso_a_soigner == pv_perso_deux){
 						pv_perso_deux = pv_perso_deux + 15;
-						mana_perso_un = mana_perso_un - 30;
+						mana_perso_un = mana_perso_un - 20;
 						document.getElementById("pv_perso_deux").innerHTML = pv_perso_deux;
 						document.getElementById("mana_perso_un").innerHTML = mana_perso_un;
 						document.getElementById("message_box").innerHTML = (perso_un + " soigne " + perso_deux);
 						listeDef[0] = tourJoueur + 1;
 					} if (perso_a_soigner == pv_perso_trois){
 						pv_perso_trois = pv_perso_trois + 15;
-						mana_perso_un = mana_perso_un - 30;
+						mana_perso_un = mana_perso_un - 20;
 						document.getElementById("pv_perso_trois").innerHTML = pv_perso_trois;
 						document.getElementById("mana_perso_un").innerHTML = mana_perso_un;
 						document.getElementById("message_box").innerHTML = (perso_un + " soigne " + perso_trois);
 						listeDef[0] = tourJoueur + 1;
 					} if (perso_a_soigner == pv_perso_quatre){
 						pv_perso_quatre = pv_perso_quatre + 15;
-						mana_perso_un = mana_perso_un - 30;
+						mana_perso_un = mana_perso_un - 20;
 						document.getElementById("pv_perso_quatre").innerHTML = pv_perso_quatre;
 						document.getElementById("mana_perso_un").innerHTML = mana_perso_un;
 						document.getElementById("message_box").innerHTML = (perso_un + " soigne " + perso_quatre);
@@ -177,28 +177,28 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 					var perso_a_soigner = listePlusFaiblePV[0];
 					if (perso_a_soigner == pv_perso_un){
 						pv_perso_un = pv_perso_un + 15;
-						mana_perso_trois = mana_perso_trois - 30;
+						mana_perso_trois = mana_perso_trois - 20;
 						document.getElementById("pv_perso_un").innerHTML = pv_perso_un;
 						document.getElementById("mana_perso_trois").innerHTML = mana_perso_trois;
 						document.getElementById("message_box").innerHTML = (perso_trois + " soigne " + perso_un);
 						listeDef[0] = tourJoueur + 1;
 					} if (perso_a_soigner == pv_perso_deux){
 						pv_perso_deux = pv_perso_deux + 15;
-						mana_perso_trois = mana_perso_trois - 30;
+						mana_perso_trois = mana_perso_trois - 20;
 						document.getElementById("pv_perso_deux").innerHTML = pv_perso_deux;
 						document.getElementById("mana_perso_trois").innerHTML = mana_perso_trois;
 						document.getElementById("message_box").innerHTML = (perso_trois + " soigne " + perso_deux);
 						listeDef[0] = tourJoueur + 1;
 					} if (perso_a_soigner == pv_perso_trois){
 						pv_perso_trois = pv_perso_trois + 15;
-						mana_perso_trois = mana_perso_trois - 30;
+						mana_perso_trois = mana_perso_trois - 20;
 						document.getElementById("pv_perso_trois").innerHTML = pv_perso_trois;
 						document.getElementById("mana_perso_trois").innerHTML = mana_perso_trois;
 						document.getElementById("message_box").innerHTML = (perso_trois + " soigne " + perso_trois);
 						listeDef[0] = tourJoueur + 1;
 					} if (perso_a_soigner == pv_perso_quatre){
 						pv_perso_quatre = pv_perso_quatre + 15;
-						mana_perso_trois = mana_perso_trois - 30;
+						mana_perso_trois = mana_perso_trois - 20;
 						document.getElementById("pv_perso_quatre").innerHTML = pv_perso_quatre;
 						document.getElementById("mana_perso_trois").innerHTML = mana_perso_trois;
 						document.getElementById("message_box").innerHTML = (perso_trois + " soigne " + perso_quatre);
@@ -208,7 +208,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 				}
 			} 	
 		} if (tourJoueur == 2 || tourJoueur == 4){
-			//
+			//draine un nombre de pv aléatoire entre 5 et 25PV du boss sélectionné.
 			document.getElementById("special").innerHTML = ("> Drainage <");
 			setTimeout(() => {document.getElementById("special").innerHTML = ("Drainage");}, 250);
 			var drainage = aleatoire(5,25);
@@ -217,14 +217,67 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 					document.getElementById("message_box").innerHTML = ("Vous n'avez pas assez de mana");
 				} else {
 					if (bossChoisi[0] == boss_un){
+						bossChoisi[1] = bossChoisi[1] - drainage;
 						pv_boss_un = bossChoisi[1];
-						document.getElementById("message_box").innerHTML = ("Vous n'avez pas assez de mana");
+						pv_perso_deux = pv_perso_deux + drainage;
+						mana_perso_deux = mana_perso_deux - 30;
+						document.getElementById("pv_perso_deux").innerHTML = pv_perso_deux;
+						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
+						document.getElementById("pv_boss_un").innerHTML = pv_boss_un;
+						document.getElementById("message_box").innerHTML = (perso_deux + " drainage " + drainage + "PV à " + bossChoisi[0]);
+					} if (bossChoisi[0] == boss_deux){
+						bossChoisi[1] = bossChoisi[1] - drainage;
+						pv_boss_deux = bossChoisi[1];
+						pv_perso_deux = pv_perso_deux + drainage;
+						mana_perso_deux = mana_perso_deux - 30;
+						document.getElementById("pv_perso_deux").innerHTML = pv_perso_deux;
+						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
+						document.getElementById("pv_boss_deux").innerHTML = pv_boss_deux;
+						document.getElementById("message_box").innerHTML = (perso_deux + " drainage " + drainage + "PV à " + bossChoisi[0]);
+					} if (bossChoisi[0] == boss_trois){
+						bossChoisi[1] = bossChoisi[1] - drainage;
+						pv_boss_trois = bossChoisi[1];
+						pv_perso_deux = pv_perso_deux + drainage;
+						mana_perso_deux = mana_perso_deux - 30;
+						document.getElementById("pv_perso_deux").innerHTML = pv_perso_deux;
+						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
+						document.getElementById("pv_boss_trois").innerHTML = pv_boss_trois;
+						document.getElementById("message_box").innerHTML = (perso_deux + " drainage " + drainage + "PV à " + bossChoisi[0]);
 					}
 				}
-				
-				bossChoisi
 			} if (tourJoueur == 4){
-
+				if (mana_perso_quatre <= 0){
+					document.getElementById("message_box").innerHTML = ("Vous n'avez pas assez de mana");
+				} else {
+					if (bossChoisi[0] == boss_un){
+						bossChoisi[1] = bossChoisi[1] - drainage;
+						pv_boss_un = bossChoisi[1];
+						pv_perso_quatre = pv_perso_quatre + drainage;
+						mana_perso_quatre = mana_perso_quatre - 30;
+						document.getElementById("pv_perso_quatre").innerHTML = pv_perso_quatre;
+						document.getElementById("mana_perso_quatre").innerHTML = mana_perso_quatre;
+						document.getElementById("pv_boss_un").innerHTML = pv_boss_un;
+						document.getElementById("message_box").innerHTML = (perso_quatre + " drainage " + drainage + "PV à " + bossChoisi[0]);
+					} if (bossChoisi[0] == boss_deux){
+						bossChoisi[1] = bossChoisi[1] - drainage;
+						pv_boss_deux = bossChoisi[1];
+						pv_perso_quatre = pv_perso_quatre + drainage;
+						mana_perso_quatre = mana_perso_quatre - 30;
+						document.getElementById("pv_perso_quatre").innerHTML = pv_perso_quatre;
+						document.getElementById("mana_perso_quatre").innerHTML = mana_perso_quatre;
+						document.getElementById("pv_boss_deux").innerHTML = pv_boss_deux;
+						document.getElementById("message_box").innerHTML = (perso_quatre + " drainage " + drainage + "PV à " + bossChoisi[0]);
+					} if (bossChoisi[0] == boss_trois){
+						bossChoisi[1] = bossChoisi[1] - drainage;
+						pv_boss_trois = bossChoisi[1];
+						pv_perso_quatre = pv_perso_quatre + drainage;
+						mana_perso_quatre = mana_perso_quatre - 30;
+						document.getElementById("pv_perso_quatre").innerHTML = pv_perso_quatre;
+						document.getElementById("mana_perso_quatre").innerHTML = mana_perso_quatre;
+						document.getElementById("pv_boss_trois").innerHTML = pv_boss_trois;
+						document.getElementById("message_box").innerHTML = (perso_quatre + " drainage " + drainage + "PV à " + bossChoisi[0]);
+					}
+				}
 			}
 		}
 				
