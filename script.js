@@ -566,3 +566,10 @@ function testBossMort(pv_boss_un, pv_boss_deux, pv_boss_trois, boss_un_mort, bos
 		alert("Vous avez gagné !")
 	}
 }
+
+/*
+Problèmes du programme :
+le mana de diminue pas
+les pv des perso ne diminue pas
+la selection n'est pas reset, donc si un boss selectionné est mort il est toujours possible de l'attaquer (ne fait rien, mais saute juste un tour)
+*/
