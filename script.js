@@ -132,6 +132,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 					document.getElementById("message_box").innerHTML = ("Vous n'avez pas assez de mana");
 				} else {
 					var listePlusFaiblePV = [pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre];
+					//sort de soin : soigne de 15PV le perso ayant les plus faibles PV, 30 mana consommé par sort
 					//si tous les perso on le meme nombre de PV --> tous les perso sont soignés, également beaucoup plus de mana consommé
 					listePlusFaiblePV.sort(tri);
 					var perso_a_soigner = listePlusFaiblePV[0];
@@ -199,8 +200,11 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 				}
 			}
 		} if (tourJoueur == 2 || tourJoueur == 4){
-			document.getElementById("special").innerHTML = ("> Poison <");
-			setTimeout(() => {document.getElementById("special").innerHTML = ("Poison");}, 250);
+			document.getElementById("special").innerHTML = ("> Drainage <");
+			setTimeout(() => {document.getElementById("special").innerHTML = ("Drainage");}, 250);
+			if (tourJoueur == 1){
+				if (mana_perso_un <= 0){
+					document.getElementById("message_box").innerHTML = ("Vous n'avez pas assez de mana");
 		}
 	}
 	return (listeDef);
@@ -280,7 +284,7 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 			document.getElementById("perso_deux").style.color = "red";
 			document.getElementById("perso_deux").style.textDecoration = "underline red";
 			document.getElementById("message_box").innerHTML = ("Tour de " + perso_deux + ".");
-			document.getElementById("special").innerHTML = ("Poison");
+			document.getElementById("special").innerHTML = ("Drainage");
 		}
 	//Tour du joueur 3
 	} if (tourJoueur == 3){
@@ -316,7 +320,7 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 			document.getElementById("perso_quatre").style.color = "red";
 			document.getElementById("perso_quatre").style.textDecoration = "underline red";
 			document.getElementById("message_box").innerHTML = ("Tour de " + perso_quatre + ".");
-			document.getElementById("special").innerHTML = ("Poison");
+			document.getElementById("special").innerHTML = ("Drainage");
 		}
 	//Tour des boss
 	} if (tourJoueur == 5){
