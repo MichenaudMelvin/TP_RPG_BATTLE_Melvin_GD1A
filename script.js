@@ -44,7 +44,7 @@ var bossChoisi = ["none", "none"];
 var defense_perso = [false, false, false, false];
 var listeDef = [1, false];
 console.log(listeDef)
-tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);
+resetTour = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef, resetTour);
 
 
 //all functions
@@ -82,7 +82,7 @@ function attaque(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 		testBossMort(pv_boss_un, pv_boss_deux, pv_boss_trois, boss_un_mort, boss_deux_mort, boss_trois_mort);
 		listeDef[0] = tourJoueur + 1;
 
-		setTimeout(() => {tourjoueur = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);}, 2500);
+		setTimeout(() => {resetTour = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef, resetTour);}, 2500);
 	}
 	return (listeDef)
 }
@@ -111,7 +111,7 @@ function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 		}
 		tourJoueur = tourJoueur + 1;
 		listeDef = [tourJoueur, defense_perso];
-		setTimeout(() => {tourjoueur = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);}, 2500);
+		setTimeout(() => {resetTour = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef, resetTour);}, 2500);
 	}
 	return (listeDef);
 }
@@ -287,7 +287,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 				}
 			}
 		}
-		setTimeout(() => {tourjoueur = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);}, 2500);	
+		setTimeout(() => {resetTour = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef, resetTour);}, 2500);	
 	}
 	return (listeDef);
 }
@@ -328,94 +328,94 @@ function bossTrois(boss_trois){
 	return bossChoisi;
 }
 	
-function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef){
+function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef, resetTour){
 	tourJoueur = listeDef[0];
 	console.log(listeDef);
 	console.log("tourJoueur : ", tourJoueur);
-	//Tour du joueur 1
-	if (tourJoueur == 1){
-		if (pv_perso_un <= 0) {
-			tourJoueur = tourJoueur + 1
-		} else {
-			//réinitialisation couleur
-			document.getElementById("perso_deux").style.color = "white";
-			document.getElementById("perso_deux").style.textDecoration = "underline white";
-			document.getElementById("perso_trois").style.color = "white";
-			document.getElementById("perso_trois").style.textDecoration = "underline white";
-			document.getElementById("perso_quatre").style.color = "white";
-			document.getElementById("perso_quatre").style.textDecoration = "underline white";
-			//changement de joueur
-			document.getElementById("perso_un").style.color = "red";
-			document.getElementById("perso_un").style.textDecoration = "underline red";
-			document.getElementById("message_box").innerHTML = ("Tour de " + perso_un + ".");
-			document.getElementById("special").innerHTML = ("Soin");
+	if (resetTour = false){
+		//Tour du joueur 1
+		if (tourJoueur == 1){
+			if (pv_perso_un <= 0) {
+				tourJoueur = tourJoueur + 1
+			} else {
+				//réinitialisation couleur
+				document.getElementById("perso_deux").style.color = "white";
+				document.getElementById("perso_deux").style.textDecoration = "underline white";
+				document.getElementById("perso_trois").style.color = "white";
+				document.getElementById("perso_trois").style.textDecoration = "underline white";
+				document.getElementById("perso_quatre").style.color = "white";
+				document.getElementById("perso_quatre").style.textDecoration = "underline white";
+				//changement de joueur
+				document.getElementById("perso_un").style.color = "red";
+				document.getElementById("perso_un").style.textDecoration = "underline red";
+				document.getElementById("message_box").innerHTML = ("Tour de " + perso_un + ".");
+				document.getElementById("special").innerHTML = ("Soin");
+			}
+		//Tour du joueur 2
+		} if (tourJoueur == 2){
+			if (pv_perso_deux <= 0) {
+				tourJoueur = tourJoueur + 1
+			} else {
+				//réinitialisation couleur 
+				document.getElementById("perso_un").style.color = "white";
+				document.getElementById("perso_un").style.textDecoration = "underline white";
+				document.getElementById("perso_trois").style.color = "white";
+				document.getElementById("perso_trois").style.textDecoration = "underline white";
+				document.getElementById("perso_quatre").style.color = "white";
+				document.getElementById("perso_quatre").style.textDecoration = "underline white";
+				//changement de joueur
+				document.getElementById("perso_deux").style.color = "red";
+				document.getElementById("perso_deux").style.textDecoration = "underline red";
+				document.getElementById("message_box").innerHTML = ("Tour de " + perso_deux + ".");
+				document.getElementById("special").innerHTML = ("Drainage");
+			}
+		//Tour du joueur 3
+		} if (tourJoueur == 3){
+			if (pv_perso_trois <= 0) {
+				tourJoueur = tourJoueur + 1
+			} else {
+				//réinitialisation couleur 
+				document.getElementById("perso_un").style.color = "white";
+				document.getElementById("perso_un").style.textDecoration = "underline white";
+				document.getElementById("perso_deux").style.color = "white";
+				document.getElementById("perso_deux").style.textDecoration = "underline white";
+				document.getElementById("perso_quatre").style.color = "white";
+				document.getElementById("perso_quatre").style.textDecoration = "underline white";
+				//changement de joueur
+				document.getElementById("perso_trois").style.color = "red";
+				document.getElementById("perso_trois").style.textDecoration = "underline red";
+				document.getElementById("message_box").innerHTML = ("Tour de " + perso_trois + ".");
+				document.getElementById("special").innerHTML = ("Soin");
+			}
+		//Tour du joueur 4
+		} if (tourJoueur == 4){
+			if (pv_perso_quatre <= 0) {
+				tourJoueur = tourJoueur + 1
+			} else {
+				//réinitialisation couleur 
+				document.getElementById("perso_un").style.color = "white";
+				document.getElementById("perso_un").style.textDecoration = "underline white";
+				document.getElementById("perso_deux").style.color = "white";
+				document.getElementById("perso_deux").style.textDecoration = "underline white";
+				document.getElementById("perso_trois").style.color = "white";
+				document.getElementById("perso_trois").style.textDecoration = "underline white";
+				//changement de joueur
+				document.getElementById("perso_quatre").style.color = "red";
+				document.getElementById("perso_quatre").style.textDecoration = "underline red";
+				document.getElementById("message_box").innerHTML = ("Tour de " + perso_quatre + ".");
+				document.getElementById("special").innerHTML = ("Drainage");
+			}
+		//Tour des boss
+		} if (tourJoueur == 5){
+			resetTour = tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, listeDef, tourJoueur);
 		}
-	//Tour du joueur 2
-	} if (tourJoueur == 2){
-		if (pv_perso_deux <= 0) {
-			tourJoueur = tourJoueur + 1
-		} else {
-			//réinitialisation couleur 
-			document.getElementById("perso_un").style.color = "white";
-			document.getElementById("perso_un").style.textDecoration = "underline white";
-			document.getElementById("perso_trois").style.color = "white";
-			document.getElementById("perso_trois").style.textDecoration = "underline white";
-			document.getElementById("perso_quatre").style.color = "white";
-			document.getElementById("perso_quatre").style.textDecoration = "underline white";
-			//changement de joueur
-			document.getElementById("perso_deux").style.color = "red";
-			document.getElementById("perso_deux").style.textDecoration = "underline red";
-			document.getElementById("message_box").innerHTML = ("Tour de " + perso_deux + ".");
-			document.getElementById("special").innerHTML = ("Drainage");
-		}
-	//Tour du joueur 3
-	} if (tourJoueur == 3){
-		if (pv_perso_trois <= 0) {
-			tourJoueur = tourJoueur + 1
-		} else {
-			//réinitialisation couleur 
-			document.getElementById("perso_un").style.color = "white";
-			document.getElementById("perso_un").style.textDecoration = "underline white";
-			document.getElementById("perso_deux").style.color = "white";
-			document.getElementById("perso_deux").style.textDecoration = "underline white";
-			document.getElementById("perso_quatre").style.color = "white";
-			document.getElementById("perso_quatre").style.textDecoration = "underline white";
-			//changement de joueur
-			document.getElementById("perso_trois").style.color = "red";
-			document.getElementById("perso_trois").style.textDecoration = "underline red";
-			document.getElementById("message_box").innerHTML = ("Tour de " + perso_trois + ".");
-			document.getElementById("special").innerHTML = ("Soin");
-		}
-	//Tour du joueur 4
-	} if (tourJoueur == 4){
-		if (pv_perso_quatre <= 0) {
-			tourJoueur = tourJoueur + 1
-		} else {
-			//réinitialisation couleur 
-			document.getElementById("perso_un").style.color = "white";
-			document.getElementById("perso_un").style.textDecoration = "underline white";
-			document.getElementById("perso_deux").style.color = "white";
-			document.getElementById("perso_deux").style.textDecoration = "underline white";
-			document.getElementById("perso_trois").style.color = "white";
-			document.getElementById("perso_trois").style.textDecoration = "underline white";
-			//changement de joueur
-			document.getElementById("perso_quatre").style.color = "red";
-			document.getElementById("perso_quatre").style.textDecoration = "underline red";
-			document.getElementById("message_box").innerHTML = ("Tour de " + perso_quatre + ".");
-			document.getElementById("special").innerHTML = ("Drainage");
-		}
-	//Tour des boss
-	} if (tourJoueur == 5){
-		tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, listeDef, tourJoueur);
+	} else {
+		tourJoueur = 1;
+		resetTour = false
 	}
+	return(resetTour)
 }
-/*
-function resetTour(tourJoueur){
-	tourJoueur == 1;
-	tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef)
-	return (tourJoueur)
-}
-*/
+
 function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, listeDef, tourJoueur){
 	defense_perso = listeDef[1];
 	//degats des boss
@@ -543,9 +543,8 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_deux + " vous inflige " + degats_boss_perso_deux + " de degats.");}, 2000);
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_trois + " vous inflige " + degats_boss_perso_trois + " de degats.");}, 4000);
 	testLose();
-	tourJoueur = 1;
-	tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef)
-	//resetTour(tourJoueur);
+	var resetTour = true;
+	setTimeout(() => {resetTour = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef, resetTour);}, 2500);
 }
 
 function testLose(){
