@@ -142,7 +142,6 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 						document.getElementById("mana_perso_un").innerHTML = mana_perso_un;
 						document.getElementById("message_box").innerHTML = (perso_un + " soigne " + perso_un);
 						listeDef[0] = tourJoueur + 1;
-						console.log(listeDef)
 					} if (perso_a_soigner == pv_perso_deux){
 						pv_perso_deux = pv_perso_deux + 15;
 						mana_perso_un = mana_perso_un - 20;
@@ -542,7 +541,7 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_deux + " vous inflige " + degats_boss_perso_deux + " de degats.");}, 2000);
 	setTimeout(() => {document.getElementById("message_box").innerHTML = (boss_trois + " vous inflige " + degats_boss_perso_trois + " de degats.");}, 4000);
 	testLose();
-	setTimeout(() => {listeDef = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);}, 2500);
+	setTimeout(() => {listeDef = tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef);}, 6000);
 }
 
 function testLose(){
