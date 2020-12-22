@@ -434,72 +434,96 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 			pv_perso_un = pv_perso_un - Math.round((degats_boss_perso_un * 1/2));
 		} else {
 			pv_perso_un = pv_perso_un - degats_boss_perso_un;
+		} if (pv_perso_un < 0){
+			pv_perso_un = 0;
 		}
 	} if (perso_choisi_un == perso_deux){
 		if (defense_perso[1] == true){
 			pv_perso_deux = pv_perso_deux - Math.round((degats_boss_perso_un * 1/2));
 		} else {
 			pv_perso_deux = pv_perso_deux - degats_boss_perso_un;
+		} if (pv_perso_deux < 0){
+			pv_perso_deux = 0;
 		}
 	} if (perso_choisi_un == perso_trois){
 		if (defense_perso[2] == true){
 			pv_perso_trois = pv_perso_trois - Math.round((degats_boss_perso_un * 1/2));
 		} else {
 			pv_perso_trois = pv_perso_trois - degats_boss_perso_un;
+		} if (pv_perso_trois < 0){
+			pv_perso_trois = 0;
 		}
 	} if (perso_choisi_un == perso_quatre){
 		if (defense_perso[3] == true){
 			pv_perso_quatre = pv_perso_quatre - Math.round((degats_boss_perso_un * 1/2));
 		} else {
 			pv_perso_quatre = pv_perso_quatre - degats_boss_perso_un;
+		} if (pv_perso_quatre < 0){
+			pv_perso_quatre = 0;
 		}
 	} if (perso_choisi_deux == perso_un){
 		if (defense_perso[0] == true){
 			pv_perso_un = pv_perso_un - Math.round((degats_boss_perso_deux * 1/2));
 		} else {
 			pv_perso_un = pv_perso_un - degats_boss_perso_deux;
+		} if (pv_perso_un < 0){
+			pv_perso_un = 0;
 		}
 	} if (perso_choisi_deux == perso_deux){
 		if (defense_perso[1] == true){
 			pv_perso_deux = pv_perso_deux - Math.round((degats_boss_perso_deux * 1/2));
 		} else {
 			pv_perso_deux = pv_perso_deux - degats_boss_perso_deux;
+		} if (pv_perso_deux < 0){
+			pv_perso_deux = 0;
 		}
 	} if (perso_choisi_deux == perso_trois){
 		if (defense_perso[2] == true){
 			pv_perso_trois = pv_perso_trois - Math.round((degats_boss_perso_deux * 1/2));
 		} else {
 			pv_perso_trois = pv_perso_trois - degats_boss_perso_deux;
+		} if (pv_perso_trois < 0){
+			pv_perso_trois = 0;
 		}
 	} if (perso_choisi_deux == perso_quatre){
 		if (defense_perso[3] == true){
 			pv_perso_quatre = pv_perso_quatre - Math.round((degats_boss_perso_deux * 1/2));
 		} else {
 			pv_perso_quatre = pv_perso_quatre - degats_boss_perso_deux;
+		} if (pv_perso_quatre < 0){
+			pv_perso_quatre = 0;
 		}
 	} if (perso_choisi_trois == perso_un){
 		if (defense_perso[0] == true){
 			pv_perso_un = pv_perso_un - Math.round((degats_boss_perso_trois * 1/2));
 		} else {
 			pv_perso_un = pv_perso_un - degats_boss_perso_trois;
+		} if (pv_perso_un < 0){
+			pv_perso_un = 0;
 		}
 	} if (perso_choisi_trois == perso_deux){
 		if (defense_perso[1] == true){
 			pv_perso_deux = pv_perso_deux - Math.round((degats_boss_perso_trois * 1/2));
 		} else {
 			pv_perso_deux = pv_perso_deux - degats_boss_perso_trois;
+		} if (pv_perso_deux < 0){
+			pv_perso_deux = 0;
 		}
 	} if (perso_choisi_trois == perso_trois){
 		if (defense_perso[2] == true){
 			pv_perso_trois = pv_perso_trois - Math.round((degats_boss_perso_trois * 1/2));
 		} else {
 			pv_perso_trois = pv_perso_trois - degats_boss_perso_trois;
+		} if (pv_perso_trois < 0){
+			pv_perso_trois = 0;
 		}
 	} if (perso_choisi_trois == perso_quatre){
 		if (defense_perso[3] == true){
 			pv_perso_quatre = pv_perso_quatre - Math.round((degats_boss_perso_trois * 1/2));
 		} else {
 			pv_perso_quatre = pv_perso_quatre - degats_boss_perso_trois;
+		} if (pv_perso_quatre < 0){
+			pv_perso_quatre = 0;
 		}
 	}
 
