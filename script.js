@@ -117,6 +117,17 @@ function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 
 function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_perso_trois, mana_perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef, perso_un, perso_deux, perso_trois, perso_quatre, pv_boss_un, pv_boss_deux, pv_perso_trois){
 	tourJoueur = listeDef[0];
+	
+	pv_perso_un = document.getElementById("pv_perso_un").innerHTML
+	pv_perso_deux = document.getElementById("pv_perso_deux").innerHTML
+	pv_perso_trois = document.getElementById("pv_perso_trois").innerHTML
+	pv_perso_quatre = document.getElementById("pv_perso_quatre").innerHTML
+	console.log(pv_perso_un)
+	mana_perso_un = document.getElementById("mana_perso_un").innerHTML
+	mana_perso_deux = document.getElementById("mana_perso_deux").innerHTML
+	mana_perso_trois = document.getElementById("mana_perso_trois").innerHTML
+	mana_perso_quatre = document.getElementById("mana_perso_quatre").innerHTML
+
 	manaListe = [mana_perso_un, mana_perso_deux, mana_perso_trois, mana_perso_quatre];
 	document.getElementById("special").innerHTML = ("> Special <");
 	setTimeout(() => {document.getElementById("special").innerHTML = ("Special");}, 250);
@@ -439,6 +450,10 @@ function tourJoueurAffichage(tourJoueur, perso_un, perso_deux, perso_trois, pers
 
 function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, boss_un, boss_deux, boss_trois, listeDef, tourJoueur){
 	defense_perso = listeDef[1];
+	pv_perso_un = document.getElementById("pv_perso_un").innerHTML
+	pv_perso_deux = document.getElementById("pv_perso_deux").innerHTML
+	pv_perso_trois = document.getElementById("pv_perso_trois").innerHTML
+	pv_perso_quatre = document.getElementById("pv_perso_quatre").innerHTML
 	//degats des boss
 	var degats_boss_perso_un = aleatoire(20,30);
 	var degats_boss_perso_deux = aleatoire(20,30);
@@ -592,7 +607,6 @@ function testBossMort(pv_boss_un, pv_boss_deux, pv_boss_trois, boss_un_mort, bos
 
 /*
 Problèmes du programme :
-le mana de diminue pas
-les pv des perso ne diminue pas
+la defense ne se réinitialiste pas
 la selection n'est pas reset, donc si un boss selectionné est mort il est toujours possible de l'attaquer (ne fait rien, mais saute juste un tour)
 */
