@@ -454,6 +454,10 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 	pv_perso_deux = document.getElementById("pv_perso_deux").innerHTML
 	pv_perso_trois = document.getElementById("pv_perso_trois").innerHTML
 	pv_perso_quatre = document.getElementById("pv_perso_quatre").innerHTML
+	perso_un = document.getElementById("pv_perso_un").innerHTML
+	perso_deux = document.getElementById("pv_perso_deux").innerHTML
+	perso_trois = document.getElementById("pv_perso_trois").innerHTML
+	perso_quatre = document.getElementById("pv_perso_quatre").innerHTML
 	//degats des boss
 	var degats_boss_perso_un = aleatoire(20,30);
 	var degats_boss_perso_deux = aleatoire(20,30);
@@ -479,7 +483,7 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 			pv_perso_un = pv_perso_un - degats_boss_perso_un;
 		} if (pv_perso_un < 0){
 			pv_perso_un = 0;
-		}
+		} perso_choisi_un = document.getElementById("perso_un").innerHTML;
 	} if (perso_choisi_un == perso_deux){
 		if (defense_perso[1] == true){
 			pv_perso_deux = pv_perso_deux - Math.round((degats_boss_perso_un * 1/2));
@@ -487,7 +491,7 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 			pv_perso_deux = pv_perso_deux - degats_boss_perso_un;
 		} if (pv_perso_deux < 0){
 			pv_perso_deux = 0;
-		}
+		} perso_choisi_un = document.getElementById("perso_deux").innerHTML;
 	} if (perso_choisi_un == perso_trois){
 		if (defense_perso[2] == true){
 			pv_perso_trois = pv_perso_trois - Math.round((degats_boss_perso_un * 1/2));
@@ -495,7 +499,7 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 			pv_perso_trois = pv_perso_trois - degats_boss_perso_un;
 		} if (pv_perso_trois < 0){
 			pv_perso_trois = 0;
-		}
+		} perso_choisi_un = document.getElementById("perso_trois").innerHTML;
 	} if (perso_choisi_un == perso_quatre){
 		if (defense_perso[3] == true){
 			pv_perso_quatre = pv_perso_quatre - Math.round((degats_boss_perso_un * 1/2));
@@ -503,7 +507,7 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 			pv_perso_quatre = pv_perso_quatre - degats_boss_perso_un;
 		} if (pv_perso_quatre < 0){
 			pv_perso_quatre = 0;
-		}
+		} perso_choisi_un = document.getElementById("perso_quatre").innerHTML;
 	} if (perso_choisi_deux == perso_un){
 		if (defense_perso[0] == true){
 			pv_perso_un = pv_perso_un - Math.round((degats_boss_perso_deux * 1/2));
@@ -511,7 +515,7 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 			pv_perso_un = pv_perso_un - degats_boss_perso_deux;
 		} if (pv_perso_un < 0){
 			pv_perso_un = 0;
-		}
+		} perso_choisi_deux = document.getElementById("perso_un").innerHTML;
 	} if (perso_choisi_deux == perso_deux){
 		if (defense_perso[1] == true){
 			pv_perso_deux = pv_perso_deux - Math.round((degats_boss_perso_deux * 1/2));
@@ -519,7 +523,7 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 			pv_perso_deux = pv_perso_deux - degats_boss_perso_deux;
 		} if (pv_perso_deux < 0){
 			pv_perso_deux = 0;
-		}
+		} perso_choisi_deux = document.getElementById("perso_deux").innerHTML;
 	} if (perso_choisi_deux == perso_trois){
 		if (defense_perso[2] == true){
 			pv_perso_trois = pv_perso_trois - Math.round((degats_boss_perso_deux * 1/2));
@@ -527,7 +531,7 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 			pv_perso_trois = pv_perso_trois - degats_boss_perso_deux;
 		} if (pv_perso_trois < 0){
 			pv_perso_trois = 0;
-		}
+		} perso_choisi_deux = document.getElementById("perso_trois").innerHTML;
 	} if (perso_choisi_deux == perso_quatre){
 		if (defense_perso[3] == true){
 			pv_perso_quatre = pv_perso_quatre - Math.round((degats_boss_perso_deux * 1/2));
@@ -535,7 +539,7 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 			pv_perso_quatre = pv_perso_quatre - degats_boss_perso_deux;
 		} if (pv_perso_quatre < 0){
 			pv_perso_quatre = 0;
-		}
+		} perso_choisi_deux = document.getElementById("perso_quatre").innerHTML;
 	} if (perso_choisi_trois == perso_un){
 		if (defense_perso[0] == true){
 			pv_perso_un = pv_perso_un - Math.round((degats_boss_perso_trois * 1/2));
@@ -543,7 +547,7 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 			pv_perso_un = pv_perso_un - degats_boss_perso_trois;
 		} if (pv_perso_un < 0){
 			pv_perso_un = 0;
-		}
+		} perso_choisi_trois = document.getElementById("perso_un").innerHTML;
 	} if (perso_choisi_trois == perso_deux){
 		if (defense_perso[1] == true){
 			pv_perso_deux = pv_perso_deux - Math.round((degats_boss_perso_trois * 1/2));
@@ -551,7 +555,7 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 			pv_perso_deux = pv_perso_deux - degats_boss_perso_trois;
 		} if (pv_perso_deux < 0){
 			pv_perso_deux = 0;
-		}
+		} perso_choisi_trois = document.getElementById("perso_deux").innerHTML;
 	} if (perso_choisi_trois == perso_trois){
 		if (defense_perso[2] == true){
 			pv_perso_trois = pv_perso_trois - Math.round((degats_boss_perso_trois * 1/2));
@@ -559,7 +563,7 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 			pv_perso_trois = pv_perso_trois - degats_boss_perso_trois;
 		} if (pv_perso_trois < 0){
 			pv_perso_trois = 0;
-		}
+		} perso_choisi_trois = document.getElementById("perso_trois").innerHTML;
 	} if (perso_choisi_trois == perso_quatre){
 		if (defense_perso[3] == true){
 			pv_perso_quatre = pv_perso_quatre - Math.round((degats_boss_perso_trois * 1/2));
@@ -567,7 +571,7 @@ function tourBoss(perso_un, perso_deux, perso_trois, perso_quatre, pv_perso_un, 
 			pv_perso_quatre = pv_perso_quatre - degats_boss_perso_trois;
 		} if (pv_perso_quatre < 0){
 			pv_perso_quatre = 0;
-		}
+		} perso_choisi_trois = document.getElementById("perso_quatre").innerHTML;
 	}
 
 	document.getElementById("pv_perso_un").innerHTML = pv_perso_un;
