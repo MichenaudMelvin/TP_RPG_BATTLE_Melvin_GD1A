@@ -118,16 +118,16 @@ function defense(bossChoisi, tourJoueur, perso_un, perso_deux, perso_trois, pers
 function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_perso_trois, mana_perso_quatre, pv_perso_un, pv_perso_deux, pv_perso_trois, pv_perso_quatre, listeDef, perso_un, perso_deux, perso_trois, perso_quatre, pv_boss_un, pv_boss_deux, pv_perso_trois){
 	tourJoueur = listeDef[0];
 	
-	pv_perso_un = document.getElementById("pv_perso_un").innerHTML
-	pv_perso_deux = document.getElementById("pv_perso_deux").innerHTML
-	pv_perso_trois = document.getElementById("pv_perso_trois").innerHTML
-	pv_perso_quatre = document.getElementById("pv_perso_quatre").innerHTML
-	console.log(pv_perso_un)
+	pv_perso_un = parseInt(document.getElementById("pv_perso_un").innerHTML, 10)
+	pv_perso_deux = parseInt(document.getElementById("pv_perso_deux").innerHTML, 10)
+	pv_perso_trois = parseInt(document.getElementById("pv_perso_trois").innerHTML, 10)
+	pv_perso_quatre = parseInt(document.getElementById("pv_perso_quatre").innerHTML, 10)
+	
 	mana_perso_un = document.getElementById("mana_perso_un").innerHTML
 	mana_perso_deux = document.getElementById("mana_perso_deux").innerHTML
 	mana_perso_trois = document.getElementById("mana_perso_trois").innerHTML
 	mana_perso_quatre = document.getElementById("mana_perso_quatre").innerHTML
-
+	
 	manaListe = [mana_perso_un, mana_perso_deux, mana_perso_trois, mana_perso_quatre];
 	document.getElementById("special").innerHTML = ("> Special <");
 	setTimeout(() => {document.getElementById("special").innerHTML = ("Special");}, 250);
@@ -193,7 +193,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 					if (perso_a_soigner == pv_perso_un){
 						pv_perso_un = pv_perso_un + 15;
 						manaListe[2] = manaListe[2] - 20;
-						mana_perso_un = manaListe[2];
+						mana_perso_trois = manaListe[2];
 						document.getElementById("pv_perso_un").innerHTML = pv_perso_un;
 						document.getElementById("mana_perso_trois").innerHTML = mana_perso_trois;
 						document.getElementById("message_box").innerHTML = (perso_trois + " soigne " + perso_un);
@@ -201,7 +201,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 					} if (perso_a_soigner == pv_perso_deux){
 						pv_perso_deux = pv_perso_deux + 15;
 						manaListe[2] = manaListe[2] - 20;
-						mana_perso_un = manaListe[2];
+						mana_perso_trois = manaListe[2];
 						document.getElementById("pv_perso_deux").innerHTML = pv_perso_deux;
 						document.getElementById("mana_perso_trois").innerHTML = mana_perso_trois;
 						document.getElementById("message_box").innerHTML = (perso_trois + " soigne " + perso_deux);
@@ -209,7 +209,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 					} if (perso_a_soigner == pv_perso_trois){
 						pv_perso_trois = pv_perso_trois + 15;
 						manaListe[2] = manaListe[2] - 20;
-						mana_perso_un = manaListe[2];
+						mana_perso_trois = manaListe[2];
 						document.getElementById("pv_perso_trois").innerHTML = pv_perso_trois;
 						document.getElementById("mana_perso_trois").innerHTML = mana_perso_trois;
 						document.getElementById("message_box").innerHTML = (perso_trois + " soigne " + perso_trois);
@@ -240,7 +240,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 						pv_boss_un = bossChoisi[1];
 						pv_perso_deux = pv_perso_deux + drainage;
 						manaListe[1] = manaListe[1] - 20;
-						mana_perso_un = manaListe[1];
+						mana_perso_deux = manaListe[1];
 						document.getElementById("pv_perso_deux").innerHTML = pv_perso_deux;
 						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
 						document.getElementById("pv_boss_un").innerHTML = pv_boss_un;
@@ -251,7 +251,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 						pv_boss_deux = bossChoisi[1];
 						pv_perso_deux = pv_perso_deux + drainage;
 						manaListe[1] = manaListe[1] - 20;
-						mana_perso_un = manaListe[1];
+						mana_perso_deux = manaListe[1];
 						document.getElementById("pv_perso_deux").innerHTML = pv_perso_deux;
 						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
 						document.getElementById("pv_boss_deux").innerHTML = pv_boss_deux;
@@ -262,7 +262,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 						pv_boss_trois = bossChoisi[1];
 						pv_perso_deux = pv_perso_deux + drainage;
 						manaListe[1] = manaListe[1] - 20;
-						mana_perso_un = manaListe[1];
+						mana_perso_deux = manaListe[1];
 						document.getElementById("pv_perso_deux").innerHTML = pv_perso_deux;
 						document.getElementById("mana_perso_deux").innerHTML = mana_perso_deux;
 						document.getElementById("pv_boss_trois").innerHTML = pv_boss_trois;
@@ -279,7 +279,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 						pv_boss_un = bossChoisi[1];
 						pv_perso_quatre = pv_perso_quatre + drainage;
 						manaListe[3] = manaListe[3] - 20;
-						mana_perso_un = manaListe[3];
+						mana_perso_quatre = manaListe[3];
 						document.getElementById("pv_perso_quatre").innerHTML = pv_perso_quatre;
 						document.getElementById("mana_perso_quatre").innerHTML = mana_perso_quatre;
 						document.getElementById("pv_boss_un").innerHTML = pv_boss_un;
@@ -290,7 +290,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 						pv_boss_deux = bossChoisi[1];
 						pv_perso_quatre = pv_perso_quatre + drainage;
 						manaListe[3] = manaListe[3] - 20;
-						mana_perso_un = manaListe[3];
+						mana_perso_quatre = manaListe[3];
 						document.getElementById("pv_perso_quatre").innerHTML = pv_perso_quatre;
 						document.getElementById("mana_perso_quatre").innerHTML = mana_perso_quatre;
 						document.getElementById("pv_boss_deux").innerHTML = pv_boss_deux;
@@ -301,7 +301,7 @@ function special(bossChoisi, tourJoueur, mana_perso_un, mana_perso_deux, mana_pe
 						pv_boss_trois = bossChoisi[1];
 						pv_perso_quatre = pv_perso_quatre + drainage;
 						manaListe[3] = manaListe[3] - 20;
-						mana_perso_un = manaListe[3];
+						mana_perso_quatre = manaListe[3];
 						document.getElementById("pv_perso_quatre").innerHTML = pv_perso_quatre;
 						document.getElementById("mana_perso_quatre").innerHTML = mana_perso_quatre;
 						document.getElementById("pv_boss_trois").innerHTML = pv_boss_trois;
